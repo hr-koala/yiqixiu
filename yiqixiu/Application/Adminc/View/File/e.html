@@ -1,0 +1,273 @@
+<block name="include"><include file="Public:head" /></block>
+			<!-- BEGIN PAGE CONTAINER-->
+			<div class="container-fluid">
+				<!-- BEGIN PAGE HEADER-->   
+				<div class="row-fluid">
+					<div class="span12">
+						<!-- BEGIN STYLE CUSTOMIZER -->
+						<!-- END BEGIN STYLE CUSTOMIZER -->   
+
+						<h3 class="page-title">
+
+							 <eq name="user[userid_int]" value="0"> 系统素材编辑<small>   Template editing system</small><else/>用户素材编辑 <small>   Edit user case</small></eq> 
+
+
+						</h3>
+
+						<ul class="breadcrumb">
+
+							<li>
+
+								<i class="icon-home"></i>
+
+								<a href="index.html">首页</a> 
+
+								<span class="icon-angle-right"></span>
+
+							</li>
+
+							<li>
+
+								<a href="#">系统素材编辑</a>
+
+								<span class="icon-angle-right"></span>
+
+							</li>
+
+							<li><a href="#"> <eq name="user[userid_int]" value="0"> 系统素材编辑<else/>用户素材编辑 </eq> </a></li>
+
+						</ul>
+
+					</div>
+
+				</div>
+
+				<!-- END PAGE HEADER-->
+
+				<!-- BEGIN PAGE CONTENT-->
+
+				<div class="row-fluid">
+
+					<div class="span12">
+
+						<!-- BEGIN SAMPLE FORM PORTLET-->   
+
+		  <div class="tabbable tabbable-custom tabbable-full-width">
+							<ul class="nav nav-tabs">
+                               <li class="">
+                               
+      <a class="button2" href='?c=file&filetype={$fnid}' style='margin-bottom: 2px;'>系统 <if condition="$fnid eq '1'">图片<elseif condition="$fnid eq 2"/>音乐 
+ <else /> 背景</if>列表</a>                          
+
+            </li>
+                <li class="<eq name="user[userid_int]" value="0"> active<else/>active </eq> "> 
+                <a href="">    编辑 <php>if($fnid ==1):</php>图标<php>elseif($fnid ==2): </php>音乐 
+<php>else: </php>背景
+<php>endif;</php>素材</a> </li>
+
+
+
+
+
+							</ul>
+                            <hr>
+                </div>
+							
+                            
+                            
+        <div class="portlet-body form">
+       <form action="" method="post" enctype="multipart/form-data" onSubmit="return checkForm()">
+        <div style="text-align: left; padding: 20px; text-align: left;">
+            <hr style="width: 50%; size: 1px; border: none;" />
+            <table style="vertical-align: top;">
+              <if condition="$fnid eq '2'">
+                <tr>
+                    <td style="width: 98px;"> <strong class="btn red-stripe">歌曲预览</td>
+                <td colspan="2">
+                  <audio controls><source id="filesrc_varchar_src" src="/Uploads/{$user.filesrc_varchar}" type="audio/mpeg">你的浏览器不支持在线.</audio>
+                  </td></tr>
+                      
+                      
+                      <tr>
+                    <td>
+                        <tr>
+                    <td style="width: 98px;"> <strong class="btn red-stripe">歌曲预览</td>
+                <td colspan="2">
+                    </td>
+                    <td>
+                    <br />
+                    <div class="control-group">
+										<div class="controls">
+											<div class="fileupload fileupload-new" data-provides="fileupload">
+                                            <input type="hidden" id="filesrc_varchar" name="filesrc_varchar">
+												<div class="input-append">
+													<div class="uneditable-input">
+														<i class="icon-file fileupload-exists"></i> 
+														<span class="fileupload-preview"></span>
+													</div>
+													<span class="btn btn-file">
+													<span class="fileupload-new">选择歌曲</span>
+													<span class="fileupload-exists">重来</span>
+													<input type="file" name="file" class="default">
+													</span>
+
+													<a href="#" class="btn fileupload-exists" data-dismiss="fileupload">放弃</a>
+												</div>
+											</div>
+										</div>
+
+									</div>
+
+                    </td>
+                    <td>    
+                 </td>
+                </tr>
+                                      
+                                      
+                                      
+                                       <else/>
+                                       <div class="control-group">
+										<div class="controls">
+											<div class="fileupload fileupload-new" data-provides="fileupload">
+												<div class="fileupload-new thumbnail" >
+													<img src="/Uploads/{$user.filethumbsrc_varchar|default="default_t.jpg"}" alt="">
+												</div>
+			<div class="fileupload-preview fileupload-exists thumbnail" style="max-height: 150px; line-height: 20px;"></div>
+<div>
+
+													<span class="btn btn-file"><span class="fileupload-new">上传图片</span>
+													<span class="fileupload-exists">改变</span>
+													<input type="file" class="default"  name="file"></span>
+													<a href="#" class="btn fileupload-exists" data-dismiss="fileupload">删除</a>
+												</div></div></div>
+                      
+                    
+                         </td></tr>
+                         
+   </if>
+                         
+                         
+                         
+           <tr> <td ><strong class="btn green-stripe">类型</td> <td colspan="2"> 
+  <select name="user[biztype_int]"  id="scenetypeB"  <php>if($filetype_int !=2):</php>onChange="changeSceneType({$filetype_int})"<php>endif;</php>> 
+                         <foreach name='filetypelist' item='item'   >
+                       <option value="{$item.value}" <eq name="user[biztype_int]" value="$item[value]"> selected="selected" </eq> >{$item.title}</option>
+                        </foreach> </select> 
+                        
+                        <span <php>if($filetype_int ==2):</php>style="display:none" <php>endif;</php> >
+                          小类
+                       <select name="user[tagid_int]" id="scenetypeS" >
+                        <foreach name='scene_type_list2' item='item' >
+	    <option value="{$item.tagid_int}" <eq name="item[tagid_int]" value="$user['tagid_int']"> selected="selected" </eq>>{$item.name_varchar}</option> 
+        				 </span>
+          </foreach>     
+                       </select>
+</td> </tr>              
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                
+                
+                 <tr>
+                
+                    <td style="width: 98px;">
+                            <strong class="btn purple-stripe">文件名
+                    </td>
+                    
+                    
+                    
+                    
+                    <td colspan="2">
+                          <span class="frm_input_box">
+                            <input name="user[filename_varchar]" type="text"  id="title"  class="frm_input"  value="{$user.filename_varchar}" />
+                            </span>
+                    </td>
+                </tr>
+                
+                
+              
+   
+               
+              
+                <tr>
+                    <td>  
+                    </td>
+                    <td colspan="2">
+                    </td>
+                </tr>
+            </table>
+            
+                 <br><br><br>
+        	<div class="form-actions">
+                <span id="Span1">
+                         <input type="hidden"  name="id" value="{$user.fileid_bigint}" />
+                          <input type="hidden"  name="fileType" value="{$filetype_int}" />
+                          <input type="hidden"  name="userid_int" value="{$user.userid_int}" />
+                   	<button type="submit" class="btn blue">确定提交</button>
+
+										<button type="button" class="btn">放弃</button>    
+                                        </span> 
+            </div>
+        </div>
+        </form>
+        
+    </div> </div> </div>
+    <!--内容显示 End-->
+<include file="Public:foot" />   
+   <script type="text/javascript">
+   function checkForm(){
+	   if($('#title').val()==''){
+		   alert('文件名不能为空');
+		 return false;  
+		 }
+		 return true;
+	}
+   $(document).ready(function(){
+   	var id={$fnid};
+   	if(id ==0){var type='bgType'}
+   	if(id ==1){var type='tpType'}
+   	if(id ==2){var type=''}
+    if(type != ''){
+   $.ajax({
+   	url:"adminc.php?c=upfile&a=systag",
+   	type:"get",
+   	data:{type:type},
+     dataType: 'json',
+    async : true,
+	success:function(data){
+		$.each(data.list, function(value,name){
+        var html="<option value="+name.value+">"+name.name+"</option>";
+        $('#dtagid').append(html); 
+		})
+   }	
+   });}
+$("#dtagid").change(function(){
+    var biztype = $("#dtagid").val();
+    $("#tagid").empty();
+    if(biztype != ''){
+   $.ajax({
+   	url:"adminc.php?c=upfile&a=systag&type=11",
+   	type:"get",
+   	data:{bizType:biztype},
+     dataType: 'json',
+    async : true,
+	success:function(data){
+		$.each(data.list, function(value,name){
+        var html="<option value="+name.id+">"+name.name+"</option>";
+     $('#tagid').append(html); 
+        
+		})
+   }	
+   });
+    }
+    });
+   });
+  </script>
+ 
+
+

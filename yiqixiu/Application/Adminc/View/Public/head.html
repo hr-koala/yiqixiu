@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+	<meta charset="utf-8" />
+	<title>移动场景系统后台管理登陆</title>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+	<meta content="" name="description" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<!-- BEGIN GLOBAL MANDATORY STYLES -->
+	<link href="__ROOT__/Public/media/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+	<link href="__ROOT__/Public/media/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
+	<link href="__ROOT__/Public/media/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+	<link href="__ROOT__/Public/media/css/style-metro.css" rel="stylesheet" type="text/css"/>
+	<link href="__ROOT__/Public/media/css/style.css" rel="stylesheet" type="text/css"/>
+	<link href="__ROOT__/Public/media/css/style-responsive.css" rel="stylesheet" type="text/css"/>
+	<link href="__ROOT__/Public/media/css/default.css" rel="stylesheet" type="text/css" id="style_color"/>
+	<link href="__ROOT__/Public/media/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+    
+    
+     
+       <link href="__ROOT__/Public/media/css/search.css" rel="stylesheet" type="text/css"/>
+     <link href="__ROOT__/Public/media/css/error.css" rel="stylesheet" type="text/css"/>
+    <link href="__ROOT__/Public/media/css/invoice.css" rel="stylesheet" type="text/css"/>
+    <link href="__ROOT__/Public/media/css/inbox.css" rel="stylesheet" type="text/css"/>
+ <link href="__ROOT__/Public/media/css/bootstrap-fileupload.css" rel="stylesheet" type="text/css"/>
+ 
+	<!-- END GLOBAL MANDATORY STYLES -->
+	<link rel="shortcut icon" href="/favicon.ico" />
+      <script type="text/javascript">
+	    function unselectall(thisform){
+        if(thisform.chkAll.checked){
+            thisform.chkAll.checked = thisform.chkAll.checked&0;
+        }   
+    }
+    function CheckAll(thisform){
+        for (var i=0;i<thisform.elements.length;i++){
+            var e = thisform.elements[i];
+			debugger;
+            if (e.name != "chkAll"&&e.disabled!=true){
+                e.checked = thisform.chkAll.checked; 
+			   if(i==0)alert(e.value);
+			}
+        }
+    }
+	 function changeSceneType(type_int){
+	   var biztypeId=$('#scenetypeB').val();
+	   $.get('?c=scene&a=getSceneTag',{type_int:type_int,biztypeId:biztypeId},function(data){
+		    if(data.status==1){
+			  $('#scenetypeS').html(data.info);	
+			}
+		 },'json');
+	}
+	  </script>      
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body class="page-header-fixed">
+	<!-- BEGIN HEADER -->
+	<div class="header navbar navbar-inverse navbar-fixed-top">
+		<!-- BEGIN TOP NAVIGATION BAR -->
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				<!-- BEGIN LOGO -->
+				<a class="brand" href="/adminc.php">
+				<img src="__ROOT__/Public/media/image/logo.png" alt="logo" />
+
+				</a>
+
+				<!-- END LOGO -->
+
+				<!-- BEGIN HORIZANTAL MENU -->
+
+			  <div class="navbar hor-menu hidden-phone hidden-tablet">
+					<div class="navbar-inner">
+						<ul class="nav">
+							<li class="visible-phone visible-tablet">
+								<!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
+								<form class="sidebar-search">
+
+									<div class="input-box">
+
+										<a href="javascript:;" class="remove"></a>
+
+										<input type="text" placeholder="Search..." />            
+
+										<input type="button" class="submit" value=" " />
+
+									</div>
+
+								</form>
+
+								<!-- END RESPONSIVE QUICK SEARCH FORM -->
+
+							</li>
+
+							<li class="{$ui.index}">
+								<a href="{:U('/index')}">
+								管理首页
+								<span class="selected"></span>
+								</a>
+							</li>
+							<li class="{$ui.sys_set}{$ui.sys}  {$ui.sys_setmail}{$ui.sys_wxapi} {$ui.Update} {$ui.Database}{$ui.sys_pay}">
+								<a data-toggle="dropdown" class="dropdown-toggle" href="javascript:;">
+								站点设置
+								<span class="arrow"></span>     
+								</a>
+								<ul class="dropdown-menu">
+									     <include file="Sys:_menu"/>                  
+                   
+								</ul>
+
+								<b class="caret-out"></b>                        
+
+							</li>
+
+							<li  class="{$ui.useranli}">
+								<a data-toggle="dropdown" class="dropdown-toggle" href="">案例管理<span class="arrow"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li class="<eq name="flag" value="useranli">{$ui.anli_index}</eq>"> <a  href="{:U('/Scene/index/flag/useranli')}"> 用户案例管理</a> </li>
+                        <li class="<eq name="flag" value="template">{$ui.anli_index}</eq>"> <a href="/adminc.php?c=scene&flag=template"> 申请模板案例</a> </li>
+                         <li class="<eq name="flag" value="promotion">{$ui.anli_index}</eq>"> <a href="/adminc.php?c=scene&flag=promotion"> 申请推荐案例</a> </li>
+								</ul>
+								<b class="caret-out"></b>         
+							</li>
+
+							<li class="{$ui.users} {$ui.users_add} {$ui.user_group}">
+								<a data-toggle="dropdown" class="dropdown-toggle" href="">用户管理
+								<span class="arrow"></span>
+								</a>
+
+								<ul class="dropdown-menu">
+               <li class="{$ui.users}"> <a href="{:U('user/index')}"> 前台用户管理</a> </li>
+		       <li class="{$ui.users_add}"> <a href="{:U('user/add')}"> 添加新用户</a> </li>
+               <li class="{$ui.user_group}"> <a href=adminc.php?c=group> 用户组管理</a> </li>
+								</ul>
+								<b class="caret-out"></b>                        
+							</li>
+							<li>
+								<a href="/adminc.php?c=sys&a=clearcache">清理缓存</a>
+							</li>
+					<li>
+								<a href="/" target="_blank">网站首页</a>
+							</li>
+							<li>
+								<span class="hor-menu-search-form-toggler">&nbsp;</span>
+								<div class="search-form hidden-phone hidden-tablet">
+									<form class="form-search">
+										<div class="input-append">
+
+											<input type="text" placeholder="Search..." class="m-wrap">
+
+											<button type="button" class="btn"></button>
+
+										</div>
+
+									</form>
+
+								</div>
+
+							</li>
+
+						</ul>
+
+					</div>
+
+				</div>
+
+				<!-- END HORIZANTAL MENU -->
+
+				<!-- BEGIN RESPONSIVE MENU TOGGLER -->
+
+				<a href="javascript:;" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+
+				<img src="__ROOT__/Public/media/image/menu-toggler.png" alt=""/>
+
+				</a>          
+
+	       
+
+				<!-- BEGIN TOP NAVIGATION MENU -->              
+
+				<ul class="nav pull-right">
+
+					<!-- BEGIN USER LOGIN DROPDOWN -->
+
+					<li class="dropdown user">
+
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+						<img alt="" src="assets/images/defaultuser.jpg " style="width:30px;"/>
+
+						<span class="username">{$Adminusername}</span>
+
+						<i class="icon-angle-down"></i>
+
+						</a>
+
+						<ul class="dropdown-menu">
+                        
+                         
+                    <li> <a href="{:U('sys/admin')}"> <i class="icon-user"></i>  管理员管理</a> </li>
+                 <li> <a href="/adminc.php?c=sys&a=edit&id={$Adminuserid}"><i class="icon-calendar"></i> 修改密码</a> </li>
+		        <li > <a href="/adminc.php?c=auth&a=logout"><i class=" icon-share"></i>  退出</a> </li>
+
+						
+
+						</ul>
+
+					</li>
+
+					<!-- END USER LOGIN DROPDOWN -->
+
+			  </ul>
+
+				<!-- END TOP NAVIGATION MENU --> 
+
+			</div>
+
+		</div>
+
+		<!-- END TOP NAVIGATION BAR -->
+
+	</div>
+
+	<!-- END HEADER -->
+
+	<!-- BEGIN CONTAINER -->   
+
+	<div class="page-container row-fluid" >
+
+		<!-- BEGIN HORIZONTAL MENU PAGE SIDEBAR1 -->
+		<div class="page-sidebar nav-collapse collapse">
+		  <!-- BEGIN SIDEBAR MENU -->
+		  <ul class="page-sidebar-menu">
+		    <li>
+		      <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+		      <div class="sidebar-toggler hidden-phone"></div>
+		      <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+	        </li>
+		    <li>
+		      <!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
+		      <form class="sidebar-search">
+		        <div class="input-box"> <a href="javascript:;" class="remove"></a>
+		          <input type="text" placeholder="Search..." />
+		          <input type="button" class="submit" value=" " />
+	            </div>
+	          </form>
+		      <!-- END RESPONSIVE QUICK SEARCH FORM -->
+	        </li>
+		    <li class="{$ui.index}"> <a href="{:U('/index')}"> <i class="icon-home"></i> 
+            <span class="title">管理首页</span> <span class="selected"></span> </a> </li>
+  
+		    <li class="{$ui.sys_set}{$ui.sys}{$ui.sys_setmail}{$ui.sys_wxapi}{$ui.Update}{$ui.sys_pay}"> 
+            <a href="javascript:;"> <i class="icon-cogs"></i> <span class="title">站点设置</span> 
+             <span class="selected "></span> </a>
+		      <ul class="sub-menu">
+              	   <include file="Sys:_menu"/>                   
+	          </ul>
+			  </li>
+    
+             <li class="{$ui.sys_admin}{$ui.sys_edit}{$ui.sys_add}"> <a href="javascript:;"> 
+             <i class="icon-user"></i> <span class="title">管理员管理</span> 
+             <span class="selected "></span> </a>
+		      <ul class="sub-menu">
+                <li class="{$ui.sys_admin}"> <a href="{:U('sys/admin')}"> 管理员管理</a> </li>
+                 <li class="{$ui.sys_edit}"> <a href="/adminc.php?c=sys&a=edit&id={$Adminuserid}"> 修改密码</a> </li>
+		        <li class="{$ui.sys_add}"> <a href="{:U('sys/add')}"> 添加管理员</a> </li>
+		        
+		    
+	          </ul>
+	        </li>
+            
+		    <li class="{$ui.users}{$ui.users_e}{$ui.users_add}{$ui.user_group}"> <a href="javascript:;"> 
+            <i class="icon-user"></i> <span class="title">用户管理</span> 
+            <span class="selected "></span> </a>
+		      <ul class="sub-menu">
+               <li class="{$ui.users}"> <a href="{:U('user/index')}"> 前台用户管理</a> </li>
+		       <li class="{$ui.users_add}"> <a href="{:U('user/add')}"> 添加新用户</a> </li>
+               <li class="{$ui.user_group}"> <a href=adminc.php?c=group> 用户组管理</a> </li>
+			   
+			   
+	          </ul>
+	        </li>
+			
+			
+		    <li class="{$ui.scene_anli}"> <a href="javascript:;"> 
+            <i class="icon-table"></i> <span class="title">用户案例管理</span> 
+            <span class="selected "></span> </a>
+		      <ul class="sub-menu">
+		              <li class="<eq name="flag" value="useranli">{$ui.anli_index}</eq>"> <a  href="{:U('/Scene/index/flag/useranli')}"> 用户案例管理</a> </li>
+                        <li class="<eq name="flag" value="template">{$ui.anli_index}</eq>"> <a href="/adminc.php?c=scene&flag=template"> 申请模板案例</a> </li>
+                         <li class="<eq name="flag" value="promotion">{$ui.anli_index}</eq>"> <a href="/adminc.php?c=scene&flag=promotion"> 申请推荐案例</a> </li>
+					 
+	          </ul>
+	        </li>
+		    <li class="<eq name="flag" value="useranli"><else/> {$ui.scene_index}{$ui.Reptile}{$ui.yxcj}</eq> "> <a href="javascript:;"> 
+            <i class="icon-briefcase"></i> 
+            <span class="title">系统模板管理</span> <span class="selected "></span> </a>
+		      <ul class="sub-menu">
+              	<li class="{$ui.scene_index}"><a href="{:U('/scene/index')}" >模板列表</a></li>
+                 <li class="<php>if($_GET['from']=='0'):</php>active <php>else:</php><php>endif;</php>"><a href="/adminc.php?c=reptile&from=0" ><i class="fa "></i>采集官方</a></li>
+				 <li class="<php>if($_GET['from']=='70'):</php>active <php>else:</php><php>endif;</php>"><a href="/adminc.php?c=reptile&from=70" ><i class="fa "></i>采集70c</a></li>
+                  <li class="{$ui.yxcj}"><a href="/adminc.php?c=Cjsys" ><i class="fa "></i>采集组件</a></li>
+	          </ul>
+	        </li>
+            
+            
+             <li class="{$ui.goods}"> <a href="javascript:;"> 
+            <i class="icon-collapse"></i> <span class="title">商品管理</span> 
+            <span class="selected "></span> </a>
+		      <ul class="sub-menu">
+		        <li  class="{$ui.goods_index}"> <a href="{:U('/goods')}"> 商品管理</a> </li>
+		        <li class="{$ui.goods_add}" > <a href="?c=goods&a=add"> 添加商品</a> </li>
+		    
+		     
+	          </ul>
+	        </li>
+             <li class=" {$ui.order_info}"> <a href="javascript:;"> 
+            <i class="icon-yen"></i> <span class="title">订单管理</span> 
+            <span class="selected "></span> </a>
+		      <ul class="sub-menu">
+		        <li class="{$ui.order_info_index}"> <a href="{:U('/order')}"> 订单管理</a> </li>
+		    
+		     
+	          </ul>
+	        </li>
+            <li class=" {$ui.article}"> <a href="javascript:;"> 
+            <i class="icon-collapse"></i> <span class="title">文章管理</span> 
+            <span class="selected "></span> </a>
+		      <ul class="sub-menu">
+		        <li class="{$ui.article_index}"> <a href="{:U('/article')}"> 文章管理</a> </li> 
+	          </ul>
+	        </li>
+		    <li class="{$ui.File_index}"> <a href="javascript:;"> <i class="icon-gift"></i> 
+            <span class="title">系统素材管理</span> <span class="selected "></span> </a>
+		      <ul class="sub-menu">
+		    <!--<li class="<eq name="filetype" value="0">{$ui.File_index}</eq>"><a href="/adminc.php?c=File&a=index&filetype=0" ><i class="fa "></i>背景素材</a></li>-->
+		    <li class="<eq name="filetype" value="1">{$ui.File_index}</eq>"><a href="/adminc.php?c=File&a=index&filetype=1" ><i class="fa "></i>图片素材</a></li>
+		    <li class="<eq name="filetype" value="2">{$ui.File_index}</eq>"><a href="/adminc.php?c=File&a=index&filetype=2" ><i class="fa "></i>音乐素材</a></li>
+	   
+	          </ul>
+	        </li>
+            
+            
+            
+            <li class="{$ui.userancs}"> <a href="javascript:;"> <i class="icon-gift"></i> 
+            <span class="title">用户素材管理</span> <span class="selected "></span> </a>
+		      <ul class="sub-menu">
+		    <li class="<eq name="filetype" value="0">{$ui.File_index}</eq>"><a href="/adminc.php?c=File&a=userancs&filetype=0" ><i class="fa "></i>背景素材</a></li>
+		    <li class="<eq name="filetype" value="1">{$ui.File_index}</eq>"><a href="/adminc.php?c=File&a=userancs&filetype=1" ><i class="fa "></i>图片素材</a></li>
+		    <li class="<eq name="filetype" value="2">{$ui.File_index}</eq>"><a href="/adminc.php?c=File&a=userancs&filetype=2" ><i class="fa "></i>音乐素材</a></li>
+	   
+	          </ul>
+	        </li>
+            
+            
+              <li class="{$ui.cate}{$ui.tag_index}"> <a href="javascript:;"> 
+            <i class="icon-briefcase"></i> 
+            <span class="title">系统分类管理</span> <span class="selected "></span> </a>
+		      <ul class="sub-menu">          
+              
+                 <li  class="<eq name="type" value="tpType">{$ui.cate_index}</eq>"><a href="/adminc.php?c=cate&filetype=tpType" >图片分类</a></li>
+					 <!-- <li class="<eq name="type" value="bgType">{$ui.cate_index}</eq>"><a href="/adminc.php?c=cate&filetype=bgType"  >背景分类</a></li> -->
+					 <li class="<eq name="type" value="musType">{$ui.cate_index}</eq>"><a href="/adminc.php?c=cate&filetype=musType" >音乐分类</a></li>
+				 <li class="<eq name="type" value="scene_type">{$ui.cate_index}</eq>"><a href="/adminc.php?c=cate&filetype=scene_type">场景分类</a></li> 
+                 <php>if(C('VI_SCENECODE')):</php>
+                 <li class="<eq name="type" value="mytpl_type">{$ui.cate_index}</eq>"><a href="/adminc.php?c=cate&filetype=mytpl_type">我的模板分类</a></li>     <php>endif;</php>
+	          </ul>
+	        </li>
+            
+            
+              <li class="{$ui.Database}"> 
+            <a href="javascript:;"> <i class="icon-cogs"></i> <span class="title">数据库备份</span> 
+             <span class="selected "></span> </a>
+		      <ul class="sub-menu">
+               <li class=""> <a href="{:U('/Database/index/type/export')}"> 数据库备份</a> </li>
+                <li class=""> <a href="{:U('/Database/index/type/import')}"> 数据库还原</a> </li>
+
+	          </ul>
+	        </li>
+            
+            
+                     <li class="{$ui.Ad_msgList}{$ui.Ad_msgadd}{$ui.ad_friendlinks}"> <a href="javascript:;"> 
+             <i class="icon-bookmark-empty"></i>  <span class="title">公告&友情链接</span> 
+             <span class="selected "></span> </a>
+		      <ul class="sub-menu">
+               <li class="{$ui.Ad_msgList}"> <a href="{:U('/Ad/msglist')}"> 公告管理</a> </li>
+                <li class="{$ui.Ad_msgadd}"> <a href="{:U('/Ad/msgadd')}"> 新增公告</a> </li>
+     		   <li class="{$ui.ad_friendlinks}"> <a href="{:U('Ad/friendlinks')}"> 友情链接管理</a> </li>
+
+		    
+	          </ul>
+	        </li>
+            <li class="{$ui.Ad_index}{$ui.Ad_d}"> <a href="javascript:;"> 
+             <i class="icon-bookmark-empty"></i>  <span class="title">Logo图片管理</span> 
+             <span class="selected "></span> </a>
+		      <ul class="sub-menu">
+              
+                <li class="{$ui.Ad_index}"> <a href="{:U('/Ad/index')}"> 广告图片管理</a> </li>
+ <li class="{$ui.Ad_d}"> <a href="{:U('/Ad/add')}"> 新增广告</a> </li>
+		    
+	          </ul>
+	        </li>
+            
+	
+		    
+		
+		  
+	      </ul>
+		  <!-- END SIDEBAR MENU -->
+</div>
+		<!-- END BEGIN HORIZONTAL MENU PAGE SIDEBAR -->
+
+		<!-- BEGIN PAGE -->
+
+		<div class="page-content">
+
+			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM--><!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+  
+    
+            	<script src="__ROOT__/Public/media/js/jquery-1.10.1.min.js" type="text/javascript"></script>
+                <style>
+                  div.radio input {
+opacity: 11;}
+.radio input[type="radio"], .checkbox input[type="checkbox"] {
+	margin-left: 0 !important;}</style>

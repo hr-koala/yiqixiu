@@ -1,0 +1,127 @@
+<include file="Public:head"/>
+<div class="container-fluid">
+				<!-- BEGIN PAGE HEADER-->
+				<div class="row-fluid">
+					<div class="span12">
+					<h4 class="page-title">
+							用户管理
+							   <small>   User management</small></h4>
+
+						<ul class="breadcrumb">
+							<li><i class="icon-home"></i><a href="index.html">首页</a> 
+								<i class="icon-angle-right"></i></li>
+
+							<li><a href="#">用户管理</a><i class="icon-angle-right"></i></li>
+							<li><a href="#">用户设置</a></li>
+						</ul>
+						<!-- END PAGE TITLE & BREADCRUMB-->
+					</div>
+				</div>
+				<!-- END PAGE HEADER-->
+
+				<!-- BEGIN PAGE CONTENT-->
+	<!-- END PAGE HEADER-->
+                <div class="tabbable tabbable-custom tabbable-full-width">
+							<ul class="nav nav-tabs">
+			  <li class="{$ui.users}"> <a href="{:U('user/index')}"> 前台用户管理</a> </li>
+		       <li class="{$ui.users_add}"> <a href="{:U('user/add')}"> 添加新用户</a> </li>
+               <li class="{$ui.user_group}"> <a href=adminc.php?c=group>  用户组管理</a> </li>
+			
+			   
+							</ul>
+			</br>			
+			<form class="login-form" action="{:U('user/index')}" method="post">
+			
+				
+				根据用户名搜索&nbsp(支持模糊查询)&nbsp:&nbsp&nbsp&nbsp <input type="text" name="username" id="id"  value="" />
+			
+			&nbsp&nbsp&nbsp <input type="submit" name="button" id="button" value="搜索">
+			</form>
+							
+                            <hr>
+                </div>
+				<!-- BEGIN PAGE CONTENT-->          
+				<div class="row-fluid">
+					<div class="span12 ">
+						<!-- BEGIN EXAMPLE TABLE PORTLET-->
+							<div class="portlet-body">
+
+				<!-- END PAGE HEADER-->
+                
+               
+
+										<div class="portlet-body form ">
+                                        
+                                        
+                                         <foreach name='select' item='user' >
+                                        
+
+
+									<div class="media-body">
+
+
+										
+
+										<!-- Nested media object -->
+
+										<div class="media">
+<a href="/adminc.php?c=user&a=e&id={$user.userid_int}"class="pull-left"><img src="<if condition="substr($user['headimg'],0,7) neq 'http://'">/Uploads/</if>{$user.headimg|default="defaultuser.jpg"}" width="60" height="60" class="media-object" style=" width:60px; height:60px"/> </a>
+
+
+											<div class="media-body">
+
+												<h4 class="media-heading">
+                                                  <strong class="btn purple-stripe">登陆名：{$user.email_varchar}</strong>   
+                                                 <strong class="btn purple-stripe">角色：{$user.gname}</strong>
+                                                 <strong class="btn purple-stripe">秀点数：{$user.xd}</strong>
+                                                 <strong class="btn purple-stripe">可创建场景数：{$user.allow_nums}</strong>
+					<span><a  href="/adminc.php?c=user&a=e&id={$user.userid_int}" class="btn purple-stripe">状态：</a><eq name="user['status_int']" value="1"><a href="/adminc.php?c=user&a=e&id={$user.userid_int}" class="btn icn-only green"><i class="icon-play"></i></a></eq><eq name="user['status_int']" value="0"><a href="/adminc.php?c=user&a=e&id={$user.userid_int}" class="btn icn-only red"><i class="icon-remove"></i></a></eq>
+					</span>
+                                                  
+                                        
+                                              
+                                               
+                                                
+                                                
+                                                
+                                                <span  class="pull-right"><a  href="/adminc.php?c=user&a=e&id={$user.userid_int}"  class="btn blue"><i class="icon-remove icon-pencil"></i>  修改</a><a href="/adminc.php?c=user&a=del&id={$user.userid_int}" class="btn black"><i class="icon-remove icon-white"></i>  删除</a></span></h4>
+
+												<p>
+                                                 <span class="btn mini green-stripe">用户ID：{$user.userid_int}</span>
+                                                <span class="btn  mini  green-stripe">用户名：{$user.uname}</span><span class="btn mini green-stripe">注册时间：{$user.create_time} </span><span class="btn mini green-stripe">到期时间:<php>if($user['end_time']>0):</php>{$user.end_time|date='Y-m-d H:i',###}<else/> 永久<php>endif;</php> </span></p>
+
+										  </div>
+
+									  </div>
+
+										<!--end media-->
+
+									
+										<!--end media-->
+
+									</div>
+
+<hr>
+    </foreach>
+										</div>
+
+									</div>
+
+								</div>
+
+				<!-- BEGIN PAGE CONTENT-->
+                <div class="pagination pagination-right">
+
+							<ul>
+                            
+                           
+                              {$page}
+
+						
+							</ul>
+
+						</div>
+
+			</div></div></div>
+
+<include file="Public:foot" />

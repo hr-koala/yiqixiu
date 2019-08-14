@@ -1,0 +1,190 @@
+ 
+<include file="Public:head"/>
+<div class="container-fluid">
+
+				<!-- BEGIN PAGE HEADER-->   
+
+  <div class="row-fluid">
+
+					<div class="span12 blog-page">
+
+						<!-- BEGIN STYLE CUSTOMIZER --><!-- END BEGIN STYLE CUSTOMIZER -->  
+
+						<h3 class="page-title">
+
+							公告管理
+
+							 <small>Announcement Management</small>
+
+					  </h3>
+
+						<ul class="breadcrumb">
+
+							<li>
+
+								<i class="icon-home"></i>
+
+								<a href="index.html">管理首页</a> 
+
+								<span class="icon-angle-right"></span>
+
+							</li>
+
+							<li>
+
+								<a href="#">公告管理</a>
+
+								<span class="icon-angle-right"></span>
+
+							</li>
+
+							<li><a href="#">公告列表</a></li>
+
+						</ul>
+
+	</div>
+
+				</div>
+
+				<!-- END PAGE HEADER-->
+                
+           
+               <div class="tabbable tabbable-custom tabbable-full-width">
+							<ul class="nav nav-tabs">
+			      <li class="{$ui.Ad_msgList}"> <a href="{:U('Ad/msgList')}"> 公告管理</a> </li>
+		         <li class="{$ui.Ad_index}"> <a href="{:U('Ad/index')}"> 广告管理</a> </li>
+							</ul>
+                        
+                </div>
+				
+               <a class="btn green" href='?c=ad&a=msgadd' style='margin-bottom: 20px;'> 填加公告</a>
+         
+            </p>
+	
+<script type="text/javascript">
+    function setCommonClick() {        
+       document.getElementById('ctl00_ContentPlaceHolder1_gvPager_hidIsCommonClick').value = "1";
+    }
+</script>
+
+<script type="text/javascript" language="javascript">
+    function getChecked() {
+    var ids = new Array();
+    $.each($('table input:checked'), function(i, n){
+        ids.push( $(n).val() );
+    });
+    return ids;
+}
+
+function checkon(o){
+    if( o.checked == true ){
+        $(o).parents('tr').addClass('bg_on') ;
+    }else{
+        $(o).parents('tr').removeClass('bg_on') ;
+    }
+}
+
+function checkAll(o){
+    if( o.checked == true ){
+        $('input[name="checkbox"]').attr('checked','true');
+        $('tr[overstyle="on"]').addClass("bg_on");
+    }else{
+        $('input[name="checkbox"]').removeAttr('checked');
+        $('tr[overstyle="on"]').removeClass("bg_on");
+    }
+}
+ //搜索用户
+     $(document).ready(function(){
+        $("button").click(function(){
+		var fn = $("#filetype_int:input").val();
+        var top = $("#filetype_int2:input").val();
+        $.get("adminc.php?c=file", {fnid:fn, top:top},function(data){});
+ });   
+ });
+ 
+</script>
+ 
+     <div class="row-fluid"
+        <div style="padding-top: 10px; padding-left: 10px; padding-right: 10px;">
+        </div>
+        <div style="padding: 1px;">
+            <div id="ctl00_ContentPlaceHolder1_UpdatePanel1">
+	<div class="portlet-body" style=" margin-top:15px;">
+														<table class="table table-striped table-bordered table-advance table-hover">
+															<thead>
+																<tr>
+                            <th scope="col" width="67"><i class="icon-briefcase"></i>ID</th>
+                              <th width="91" align="center" scope="col" abbr="lbtnOperate"><div align="center"><i class="icon-bookmark"></i>操作</div></th>
+                              <th scope="col" width="54"><i class="icon-question-sign"></i>类型</th>
+                            <th scope="col" width="179"><div align="center"><i class="icon-bookmark"></i>标题</div></th>
+                            <th scope="col" width="78"><div align="left"><i class="icon-bookmark"></i>状态</div></th>
+                            <th scope="col" width="258"><div align="center"><i class="icon-bookmark"></i>添加时间</div></th>
+                        </tr>
+
+															</thead>
+
+															<tbody>
+                              <foreach name='msglist' item='item' >
+                                <tr>
+                                    <td align="center"> {$item.id} </td>
+                                    <td align="center" style="width:20px;"> <div align="center"><a href="?c=ad&a=msgedit&id={$item.id}" class="btn blue">  <i class=" icon-edit"> </i> 编辑 </a>  <a href="javascript:;" onClick="javascript:if(confirm('你确信要删除[{$item.title}]吗？')) window.location='?c=ad&a=msgdel&id={$item.id}<eq name="flag" value="useranli">&flag=useranli
+                                    </eq>
+                                    '"class="btn"><i class="icon-remove icon-white"></i> 删除</a>
+                                      </if>
+                                    </div></td>
+                                  <td> 
+                                  	<switch name="item.bizType">    
+                               		  <case value="1">
+                                  		  <div align="center">公告</div>
+                                  		</case> 
+                                        <case value="2">
+                                          <div align="center">通知</div>
+                                        </case>  
+                               		  <div align="center"><default />
+                               		    其它</div>
+                                  		   
+                                  	    </switch>
+                                  	
+                               	  </td>
+                             
+                                    <td>
+                                      <div align="center">{$item.title}
+                                   
+                                    </div></td>
+                                   <td><eq name="item.status" value="1"> 
+                                     <div align="center" class="btn icn-only green">启用
+                                       <else/> 
+                                       <i class="btn black"><i class="icon-remove icon-white"></i>禁用</div>
+                                   </eq></td> 
+                                  <td><div align="center">{$item.sendTime|date='Y-m-d H:i:s',###} </div></td>
+                                </tr>
+                                  </foreach>
+                                <tr>
+                                <td colspan="11">  </td>  </tr>
+                    </table><div class="pages">{$page}</div>               
+</div>
+        </div>
+    </div>
+<div id="divIsSetHeight" style="display: none;">
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+    $("#fnid").bind("change",function(){
+	 var url = $("#fnid").val();
+     $.get("/adminc.php?c=ad",{fnid:url},function(){   
+   
+  });
+ 
+         });
+	 });
+</script>
+
+ </div>
+        </form>
+        
+    </div> </div> </div> </div>
+ 
+
+
+  <include file="Public:foot"/>

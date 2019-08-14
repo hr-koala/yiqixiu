@@ -1,0 +1,172 @@
+<include file="Public:head"/>
+	<!-- BEGIN PAGE LEVEL STYLES --> 
+	<link href="Public/media/css/jquery.fancybox.css" rel="stylesheet" />
+	<link href="Public/media/css/chosen.css" rel="stylesheet" type="text/css"/>
+<div class="container-fluid">
+				<!-- BEGIN PAGE HEADER-->
+				<div class="row-fluid">
+					<div class="span12">
+						<!-- BEGIN PAGE TITLE & BREADCRUMB-->
+						<h3 class="page-title">
+                     站点导航设置
+						</h3>
+						<ul class="breadcrumb">
+							<li>
+								<i class="icon-home"></i>
+								<a href="{:U('index')}">首页</a> 
+								<i class="icon-angle-right"></i>
+							</li>
+							<li>
+								<a href="#">站点导航设置</a>
+								<i class="icon-angle-right"></i>
+							</li>
+							<li><a href="#"><if condition="$type eq '13'">顶部</if><if condition="$type eq '14'">底部</if>导航管理 </a></li>
+						</ul>
+						<!-- END PAGE TITLE & BREADCRUMB-->
+					</div>
+				</div>
+				<!-- END PAGE HEADER-->
+                
+                
+                
+                
+   
+   <div class="row-fluid">
+
+					<div class="span12">
+
+						<div class="tabbable tabbable-custom boxless">
+
+							<ul class="nav nav-tabs">
+								
+								<li <if condition="$type eq '13'">class="active" </if>><a href="adminc.php?c=ad&filetype=13">顶部导航管理</a></li>
+								<li <if condition="$type eq '14'">class="active" </if>><a class="" href="adminc.php?c=ad&filetype=14">底部导航管理</a></li>
+                                <li <if condition="$type eq '5'">class="active" </if>><a class="" href="adminc.php?c=ad&filetype=15">辅助导航管理</a></li>
+							</ul>
+
+							<div class="tab-content ">
+								<div class="tab-pane active" id="scene_type">
+									<div class="portlet box grey">
+										<div class="portlet-title">
+											<div class="caption"><i class="icon-reorder"></i> <if condition="$type eq '13'">顶部</if><if condition="$type eq '14'">底部</if><if condition="$type eq '5'">辅助</if>导航管理 </div>
+										</div>
+										<div class="portlet-body form">
+                                         <p>
+               <a  href='?c=ad&a=dh_add&type={$type}' style='margin-bottom: 2px; ' class="btn green ">添加<if condition="$type eq '13'">顶部</if><if condition="$type eq '14'">底部</if><if condition="$type eq '5'">辅助</if>导航</a>
+            </p> 
+                                        
+                        
+                                        
+                            <table class="table table-hover table-striped table-bordered">
+                        <tr>
+                            <th scope="col" width="12px">
+                                ID
+                            </th>
+                             
+                            <th scope="col"  >别名称</th>
+                            <th scope="col" >
+                               链接地址</th>
+                            <th scope="col" width="30px">排序</th>
+                            <th scope="col">
+                                添加时间
+                            </th>
+                             <th align="center" scope="col" abbr="lbtnOperate" width="150px">操作</th>
+                        </tr>
+                        
+                                
+                              <foreach name='select' item='item' >
+                                <tr onMouseOver="this.className='RecordRowOver'" onMouseOut="this.className=''">
+                                    <td align="center">
+                                       {$item.id}
+                                    </td>
+                                
+                                    <td> <h4>{$item.name}
+                                    <img src="{$item.logo}" class="qr-code"  > </h4>
+                                    </td>
+                                    <td>{$item.url} 
+                                    </td>
+                                    <td>  {$item.sort}</td>
+                                    <td>
+                                    <if condition="$item['create_time'] gt 0">{$item.create_time|date="Y-m-d",###}</if>
+                                    </td>
+                                       <td align="center" > <a href="?c=ad&a=dh_e&id={$item.id}" class="btn blue"> 编辑导航 </a> 
+                                    <a href="javascript:;" onClick="javascript:if(confirm('你确信要删除[{$item.name}]吗？')) window.location='?c=ad&a=del&id={$item.id}&type={$type}<eq name="flag" value="useranli">&flag=useranli</eq>'" class="btn black"> 删 除</a>
+                                    
+                                    </td> 
+                                    
+                                    
+                                </tr>
+                                  </foreach>
+                                <tr>
+                                <td colspan="8">
+                                </td>
+                                </tr>
+                    </table>                      
+                                        
+                                        
+							</div>
+						</div>
+					</div>
+				</div>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+<div class="row-fluid">
+<div class="span12">
+<div class="pagination pull-right">
+<ul> {$page}</ul>
+</div>
+</div>
+</div>
+                
+</div>
+        </div>
+    </div>
+    <!--内容显示 End-->
+
+
+
+
+    
+           
+
+
+
+<script type="text/javascript">
+    // <![CDATA[
+    //    function ShowVisibleColumnWindow() {
+    //        pcVisibleColumn.Show();
+    //    }
+    // ]]> 
+</script>
+
+<script type='text/javascript'>    SetHeight();</script>
+
+
+                    
+</div>
+            </div>
+        </div>
+
+            <include file="Public:foot"/>

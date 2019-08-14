@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Items" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="242.336px" height="12.754px" viewBox="0 0 242.336 12.754" style="enable-background:new 0 0 242.336 12.754;"
+	 xml:space="preserve">
+<g id="Mechanical_pencil">
+	<path style="opacity:0.1;" d="M242.336,9.947V3.858c0-0.704-0.517-1.28-1.149-1.28h-5.202h-0.575h-4.837h-0.472h-7.343h-0.472
+		h-4.873h-0.574H29.218V2.577c-0.848,0-1.635,0.086-2.298,0.233h-0.007L6.898,7.27L2.251,8.304l4.646,1.037l20.015,4.46h0.009
+		c0.663,0.147,1.449,0.233,2.296,0.233v0h188.196h4.873v0h0.472v0h7.343v0h0.472v0h4.836h0.001h5.776h0.001
+		c0.632,0,1.148-0.576,1.148-1.279V9.941C242.336,9.943,242.336,9.945,242.336,9.947z"/>
+	<g>
+		<path style="fill:#C34B51;" d="M240.156,1.048c0-0.704-0.515-1.28-1.144-1.28h-5.751v11.455h5.751
+			c0.629,0,1.144-0.576,1.144-1.279V1.048z"/>
+		<path style="fill:#AB4247;" d="M240.156,9.943V7.131c0,0.707-0.514,1.28-1.144,1.28h-5.752v2.812h5.752
+			C239.642,11.223,240.156,10.647,240.156,9.943z"/>
+		<rect x="233.261" y="-0.232" style="opacity:0.1;" width="0.572" height="11.454"/>
+		<rect x="214.772" y="-0.232" style="opacity:0.1;" width="0.572" height="11.454"/>
+	</g>
+	<polygon style="fill:#E2AA7E;" points="27.973,0 27.973,10.991 25.679,10.991 5.752,6.531 5.752,4.46 25.679,0 	"/>
+	<path style="fill:#EAA323;" d="M27.974,2.685c-2.337,0-4.231,1.258-4.231,2.81c0,1.552,1.894,2.81,4.231,2.81v0h201.338V2.685
+		H27.974z"/>
+	<path style="fill:#FDB33D;" d="M27.974-0.232v-0.001c-2.337,0-4.231,0.653-4.231,1.459c0,0.806,1.894,1.459,4.231,1.459h187.369
+		v-2.917H27.974z"/>
+	<path style="fill:#CD7208;" d="M27.974,8.305L27.974,8.305c-2.337,0-4.231,0.653-4.231,1.459c0,0.806,1.894,1.459,4.231,1.459v0
+		h187.369V8.305H27.974z"/>
+	<polygon style="fill:#1C1C1C;" points="5.752,4.46 5.752,6.531 1.126,5.494 	"/>
+	<rect x="215.344" y="-0.232" style="fill:#D39853;" width="17.918" height="11.455"/>
+	<rect x="215.344" y="-0.232" style="opacity:0.3;fill:#FFFFFF;" width="17.918" height="2.917"/>
+	<rect x="215.344" y="8.305" style="opacity:0.3;" width="17.918" height="2.917"/>
+	<rect x="220.196" y="-0.232" style="opacity:0.1;" width="0.47" height="11.455"/>
+	<rect x="227.976" y="-0.232" style="opacity:0.1;" width="0.469" height="11.455"/>
+</g>
+</svg>

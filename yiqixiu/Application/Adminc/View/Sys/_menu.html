@@ -1,0 +1,10 @@
+	<li class="{$ui.sys_set}"><a href="{:U('sys/set')}">网站信息设置</a></li>
+    	<li class="{$ui.sys_homeset}"><a href="{:U('sys/homeset')}">首页配置</a></li>
+    	 <php>if(C('sys_link_arr')):</php> <li class="{$ui.sys_scenelink}"><a href="{:U('sys/scenelink')}">相关状态场景</a></li> <php>endif;</php> 
+                	<li class="{$ui.sys_pay}"><a href="{:U('sys/pay')}">支付配置</a></li>
+                    	<li class="{$ui.otherlogin}"><a href="{:U('sys/otherlogin')}">第三方登录</a></li>
+				<li class="{$ui.sys_setmail}"><a href="{:U('sys/setmail')}">邮件服务器</a></li>
+				<li class="{$ui.sys_wxapi}"><a href="{:U('sys/wxapi')}">SDK分享</a></li>
+               
+		        <li class="{$ui.Update}"> <a href="{:U('/Update')}"> 在线更新</a> </li>
+                <li class="{$ui.Database}"> <a href="{:U('/Database/index/type/export')}"> 数据备份</a> </li>

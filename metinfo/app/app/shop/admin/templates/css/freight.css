@@ -1,0 +1,50 @@
+.freight_list li.list-group-item{ margin:0px; padding:0px 0px; position:relative; margin-top:10px; }
+.freight_list h3.list-title{ font-size:16px; margin:0px; padding:15px 0px 15px 35px; color:#555; cursor:pointer; }
+.freight_list h3.list-title:before,.freight_list li.list-group-item h3.list-title:after{ 
+	position: absolute;
+    top: 15px;
+    left: 10px;
+    font-family: "Web Icons";
+    -webkit-transition: all .3s linear 0s;
+    -o-transition: all .3s linear 0s;
+    transition: all .3s linear 0s;
+	color:#62a8ea;
+}
+.freight_list h3.list-title:before{ content: "\f197"; }
+.freight_list h3.list-title[aria-expanded=true]:before{ 
+    opacity: 0;
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+.freight_list h3.list-title:after{ content: "\f199"; }
+.freight_list h3.list-title:after{ opacity: 1;}
+.freight_list h3.list-title[aria-expanded=true]:after{ opacity: 1;}
+.freight_list h3.list-title[aria-expanded=false]:after{ opacity: 0;
+    -webkit-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    -o-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}
+
+.freight-action{ position:absolute; right:15px; top:15px; }
+.freight-action a.icon{ cursor:pointer; margin-right:15px; }
+.freight-action a:hover{ text-decoration:none; }
+
+.freight_list .well{ border:none; border-radius:0px; border-top:1px solid #e4eaec;}
+.freight_list .table-responsive{ background:#fff; }
+.freight_list .table-responsive table{ margin-bottom:0px; }
+
+.slidePanel-left, .slidePanel-right{ top:0px; }
+
+.ms-container .ms-list{ height:260px; }
+.ms-container:before{ top:140px; }
+
+#editor_region a{ text-decoration:none; }
+
+
+
+
+
+

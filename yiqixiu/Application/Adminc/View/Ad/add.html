@@ -1,0 +1,112 @@
+<include file="Public:head"/>
+<body>
+    
+     <!--内容显示 Begin-->
+    <div class="col_main">
+        <input name="ctl00$ContentPlaceHolder1$txt" type="hidden" id="ctl00_ContentPlaceHolder1_txt" />
+        <div class="main_hd">
+            <div class="title_tab" id="topTab">
+                <ul class="tab_navs mt title_tab">
+                    <li class="tab_nav js_top  selected" data-id="mphelper"><a href="javascript:void(0);">
+                       编辑 <php>if($fnid ==1):</php>图标<php>elseif($fnid ==2): </php>音乐 
+<php>else: </php>背景
+<php>endif;</php>素材</a></li>
+                </ul>
+            </div>
+             <p class="extra_info">
+               <a class="button2" href='?c=File&filetype={$fnid}' style='margin-bottom: 2px;'>返回<php>if($fnid ==1):</php>图标<php>elseif($fnid ==2): </php>音乐 
+<php>else: </php>背景
+<php>endif;</php>列表</a>
+            </p>
+        </div>
+        
+        
+        
+       <form action="" method="post" enctype="multipart/form-data"  >
+        <div style="text-align: left; padding: 20px; text-align: left;">
+            <hr style="width: 50%; size: 1px; border: none;" />
+            <table style="vertical-align: top;"> 
+            	<eq name="fnid" value="2"> <b>请上传MP3格式文件，不超过3M</b> <else/> 
+                <tr style="height: 50px;  border-bottom: 1px solid #ccc;
+">
+            		<td>选择分类：</td>
+            		<td style="width: 98px;"> 
+               
+ <select name="dtagid" id="dtagid"></select>
+ -
+<select name="tagid" id="tagid" style=""></select>		
+            		
+            		</td>
+</tr> </eq>
+      <tr style="height: 50px;">
+    <td style="width: 98px;">上传文件  <php>if($fnid ==1):</php>图标<php>elseif($fnid ==2): </php>MP3格式音乐 
+<php>else: </php>背景
+<php>endif;</php> </td>
+<td><input type='file'  name='photo2'>  </td>
+</tr>
+<tr>
+
+                    <td colspan="2">
+                    </td>
+                </tr>
+            </table>
+          <div class="tool_bar border with_form">
+                <span id="Span1" class="btn btn_primary btn_input">
+                    <input type="submit" name=" " value="保存"   /></span>
+            </div>
+        </div>
+        </form>
+        
+    </div>
+  <script type="text/javascript">
+   function checkForm(){
+	   if($('#title').val()==''){
+		   alert('文件名不能为空');
+		 return false;  
+		 }
+		 return true;
+	}
+   $(document).ready(function(){
+   	var id={$fnid};
+   	if(id ==0){var type='bgType'}
+   	if(id ==1){var type='tpType'}
+   	if(id ==2){var type=''}
+    if(type != ''){
+   $.ajax({
+   	url:"adminc.php?c=upfile&a=systag",
+   	type:"get",
+   	data:{type:type},
+     dataType: 'json',
+    async : true,
+	success:function(data){
+		$.each(data.list, function(value,name){
+        var html="<option value="+name.value+">"+name.name+"</option>";
+        $('#dtagid').append(html); 
+		})
+   }	
+   });}
+$("#dtagid").change(function(){
+    var biztype = $("#dtagid").val();
+    $("#tagid").empty();
+    if(biztype != ''){
+   $.ajax({
+   	url:"adminc.php?c=upfile&a=systag&type=11",
+   	type:"get",
+   	data:{bizType:biztype},
+     dataType: 'json',
+    async : true,
+	success:function(data){
+		$.each(data.list, function(value,name){
+        var html="<option value="+name.id+">"+name.name+"</option>";
+     $('#tagid').append(html); 
+        
+		})
+   }	
+   });
+    }
+    });
+   });
+  </script>
+ 
+</body>
+</html>

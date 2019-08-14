@@ -1,0 +1,70 @@
+
+<include file="Public:head"/><body>
+
+    <div class="col_main">
+        <input name="ctl00$ContentPlaceHolder1$txt" type="hidden" id="ctl00_ContentPlaceHolder1_txt" />
+        <div class="main_hd">
+            <div class="title_tab" id="topTab">
+                <ul class="tab_navs mt title_tab">
+                    <li class="tab_nav js_top  selected" data-id="mphelper"><a href="javascript:void(0);">
+                        网站设置</a></li>
+                          <li class="tab_nav js_to" data-id="mail"><a href="javascript:void(0);">
+                        邮件设置</a></li>
+                </ul>
+            </div>
+             
+        </div>
+       <form action="" method="post">
+        <div style="text-align: left; padding: 20px; text-align: left;" id="mphelper">
+            <hr style="width: 50%; size: 1px; border: none;" />
+            <table style="vertical-align: top;">
+                <tr>
+                    <td height="48" align="right">网站名称 :</td>
+                    <td>
+                  <input name="site_name" type="text" value="{$Think.config.site_name}" /><span>&nbsp;&nbsp;例：搜虎精品社区</span>
+                    </td>
+                </tr>
+         <tr> 
+      <td  height="48" align="right">网站地址：</td>
+      <td><input type="text" name="site_url" value="{$Think.config.site_url}" <span>&nbsp;&nbsp;例:http://test.souho.net</span>
+    </tr>  
+                   <tr>
+                    <td height="48" align="right">网站标题:</td>
+                    <td><input name="site_title" type="text" value="{$Think.config.site_title}" /><span>&nbsp;&nbsp;一般不超过80个字符</span> 
+                </tr>    
+                <tr>
+                    <td height="48" align="right" > 关键词   :  </td>
+                    <td>  <input name="keyword" type="text" style="width: 200px;"><span>&nbsp;&nbsp;一般不超过100个字符</span>
+                </tr>
+                <tr>
+                    <td height="48" align="right">描述 :</td>
+                    <td><textarea name="content" style="width:450px;height:60px;margin:5px 0 5px 0;">{$Think.config.content}</textarea> <span>&nbsp;&nbsp;一般不超过200个字符</span>
+                </tr>
+    <tr> 
+      <td height="48" align="right">注册后使用天数：</td>
+      <td><input type="text" name="reg_validdays" value="{$Think.config.reg_validdays}"/><span>&nbsp;&nbsp;注册后多少天过期(仅注册不需要审核的时候有效)</span>
+    </tr> 
+    	<tr> 
+      <td height="48" align="right">网站备案：</td>
+      <td><input type="text" name="ipc" value="{$Think.config.ipc}"/><span>&nbsp;&nbsp;例：京IPC备88888号</span>
+    </tr>
+    	<tr> 
+      <td  height="48" align="right"><strong>统计代码：</strong></td>
+      <td><textarea	 type="text" name="countsz" class="ipt" style="width:450px;height:60px;margin:5px 0 5px 0;" />{$Think.config.countsz}</textarea><span>&nbsp;&nbsp;例:51啦统计,cnzz统计</span>
+    </tr>
+            </table>
+          <div class="tool_bar border with_form">
+                <span id="Span1" class="btn btn_primary btn_input">
+                    <input type="hidden" name="files" value="info.php" /> 
+                    <input type="submit" name=" " value="保存"   /></span>
+            </div>
+        </div>
+        </form>
+        
+    </div>
+ 
+
+
+ 
+</body>
+</html>

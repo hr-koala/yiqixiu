@@ -1,0 +1,89 @@
+/*全局需要记载CSS的class yun控制*/
+.yun_right{float: right!important;}
+.yun_right.btn-danger { color: #fff; background-color: #d9534f; border-color: #d43f3a;}
+.backup.btn-warning { color: #fff;background-color: #f0ad4e;border-color: #eea236; font-size: 14px;  margin-right: 10px;     padding: 4px 10px;}
+
+/*导航条*/
+.stat_list{background: #f7f7f7; width: 100%;}
+
+/*导入页面按钮*/
+#dcdl .mycsv{position: relative;overflow: hidden;display:inline-block; *display:inline; text-align:center;vertical-align:middle;cursor:pointer; float: left; margin-right: 25px;} 
+#dcdl .mycsv input{position: absolute;top: 0; right: 0;margin: 0; padding: 4px 0px; border:solid transparent; opacity: 0;filter:alpha(opacity=0); cursor: pointer;} 
+
+#dcdl .yw_tips, #dcdl .yw_tipsleft{float: left; display: inline-block;}
+#dcdl .yw_tips.yw_tipsleft{padding-top: 8px;}
+#dcdl .yw_tips .progress{ *width: 300px; max-width: 400px; min-width: 300px; margin-right:15px; }
+#dcdl .yw_tips #msg a{color:#FF0000;}
+
+
+/*滚动条*/
+.barline{width:200px; background:#FFF; border:2px solid #4DBF7D; height:12px; display:inline-block; border-radius:8px; margin-top: 13px; position: relative; display: none;}
+.barline #percent{position:absolute;left:0px;top:-30px;display:inline-block;color:#4DBF7D;font-size:16px;}
+.barline #line{float:left;height:12px;overflow:hidden;background:#4DBF7D;border-radius:8px;}
+.barline #msg{position:absolute;right:-100px;top:-7px;display:inline-block;}
+.barline #msg a{color:#FF0000;font-size:14px;}
+
+
+
+/*配置中心*/
+.v52fmbx.addup, div.yuncon{margin-top: 30px; margin-bottom: 20px;}
+div.yuncon #box{position:relative;}
+
+div.con2 .panel-heading.twoh3{border-bottom: 1px solid #bce8f1; border-top: 1px solid #bce8f1; border-top-left-radius: 0px; border-top-right-radius: 0px;}
+div.con2 ul li a{padding: 10px; color: #76838f; display: block; margin-top:1px; text-align: center;}
+div.con2 ul li a:hover, div.con2 ul li a.on{    color: #a94442; background-color: #f2dede; border-color: #ebccd1; border-radius: 3px;}
+
+div.con10{border-radius: 5px;  border: 1px solid #bce8f1;  background: #fff; padding: 15px;}
+div.con10 .v52fmbx{border-radius: 5px; border:none;}
+div.con10 .v52fmbx  dl, div.con10 .v52fmbx_hr, .v52fmbx h3.v52fmbx_hr:first-child{border-top:none;}
+
+.yuncon .table-responsive {background: #ffffff; padding: 15px; text-align: center;}
+.yuncon .table-responsive th {text-align: center;}
+
+/*防伪码设置*/
+.ftype_input .fwinput input{width: 100px; margin:0px 15px 5px 0px; }
+
+/*回收站*/
+a.navacross.ui-addlist{background: #f6f6f6; color: #000;}
+a.navacross.on{background: #6c6fbf; color: #fff;}
+
+/*防伪码生成页面*/
+dl.codenum{border-top: none;}
+div.codeinfo{max-height: 415px; overflow-y:auto; width: 93%; min-width: 500px;}
+div.codeinfo div, div.codeinfodd div{padding: 6px 8px; border: 1px solid #ccc; display: inline-block; margin: 3px; border-radius: 5px;}
+
+div.codeinfo div{position: relative; margin: 6px 4px;}
+div.codeinfo div i{position: absolute; right: -3px; top:-10px; display: none; z-index: 999; color: #fff; border-radius: 3px; padding: 1px 2px;  font-size: 16px; background: red;}
+div.codeinfo div:hover i, div.codeinfo div.bspan i, div.codeinfo div.redspan i{display: inline-block;}
+
+div.codeinfo div:hover, div.codeinfo div.bspan{background: #4DBF7D; border: 1px solid #4DBF7D; color: #fff;}
+div.codeinfo div.bspan input{border: none; color: #000;}
+
+div.codeinfo div.redspan{background: #f00; border: 1px solid #f00; color: #fff;}
+div.codeinfo div.redspan span{padding-left: 8px;}
+div.codeinfo div.redspan input{ border: 1px solid #f00; color: #000;}
+
+/*统计页面*/
+.v52fmbx.addup{border: none;}
+div.addup{background: #f7f7f7; border-radius: 5px;}
+div.statistic div.area{background: #fff; text-align: center; }
+
+.arec .panel-body{color: #a3afb7;}
+.arec .panel-body span{color: #76838f;}
+
+div.statistic div.areb{padding:0px 15px; }
+.areb .panel-heading{background-color: #fff; color: #333;}
+.areb .panel-body{padding: 15px 0px;}
+.areb .panel-heading button{outline: none;}
+
+/*二维码生成页*/
+.generates{margin-top: 30px; margin-bottom: 20px; }
+.generates .panel-heading{padding: 0px;}
+.generates .panel-heading .progress{margin-bottom:0px; /*background-color: #5bc0de;*/}
+.generates #info{height: 440px; overflow-y: scroll;}
+
+/*表格导航排序*/
+a.orderby-link:active,a.orderby-link:focus,a.orderby-link:hover{color: #23b7e5;text-decoration: none;}
+.orderby-arrow {margin-left: 5px;}
+.orderby-arrow.desc:before{ content: '\2193'; }
+.orderby-arrow.asc:before{ content: '\2191'; }

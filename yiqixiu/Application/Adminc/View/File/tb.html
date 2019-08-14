@@ -1,0 +1,74 @@
+
+                
+                
+                
+                
+                
+                
+                
+                
+				<!-- BEGIN PAGE CONTENT-->
+				<div class="row-fluid">
+					<div class="tabbable tabbable-custom tabbable-full-width">
+                      <if condition="$ui.File_index eq 'active'">
+						<ul class="nav nav-tabs">
+                        <eq name="flag" value="useranli">
+                            <li class="<eq name="fnid" value="">active</eq>"><a  href="{:U('/File/index/flag/useranli/0')}" >全部</a></li>
+                            <li class="<eq name="fnid" value="106">active</eq>"><a  href="{:U('/File/lists/flag/useranli/filetype/1/fnid/106')}" >图标</a></li>
+							<li class="<eq name="fnid" value="107">active</eq>"><a  href="{:U('/File/lists/flag/useranli/filetype/1/fnid/107')}" >动画</a></li>
+							<li class="<eq name="fnid" value="105">active</eq>"><a href="{:U('/File/lists/flag/useranli/filetype/1/fnid/105')}">节日</a></li>
+							<li class="<eq name="fnid" value="103">active</eq>"><a href="{:U('/File/lists/flag/useranli/filetype/1/fnid/103')}">风格</a></li>
+							<li class="<eq name="fnid" value="102">active</eq>"><a href="{:U('/File/lists/flag/useranli/filetype/1/fnid/102')}">企业</a></li>
+							<li class="<eq name="fnid" value="101">active</eq>"><a href="{:U('/File/lists/flag/useranli/filetype/1/fnid/101')}">行业</a></li>
+                            <li class="<eq name="fnid" value="104">active</eq>"><a href="{:U('/File/lists/flag/useranli/filetype/1/fnid/104')}">个人</a></li>
+                            <else/> 
+                            <li class="<eq name="fnid" value="">active</eq>"><a  href="{:U('/File/index/filetype/1')}" >全部</a></li>
+                            <li class="<eq name="fnid" value="106">active</eq>"><a  href="{:U('/File/lists/filetype/1/fnid/106')}" >图标</a></li>
+                            <li class="<eq name="fnid" value="107">active</eq>"><a  href="{:U('/File/lists/filetype/1/fnid/107')}" >动画</a></li>
+							<li class="<eq name="fnid" value="105">active</eq>"><a href="{:U('/File/lists/filetype/1/fnid/105')}">节日</a></li>
+							<li class="<eq name="fnid" value="103">active</eq>"><a href="{:U('/File/lists/filetype/1/fnid/103')}">风格</a></li>
+							<li class="<eq name="fnid" value="102">active</eq>"><a href="{:U('/File/lists/filetype/1/fnid/102')}">企业</a></li>
+							<li class="<eq name="fnid" value="101">active</eq>"><a href="{:U('/File/lists/filetype/1/fnid/101')}">行业</a></li>
+                            <li class="<eq name="fnid" value="104">active</eq>"><a href="{:U('/File/lists/filetype/1/fnid/104')}">个人</a></li>  
+							<li class="<eq name="fnid" value="104">active</eq>"><a href="{:U('/File/lists/filetype/1/fnid/1301')}">背景</a></li>  
+                          </eq>
+						</ul>
+                       <hr> 
+                         <a href="?c=File&a=add&filetype={$filetype}" class="btn green"><i class="icon-plus"></i> 添加背景素材</a>
+                          <else/></if>
+                        </div>
+					</div>
+                         <foreach name='select' item='item' >
+                        <div class="span1" style=" min-width:140px;">
+										<div class="item" style="width:110px;">
+	<a class="fancybox-button" data-rel="fancybox-button" title="图片ID：{$item.fileid_bigint}，添加时间：{$item.create_time}，文件类型：{$item.ext_varchar}" href="/Uploads/{$item.filesrc_varchar}">
+												<div class="zoom">
+													<img src="/Uploads/{$item.filethumbsrc_varchar}" alt="Photo" style="width:110px; height:110px" style="border-color:#CCC">                    
+													<div class="zoom-icon"></div>
+												</div>
+											</a>
+											<div class="details">
+	  <if condition="$ui.File_index eq 'active'">                        
+		<a href="/Uploads/{$item.filesrc_varchar}" class="icon"  target="_blank"><i class="icon-link"></i></a>
+		<a href="?c=File&a=e&id={$item.fileid_bigint}&filetype={$item.filetype_int}" class="icon"><i class="icon-pencil"></i></a>
+		<a href="javascript:;" onClick="javascript:if(confirm('你确信要删除[{$item.filename_varchar}]吗？')) window.location='?c=File&a=del&id={$item.fileid_bigint}'" class="icon"><i class="icon-remove"></i></a> 
+ <else/>
+ <a href="/Uploads/{$item.filesrc_varchar}" class="icon" title="查看链接地址" target="_blank"><i class="icon-link"></i></a>
+ <a href="?c=File&a=userancs_e&id={$item.fileid_bigint}&filetype={$item.filetype_int}" class="icon"><i class="icon-pencil"></i></a>
+		<a href="javascript:;" onClick="javascript:if(confirm('你确信要删除[{$item.filename_varchar}]吗？')) window.location='?c=File&a=userancs_del&id={$item.fileid_bigint}'" class="icon"><i class="icon-remove"></i></a></if>  
+ 
+
+											</div>
+										</div>
+									</div>
+                          </foreach>
+                          
+
+
+
+
+	
+         
+
+
+

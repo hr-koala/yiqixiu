@@ -1,0 +1,303 @@
+<include file="Public:head"/>
+<div class="container-fluid">
+				<!-- BEGIN PAGE HEADER-->
+				<div class="row-fluid">
+					<div class="span12">
+						<!-- BEGIN PAGE TITLE & BREADCRUMB-->
+						<h3 class="page-title">
+							<eq name="flag" value="useranli"> 用户案例列表<else/> 场景模板列表</eq> <small> <eq name="flag" value="useranli"> 用户案例列表<else/> 场景模板列表</eq> </small>
+						</h3>
+						<ul class="breadcrumb">
+							<li>
+								<i class="icon-home"></i>
+								<a href="index.html">首页</a> 
+								<i class="icon-angle-right"></i>
+							</li>
+							<li>
+								<a href="#"><eq name="flag" value="useranli"> 用户案例管理<else/> 模板管理</eq></a>
+								<i class="icon-angle-right"></i>
+							</li>
+							<li><a href="#"><eq name="flag" value="useranli"> 用户案例列表<else/> 场景模板列表</eq></a></li>
+						</ul>
+						<!-- END PAGE TITLE & BREADCRUMB-->
+					</div>
+				</div>
+				<!-- END PAGE HEADER-->
+				<!-- BEGIN PAGE CONTENT-->
+				<div class="row-fluid">
+					<div class="tabbable tabbable-custom tabbable-full-width">
+						<ul class="nav nav-tabs">
+                        
+                        <eq name="flag" value="useranli">  
+                        
+                            <li class="<eq name="fnid" value="">active</eq>"><a  href="{:U('/Scene/index/flag/useranli')}" >全部</a></li>
+							<foreach name='scene_type_list' item='item' >                                
+							<li class="<eq name="item['value']" value="$fnid">active</eq>"><a href="?c=scene&a=index&flag=useranli&fnid={$item.value}">{$item.title}</a></li>
+                            </foreach> 
+                            <else/> 
+                            <li class="<eq name="fnid" value="">active</eq>"><a  href="{:U('/scene/index')}" >全部</a></li>
+                           <foreach name='scene_type_list' item='item' >                                
+							<li class="<eq name="item['value']" value="$fnid">active</eq>"><a href="?c=scene&a=index&fnid={$item.value}">{$item.title}</a></li>
+                            </foreach> 
+                          </eq>
+						</ul>
+                        </div>
+                        
+                        
+						<div class="tab-content">
+                            <div class="row-fluid search-forms search-default">
+									<form class="form-search" action="#" method="post">
+										<div class="chat-form">
+											<div class="input-cont">   
+                                            <select name="field" style="width:120px">
+             <option value="scenename_varchar"  <eq name="field" value="scenename_varchar"> selected="selected" </eq>>名称</option>
+              <option value="scenecode_varchar"  <eq name="field" value="scenecode_varchar"> selected="selected" </eq>>编码</option>
+            </select>
+<input type="text"  name="keyword"  placeholder="请输入关键词..." class="m-wrap" style="width:200px">
+<select id="scenetypeB" name="fnid" onChange="changeSceneType()" style="width:120px" >
+<option value="">请选择</option>
+                        <foreach name='scene_type_list' item='item' >
+                         
+	    <option value="{$item.value}" <eq name="item[value]" value="$user['scenetype_int']"> selected="selected" </eq>>{$item.title}</option>
+          </foreach>                     
+                       
+                       </select>- 
+                       <select  id="scenetypeS" name="tagId" style="width:120px" >
+                        <option value="">请选择</option>
+                        <foreach name='scene_type_list2' item='item' >
+	    <option value="{$item.tagid_int}" <eq name="item[tagid_int]" value="$user['tagid_int']"> selected="selected" </eq>>{$item.name_varchar}</option> 
+          </foreach>     
+                       </select>
+           <php> if( in_array($flag,array("template","promotion","useranli"))):</php>             
+             <select name="applyPromotion" style="width:120px" >
+              <option value="">选择案例审核状态</option>
+                         <option <eq name="applyPromotion" value="1">selected="selected" </eq> value="1">待审核</option>
+              <option <eq name="applyPromotion" value="2">selected="selected" </eq> value="2">审核通过</option>
+              <option <eq name="applyPromotion" value="-1">selected="selected" </eq> value="-1">审核未通过</option> 
+             </select>   
+             <select name="applyTemplate" style="width:120px" >
+              <option value="">选择模板审核状态</option>
+              <option <eq name="applyTemplate" value="1">selected="selected" </eq> value="1">待审核</option>
+              <option <eq name="applyTemplate" value="2">selected="selected" </eq> value="2">审核通过</option>
+              <option <eq name="applyTemplate" value="-1">selected="selected" </eq> value="-1">审核未通过</option> 
+             </select>         
+           <php>endif;</php>            
+     
+
+<button type="submit" class="btn green" style=" ">搜 索 &nbsp; <i class="m-icon-swapright m-icon-white"></i></button>
+											</div>
+
+
+										</div>
+									</form>
+								</div>
+                                
+                                
+                    
+                       
+                  
+                        <foreach name='select' item='item' >
+                        <div class="row-fluid portfolio-block">
+									<div class="span6 portfolio-text">
+										<img src="/Uploads/{$item.thumbnail_varchar}" class="" style="width:112px; height:112px">
+                                        
+                <img src="http://qr.liantu.com/api.php?bg=f3f3f3&fg=333333&gc=222222&el=l&w=112&m=5&text=http://{$_SERVER['HTTP_HOST']}/v/{$item.scenecode_varchar}"/>                        
+
+										<div class="portfolio-text-info">
+
+										  <h4> {$item.scenename_varchar}</h4>
+
+											<p>添加时间：<span> {$item.createtime_time}</span></p>
+<p>
+类别： 
+<code>  {$item.scenetype_int|getSceneType="scene_type",###}- {$item.tagid_int|getSceneTag=###}</code>&nbsp;
+								</p>
+                                <p>    翻页方式: <code>{$item.movietype_int|getPageMode=###}</code>		</p>
+									  </div>
+
+						  </div>
+
+									<div class="span4">
+                                    
+                                    
+ <php> if( in_array($flag,array("template","promotion","useranli"))):</php>
+        <div class="portfolio-info">
+											审核推荐(案例中是否显示)
+										<p>  <a title="点击更改审核状态"  href="javascript:;"  onclick="shenheApply({$item.sceneid_bigint},'{$flag}',this)" class="btn purple-stripe">
+                                        <if condition="$item.applypromotion eq 2">
+                                        已推荐
+               <elseif condition="$item.applypromotion eq 1"/>
+                              待审核    
+                 <elseif condition="$item.applypromotion eq -1"/> 
+                        审核未通过   
+                        <else /> 未申请推荐                                   
+                                        </if></a>
+                                       
+                          
+                                        </p>
+                                      <neq name="flag" value="useranli">   <code>使用{$item.usecount_int}次</code></neq>
+										</div>
+                                        
+          <div class="portfolio-info">
+											审核内容
+										<p> <eq name="item['shenhe']" value="1"><a title="点击取消通过审核"  href="/adminc.php?c=scene&a=shenhe&id={$item.sceneid_bigint}&no=1" class="btn purple-stripe">已审核</a><else/>
+                                        <a title="点击通过审核" href="/adminc.php?c=scene&a=shenhe&id={$item.sceneid_bigint}" class="btn purple-stripe"> 未审核</a></eq>
+                          
+                                        </p>
+                                      
+					 	</div>                              
+                                        
+                                        
+<php>endif;</php>
+                                        
+                                        
+										<div class="portfolio-info">
+											场景关闭情况
+<p>
+ <eq name="item['showstatus_int']" value="1">
+ <a href="/adminc.php?c=scene&a=is_showstatus&id={$item.sceneid_bigint}&no=1" title="点击关闭" class="btn purple-stripe"style="color:#0af005;"><i class="icon-play"></i> 开启</a>
+ <else/>
+ 
+ <a href="/adminc.php?c=scene&a=is_showstatus&id={$item.sceneid_bigint}" title="点击开启" class="btn purple-stripe" style="color:#000;"><i class="icon-pause"></i>  关闭</a></eq> 
+ 
+</p><code>权重：{$item.rank}</code>
+										</div>
+
+									
+                                    
+                             
+									</div>
+                                    <!--  <eq name="flag" value="useranli">
+                                 <div class="portfolio-info">
+											有无广告
+										<p> <eq name="item['shenhe']" value="1"><a title="点击取消通过审核"  href="/adminc.php?c=scene&a=shenhe&id={$item.sceneid_bigint}&no=1" class="btn purple-stripe">已审核</a><else/>
+                                        <a title="点击通过审核" href="/adminc.php?c=scene&a=shenhe&id={$item.sceneid_bigint}" class="btn purple-stripe"> 未审核</a></eq>
+                          
+                                        </p>
+                                      <neq name="flag" value="useranli">   <code>使用{$item.usecount_int}次</code></neq>
+										</div>
+									</div>        
+                                    </eq>-->
+                                    
+                                    
+                                    
+                                    
+                                
+
+		<div class="span2 portfolio-btn" style="float: right;">
+        
+    <a href="javascript:;" onclick="ajaxpreview('{$item.scenecode_varchar}');return false;" class="btn blue " style="width:47%"><i class="icon-eye-open"></i> 预览</a> 
+ 
+ <php> if($flag=="useranli"):</php>
+ <a href="?c=scene&a=usercpsystem&id={$item.sceneid_bigint}" class="btn blue " style="width:47%"><i class=" icon-bookmark"></i>  设为模板</a> 
+  <php>elseif($flag=="promotion" ||$flag=="template"):</php>
+    <a href="javascript:;" onclick="shenheApply({$item.sceneid_bigint},'{$flag}',this)" applypromotion="{$item.applypromotion}" applytemplate="{$item.applytemplate}" class="btn blue " style="width:47%"><i class=" icon-bookmark"></i> 审核案例</a>
+   <php> endif;</php>
+
+<a href="?c=scene&a=e&<eq name="flag" value="useranli">&flag=useranli</eq>&id={$item.sceneid_bigint}" class="btn blue " style="width:47%" >
+<span><i class="icon-pencil"></i>  修改</span></a>
+
+ <a href="javascript:;" onClick="javascript:if(confirm('你确信要删除[{$item.scenename_varchar}]吗？')) window.location='?c=scene&a=del&id={$item.sceneid_bigint}<eq name="flag" value="useranli">&flag=useranli</eq>'" class="btn blue " style="width:47%">    
+<span><i class="icon-remove"></i>   删除</span></a>  
+
+
+									</div>
+
+						  </div>
+                  
+                                   </foreach>  
+                                   <div class="space5"></div>
+                                   <div class="pagination pagination-right">
+
+									 <div class="pages">
+
+									  {$page}
+
+									</div>
+
+								</div>
+                                </div>
+                                </div>
+                                 </div>
+                                 </div>
+                                <style>
+                                .center{ text-align:center}
+								.center .p{ line-height:30px}
+                                </style>
+       <include file="Public:foot" />                             
+ <script type="text/javascript">
+<!--
+  function shenheApply(id,flag,obj){
+	  var modalobj = $('#modal-preview');
+		if(modalobj.length == 0) {
+			$(document.body).append('<div id="modal-preview" class="modal hide fade" tabindex="-1" role="dialog" aria-hidden="true" style="position:absolute;top:40%;padding-top: 30px;"></div>');
+			var modalobj = $('#modal-preview');
+		}
+		var title='审核申请模板案例';
+		var status=$(obj).attr("applytemplate");
+		if(flag=='promotion'){
+			var title='审核申请推荐案例';
+			var stauts=$(obj).attr("applypromotion");
+		}
+		var isselctOk=status==2? ' selected="selected" ' : '';
+		var isselctNo=status<0? ' selected="selected" ' : '';
+		
+		html = ' <div class="modal-body center">'+
+		  ' <p> <h3>'+title+'</h3> </p>'+
+		   ' <p>  <select id="applystatus"> <option value="2" '+isselctOk+'>审核通过</option> <option value="-1" '+isselctNo+'>审核未通过</option></select> </p>'+
+		     ' <p>  <a href="javascript:;" onclick="ajax_shenheApply('+id+')" class="btn blue " style="width:47%"> 提交</a>  </p>'+
+		 ' </div>  <div class="modal-footer"><a href="#" class="btn" data-dismiss="modal" aria-hidden="true">关闭</a></div>';
+		modalobj.html(html);
+		modalobj.css({'width' :  330, 'marginLeft' : 0 - 330 / 2});
+		modalobj.css({'height' : 450});
+		modalobj.on('hidden', function(){modalobj.remove();});
+		return modalobj.modal({'show' : true});
+	 }
+	 function ajax_shenheApply(id){
+		 $.post('/adminc.php?c=scene&a=shenheOk', { id:id,applystatus:$('#applystatus').val()},
+		  function(data){
+			   
+			   if(data.status==1){
+				   alert('审核已处理');
+			      $('#modal-preview').remove();
+				  parent.location.reload();
+			   }
+		},'json');
+  }
+	 
+	function ajaxpreview(styleid) {
+		var modalobj = $('#modal-preview');
+		if(modalobj.length == 0) {
+			$(document.body).append('<div id="modal-preview" class="modal hide fade" tabindex="-1" role="dialog" aria-hidden="true" style="position:absolute;top:40%;padding-top: 30px;background-image:url(/Public/media/image/bg/4.jpg);"></div>');
+			var modalobj = $('#modal-preview');
+		}
+		html = '<iframe width="330px" scrolling="no" height="100%" frameborder="0" src="/v/'+styleid+'" id="preview" name="preview" style="width: 330px; overflow: visible; height: 700px; margin-left: 120px;"></iframe><div class="modal-footer"><a href="#" class="btn" data-dismiss="modal" aria-hidden="true">关闭</a></div>';
+		modalobj.html(html);
+		modalobj.css({'width' :  330, 'marginLeft' : 0 - 330 / 2});
+		modalobj.css({'height' : 700});
+		modalobj.on('hidden', function(){modalobj.remove();});
+		return modalobj.modal({'show' : true});
+	}
+//-->
+</script>  
+
+<script type="text/javascript">
+    $(document).ready(function(){
+  $("#dtagid").change(function(){ 
+//  var url = $("#text").val();
+  var biztype = $("#dtagid").val();
+  $("#tagid").empty();
+   $.get("adminc.php?c=Scene&a=Type",{biztype:biztype}, function(data){
+if(data != null){
+   $("#tagid ").append(data);
+    }else{$('#tagid').after();
+        }
+   });
+    }); 
+	});
+</script>
+
+
+                              
+                             
+      

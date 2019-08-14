@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta charset="utf-8" /><title>易企秀商业版管理后台-搜虎精品社区www.souho.net提供源码</title>
+<link rel="Stylesheet" href="/assets/admin/css/main.css" />
+<link rel="stylesheet" type="text/css" href="/assets/admin/css/layout_head.css" />
+<link rel="stylesheet" type="text/css" href="/assets/admin/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/assets/admin/css/model.css" />
+</head>
+<body>
+<form name="aspnetForm" method="post" action="" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+</div>
+<div id="divmsg" style="margin: 0 auto; border: solid 1px #ddd; visibility: hidden;
+        position: absolute; z-index: 1000; background: #eaa000; color: White; width: 300px;
+        height: 40px; line-height: 40px; font-size: 15px;">
+    </div>
+<script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', document.getElementById('aspnetForm'));
+Sys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);
+//]]>
+</script>
+    <div>
+
+    <div class="col_main">
+        <input name="ctl00$ContentPlaceHolder1$txt" type="hidden" id="ctl00_ContentPlaceHolder1_txt" />
+        <div class="main_hd">
+            <div class="title_tab" id="topTab">
+                <ul class="tab_navs mt title_tab">
+                    <li class="tab_nav js_top  selected" data-id="mphelper"><a href="javascript:void(0);">
+                         网站管理系统 -> 起始页</a></li>
+                </ul>
+            </div>
+            <p class="extra_info">
+                <a href="javascript:refresh()">
+                    <img src="/assets/admin/images/refresh.png" alt="" style="width: 20px; height: 20px; cursor: pointer;
+                        margin-left: 5px; vertical-align: middle; border: 0;" /></a></p>
+        </div>
+        <div style="text-align: left; padding: 20px; text-align: left;">
+            <span style="font-size: 16px; height: 25px; line-height: 25px;">系统信息</span><br />
+            <hr style="width: 50%; size: 1px; border: none;" />
+             <table cellspacing='1' cellpadding='3'>
+ 
+  <tr>
+    <td width="20%">服务器操作系统：</td>
+    <td width="30%">{$sys_info.os}>(<{$sys_info.ip})</td>
+    <td width="20%">Web 服务器：</td>
+    <td width="30%">{$sys_info.web_server}</td>
+  </tr>
+  <tr>
+    <td>PHP 版本：</td>
+    <td>{$sys_info.php_ver}</td>
+    <td>Zlib 支持：</td>
+    <td>{$sys_info.zlib}</td>
+  </tr>
+  <tr>
+    <td>安全模式：</td>
+    <td>{$sys_info.safe_mode}</td>
+    <td>安全模式GID：</td>
+    <td>{$sys_info.safe_mode_gid}</td>
+  </tr>
+  <tr>
+    <td>Socket 支持：</td>
+    <td>{$sys_info.socket}</td>
+    <td>上传单个文件最大：</td>
+    <td>{$sys_info.post_max_size}</td>
+  </tr>
+  <tr>
+    <td> 版本：</td>
+    <td>v{$ver.ver}</td><td>{$ver.domain_time}</td>
+  </tr>
+  <tr> <td>授权时间：</td>
+    <td>{$ver.time}</td></tr>
+</table> 
+        </div>
+    </div>
+     
+			<iframe id="rightframe" name="mainFrame" scrolling="no" src="/adminc.php?c=Update" frameborder="0" height="100%" width="100%" onLoad="iFrameHeight()" class="col-app"></iframe>
+		 
+	 
+    </div>
+    
+</form>
+</body>
+</html>

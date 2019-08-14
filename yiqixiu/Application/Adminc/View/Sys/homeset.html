@@ -1,0 +1,217 @@
+<include file="Public:head"/>
+<script src="Public/kindeditor/kindeditor.js"></script>
+	<script src="Public/kindeditor/lang/zh_CN.js"></script>
+	<script src="Public/kindeditor/plugins/code/prettify.js"></script>
+	<link rel="stylesheet" href="Public/kindeditor/themes/default/default.css" />
+	<link rel="stylesheet" href="Public/kindeditor/plugins/code/prettify.css" /> 
+<script>
+KindEditor.ready(function(K){
+    var editor = K.editor({
+      allowFileManager:true
+    });
+	
+	 K('#youxiuanli').click(function() {
+      editor.loadPlugin('image', function() {
+        editor.plugin.imageDialog({
+          fileUrl : K('#pic3').val(),
+          clickFn : function(url, title) {
+            if(url.indexOf("http") > -1){
+              K('#pic3').val(url);
+            }else{
+              K('#pic3').val("{:C('site_url')}"+url);
+            }
+            editor.hideDialog();
+          }
+        });
+      });
+    });
+	
+    
+  });
+  KindEditor.ready(function(K){
+    var editor = K.editor({
+      allowFileManager:true
+    });
+	
+	 K('#gongzhonghao').click(function() {
+      editor.loadPlugin('image', function() {
+        editor.plugin.imageDialog({
+          fileUrl : K('#pic2').val(),
+          clickFn : function(url, title) {
+            if(url.indexOf("http") > -1){
+              K('#pic2').val(url);
+            }else{
+              K('#pic2').val("{:C('site_url')}"+url);
+            }
+            editor.hideDialog();
+          }
+        });
+      });
+    });
+	
+    
+  });
+  
+   KindEditor.ready(function(K){
+    var editor = K.editor({
+      allowFileManager:true
+    });
+	
+	 K('#tuijianchangjing').click(function() {
+      editor.loadPlugin('image', function() {
+        editor.plugin.imageDialog({
+          fileUrl : K('#pic1').val(),
+          clickFn : function(url, title) {
+            if(url.indexOf("http") > -1){
+              K('#pic1').val(url);
+            }else{
+              K('#pic1').val("{:C('site_url')}"+url);
+            }
+            editor.hideDialog();
+          }
+        });
+      });
+    });
+	
+    
+  });
+  
+</script>
+<div class="container-fluid">
+				<!-- BEGIN PAGE HEADER-->
+				<div class="row-fluid">
+					<div class="span12">
+						<!-- BEGIN PAGE TITLE & BREADCRUMB-->
+						<h3 class="page-title">系统管理 <small>    System management</small></h3>
+
+						<ul class="breadcrumb">
+							<li><i class="icon-home"></i><a href="index.html">首页</a> 
+								<i class="icon-angle-right"></i></li>
+
+							<li><a href="#">系统管理</a><i class="icon-angle-right"></i></li>
+							<li><a href="#">首页配置</a></li>
+						</ul>
+						<!-- END PAGE TITLE & BREADCRUMB-->
+					</div>
+				</div>
+
+				<!-- END PAGE HEADER-->
+                <div class="tabbable tabbable-custom tabbable-full-width">
+							<ul class="nav nav-tabs">
+				<li class="{$ui.sys_set}"><a href="{:U('sys/set')}">网站信息设置</a></li>                
+    	<li class="{$ui.sys_homeset}"><a href="{:U('sys/homeset')}">首页配置</a></li>
+         	<li class="{$ui.sys_dhan}"><a href="adminc.php?c=ad&filetype=13">导航设置</a></li>
+			 	<li class=""><a href="/adminc.php?c=ad&filetype=2">首页大图广告</a></li>
+            
+            				</ul>
+                            <hr>
+                </div>
+				<!-- BEGIN PAGE CONTENT-->          
+		
+       <form action="" method="post" class="form-horizontal">
+
+            <table style="vertical-align: top;">
+            	         <tr> 
+      <td  height="48" align="right">产品个数：</td>
+      <td><input type="text" name="home_products_num" value="{$Think.config.home_products_num}" <span>&nbsp;&nbsp;例:70451个产品正在使用搜虎精品社区微场景 </span>
+    </tr>  
+                <tr>
+                    <td height="48" align="right">首页案例个数:</td>
+                    <td>
+                  <input name="HOME_PAGESIZE" type="text" value="{$Think.config.HOME_PAGESIZE}" />
+                  <span>&nbsp;&nbsp;例：12</span>
+                    </td>
+                </tr>
+               <tr>
+                    <td height="48" align="right">联系邮箱:</td>
+                    <td>
+                  <input name="zixun_mail" type="text" value="{$Think.config.zixun_mail}" />
+                  <span>&nbsp;&nbsp;例：88888888@qq.com</span>
+                    </td>
+                </tr>
+
+
+               <tr>
+                    <td height="48" align="right">产品咨询QQ:</td>
+                    <td>
+                  <input name="zixun_qq" type="text" value="{$Think.config.zixun_qq}" />
+                  <span>&nbsp;&nbsp;例：8888888</span>
+                    </td>
+                </tr>  
+				<tr>
+                    <td height="48" align="right">产品咨询电话:</td>
+                    <td>
+                  <input name="zixun_tel" type="text" value="{$Think.config.zixun_tel}" />
+                  <span>&nbsp;&nbsp;例：020-88888888</span>
+                    </td>
+                </tr>
+				
+				<tr>
+                    <td height="48" align="right">技术支持QQ:</td>
+                    <td>
+                  <input name="jishu_qq" type="text" value="{$Think.config.jishu_qq}" />
+                  <span>&nbsp;&nbsp;例：99999999</span></td>
+                </tr>  
+				<tr>
+                    <td height="48" align="right">技术支持电话:</td>
+                    <td>
+                  <input name="jishu_tel" type="text" value="{$Think.config.jishu_tel}" />
+                  <span>&nbsp;&nbsp;例：13666666666</span></td>
+                </tr>
+				<tr>
+                    <td height="48" align="right">联系地址:</td>
+                    <td>
+                  <input name="address" type="text" value="{$Think.config.address}" />
+                  <span>&nbsp;&nbsp;例：广东省广州市天河区</span></td>
+                </tr> 				
+                
+                 <tr>
+                    <td height="48" align="right">推荐场景的图片:</td>
+                    <td>
+					<span class="ke-button-common" id="tuijianchangjing" >
+                        <input type="button" class="btn-info" value="Upload">
+                   </span>
+                  <input id="pic1" name="tuijian_pic_url" type="text" value="{$Think.config.tuijian_pic_url}" />
+                  <span>&nbsp;&nbsp;例：http://test.souho.net/Uploads/pic/7/201505/5560a195a540f.jpg</span></td>
+				  
+                </tr>  
+                  <tr>
+                    <td height="48" align="right">推荐场景的链接:</td>
+                    <td>
+                  <input name="tuijian_url" type="text" value="{$Think.config.tuijian_url}" />
+                  <span>&nbsp;&nbsp;例：：http://test.souho.net/#/sample</span></td>
+                </tr>   
+                
+                       <tr>
+                    <td height="48" align="right">公众号二维码图片:</td>
+                    <td>
+					<span class="ke-button-common" id="gongzhonghao" >
+                        <input type="button" class="btn-info" value="Upload">
+                   </span>
+                  <input id="pic2" name="your_weixinhao_pic_url" type="text" value="{$Think.config.your_weixinhao_pic_url}" />
+                  <span>&nbsp;&nbsp;例：http://test.souho.net/assets/images/help.png'</span></td>
+                </tr>  
+                  <tr>
+                    <td height="48" align="right">优秀案例二维码图片:</td>
+                    <td>
+					<span class="ke-button-common" id="youxiuanli" >
+                        <input type="button" class="btn-info" value="Upload">
+                   </span>
+                  <input id="pic3" name="your_anli_pic_url" type="text" value="{$Think.config.your_anli_pic_url}" />
+                  <span>&nbsp;&nbsp;例：http://test.souho.net/assets/images/help.png'</span></td>
+                </tr>
+				
+                
+            </table>
+          <div class="form-actions">
+                    <input type="hidden" name="files" value="info.php" /> 
+                  	<button type="submit" class="btn blue"><i class="icon-ok"></i> 保存</button>
+
+													<button type="button" class="btn">放弃</button>
+            </div>
+     
+        </form>
+        
+    </div>   </div>   </div>
+ 
+  <include file="Public:foot"/>

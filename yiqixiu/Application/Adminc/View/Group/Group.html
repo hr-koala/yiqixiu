@@ -1,0 +1,218 @@
+<include file="Public:head"/>
+<div class="container-fluid">
+				<!-- BEGIN PAGE HEADER-->
+				<div class="row-fluid">
+					<div class="span12">
+					<h4 class="page-title">
+							用户管理
+							   <small>   User management</small></h4>
+
+						<ul class="breadcrumb">
+							<li><i class="icon-home"></i><a href="index.html">首页</a> 
+								<i class="icon-angle-right"></i></li>
+
+							<li><a href="#">用户管理</a><i class="icon-angle-right"></i></li>
+							<li><a href="#">用户组管理</a></li>
+						</ul>
+						<!-- END PAGE TITLE & BREADCRUMB-->
+					</div>
+				</div>
+				<!-- END PAGE HEADER-->
+
+				<!-- BEGIN PAGE CONTENT-->
+	<!-- END PAGE HEADER-->
+                <div class="tabbable tabbable-custom tabbable-full-width">
+							<ul class="nav nav-tabs">
+			  <li class="{$ui.users}"> <a href="{:U('user/index')}"> 前台用户管理</a> </li>
+		       <li class="{$ui.users_add}"> <a href="{:U('user/add')}"> 添加新用户</a> </li>
+               <li class="{$ui.user_group}"> <a href=adminc.php?c=group> 用户组管理</a> </li>
+							</ul>
+                            <hr>
+                </div>
+		<!-- BEGIN PAGE CONTENT--> 
+               <a class="btn green" href='/adminc.php?c=Group&a=add' style='margin-bottom: 2px;'>新增套餐</a>
+        </p>
+        </div>
+        <div class="portlet-body"<div style="padding: 20px;">
+		
+<script type="text/javascript">
+    function sureDelete() {        
+        return confirm("您确认要删除吗?");
+    }
+</script>
+
+<script type="text/javascript">
+    function setCommonClick() {        
+       document.getElementById('ctl00_ContentPlaceHolder1_gvPager_hidIsCommonClick').value = "1";
+    }
+</script>
+
+<script type="text/javascript" language="javascript">
+    function getChecked() {
+    var ids = new Array();
+    $.each($('table input:checked'), function(i, n){
+        ids.push( $(n).val() );
+    });
+    return ids;
+}
+
+function checkon(o){
+    if( o.checked == true ){
+        $(o).parents('tr').addClass('bg_on') ;
+    }else{
+        $(o).parents('tr').removeClass('bg_on') ;
+    }
+}
+
+function checkAll(o){
+    if( o.checked == true ){
+        $('input[name="checkbox"]').attr('checked','true');
+        $('tr[overstyle="on"]').addClass("bg_on");
+    }else{
+        $('input[name="checkbox"]').removeAttr('checked');
+        $('tr[overstyle="on"]').removeClass("bg_on");
+    }
+}
+
+//搜索用户
+var isSearchHidden = <neq name="isSearch" value="1">1<else/>0</neq>;
+function searchAlbum() {
+    if(isSearchHidden == 1) {
+        $("#searchAlbum_div").slideDown("fast");
+        $(".searchAlbum_action").html("搜索完毕");
+        isSearchHidden = 0;
+    }else {
+        $("#searchAlbum_div").slideUp("fast");
+        $(".searchAlbum_action").html("搜索相册");
+        isSearchHidden = 1;
+    }
+}
+
+var ctrl = function(){
+}
+ctrl.prototype = {
+	del:function(id){
+		var id = id ? id : getChecked();
+		id = id.toString();
+		if(id=='' || id==0){
+			ui.error("请选择要删除的相册");return false;
+		}
+		if( confirm("是否删除{$ts['app']['app_alias']}？") ){
+		  $.post( '__URL__&act=delete_album',{id:id},function(text ){
+			  if( text == 1 ){
+				  ui.success( "删除多张{$ts['app']['app_alias']}成功" );
+				  var id_list = id.split( ',' );   
+				  for (var j=0 ; j< id_list.length ; j++   ){
+					  $('#list_'+id_list[j]).remove(); 
+				  }
+			  }else if( text == 2 ){
+				  ui.success( "删除成功" );
+				  $('#list_'+id).remove();
+			  }else{
+				  ui.error( "删除失败" );
+			  }
+		  });
+		}
+	},
+	edit:function(id,act){
+	  if( act == 'recommend' ){
+		  v= "推荐";
+		  v2 = "取消推荐";
+		  act2 = 'cancel';
+		
+	  }else{
+		  v = "取消推荐";
+		  v2 = "推荐";
+		  act2 = 'recommend';
+	  }
+	    $.post('__URL__&act=doChangeIsHot',{id:id,type:act},function( text ){
+			  if( text == 1 ){
+			  ui.success( "操作成功" );
+			  $('#button'+id).html('<a href="javascript:void(0);" onclick="c.edit('+id+',\''+act2+'\')">'+v2+'</a>');
+		   }else{
+			  ui.error( "设置失败" );
+		   }
+	    });
+	}
+}
+var c = null;
+var url = location.href.lastIndexOf("&act") == -1 ? location.href.substring((location.href.lastIndexOf("/")) + 1) : location.href.substring((location.href.lastIndexOf("/")) + 1, location.href.lastIndexOf("&act"));
+    
+</script>
+
+	<div class="portlet-body" style="" margin-top:15px;">
+          <table class="table table-striped table-bordered table-advance table-hover">
+           <thead>
+																<tr>
+				<th align="left" scope="col"><i class="icon-briefcase"></i>ID</th>
+                <th align="center" scope="col" abbr="lbtnOperate"><i class="icon-bookmark"></i>操作</th>
+                <th align="left" scope="col"><i class="icon-bookmark"></i>用户组名称</th>
+                <th align="left" scope="col"><i class="icon-bookmark"></i>价格</th>
+                <th align="left" scope="col"><i class="icon-bookmark"></i>场景数</th>
+                <th align="left" scope="col"><i class="icon-bookmark"></i>套餐状态</th>
+            </tr>
+
+															</thead>
+
+															<tbody>
+            <foreach name='group' item='user' >
+            <tr>
+				<td style="width:40px;">
+                  {$user.id}
+                </td>
+                <span  class="pull-right"> <td align="center" style="width:200px;"><a href="/adminc.php?c=Group&a=e&id={$user.id}"class="btn blue"> <i class=" icon-edit"> </i> 编辑 </a><a href="/adminc.php?c=Group&a=del&id={$user.id}&group=group"class="btn"><i class="icon-remove icon-white"></i> 删除</a></span></h4>
+                <td>  {$user.name}</td>
+              <td>  {$user.price}</td>
+                <td>  {$user.cj_card_num}</td>
+                
+                
+                <td><php>if($user['end_time']>0):</php>{$user.end_time|date='Y-m-d H:i',###}<else/> 永久<php>endif;</php>
+               </td>
+			</tr> 
+             </foreach>
+            
+		</table>
+	</div>
+
+
+    <table cellpadding="1" cellspacing="0" width="100%">
+                <tr>
+                  <td align="center">
+                     <div class="row-fluid">
+<div class="span12">
+<div class="pagination pull-right">
+<div class="pages">
+                        {$page}
+                </div>
+</div>
+</div>
+</div>
+                  </td>
+                </tr>
+            </table>
+
+<div id="divIsSetHeight" style="display: none;">
+ 
+</div>
+
+
+
+<script type="text/javascript">
+    // <![CDATA[
+    //    function ShowVisibleColumnWindow() {
+    //        pcVisibleColumn.Show();
+    //    }
+    // ]]> 
+</script>
+
+<script type='text/javascript'>    SetHeight();</script>
+
+
+</div>
+        </form>
+        
+    </div> </div> </div> </div>
+ 
+
+
+  <include file="Public:foot"/>

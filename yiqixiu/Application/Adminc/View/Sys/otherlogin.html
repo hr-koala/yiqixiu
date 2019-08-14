@@ -1,0 +1,88 @@
+<include file="Public:head"/>
+ 
+<div class="container-fluid">
+        
+        <div class="row-fluid">
+					<div class="span12">
+						<!-- BEGIN PAGE TITLE & BREADCRUMB-->
+						<h3 class="page-title">系统管理 <small>    System management</small></h3>
+
+						<ul class="breadcrumb">
+							<li><i class="icon-home"></i><a href="index.html">首页</a> 
+								<i class="icon-angle-right"></i></li>
+
+							<li><a href="#">系统管理</a><i class="icon-angle-right"></i></li>
+							<li><a href="#">相关状态场景设置</a></li>
+						</ul>
+						<!-- END PAGE TITLE & BREADCRUMB-->
+					</div>
+				</div>
+                
+               <div class="tabbable tabbable-custom tabbable-full-width">
+							<ul class="nav nav-tabs">
+						<include file="Sys:_menu"/>
+							</ul>
+                            <hr>
+                </div>
+          			<!-- BEGIN PAGE CONTENT-->          
+				<div class="row-fluid">
+					<div class="span12 ">
+						<!-- BEGIN EXAMPLE TABLE PORTLET-->
+							<div class="portlet-body">      
+                            <h2>QQ登录相关配置</h2>
+       <form action="" method="post">
+        
+            <hr style="width: 50%; size: 1px; border: none;" />
+            <table style="vertical-align: top;">
+               <tr> 
+              <td  height="48" align="right">APP ID：</td>
+              <td><input type="text" name="THINK_SDK_QQ[APP_KEY]" value="{$Think.config.THINK_SDK_QQ.APP_KEY}" class="ipt" size="45" /><span>&nbsp;&nbsp;例: 101232445 </span>
+            </tr> 
+                             
+       <tr> 
+      <td  height="48" align="right">APP KEY：</td>
+      <td><input type="text" name="THINK_SDK_QQ[APP_SECRET]" value="{$Think.config.THINK_SDK_QQ.APP_SECRET}" class="ipt" size="45" /><span>&nbsp;&nbsp;例:dd682e725e85405f772a84f61780feb2   </span>
+    </tr> 
+       <tr> 
+      <td  height="48" align="right">回调地址：</td>
+      <td> <php> echo 'http://' . $_SERVER['HTTP_HOST'].'/password.html';</php> <span>&nbsp;&nbsp;申请QQ互联时填写此地址  &nbsp;&nbsp; <a href="http://connect.qq.com/manage/" target="_blank">申请接入</a>   </span>
+    </tr> 
+     
+       <tr> 
+      <td  height="48" align="right">验证的号码：</td>
+      <td><input type="text" name="THINK_SDK_QQ[qqqqqq52]" value="{$Think.config.THINK_SDK_QQ.qqqqqq52}" class="ipt" size="45" />   <span>&nbsp;&nbsp; 例：  </span>
+    &lt;meta property=&quot;qc:admins&quot; content=&quot;55532176310052636&quot; /&gt;  则填写：55532176310052636</tr> 
+            </table>
+         
+       
+       <div class="form-actions">
+  
+													<button type="submit" class="btn blue"><i class="icon-ok"></i> 保存</button>
+
+													<button type="button" class="btn">放弃</button>
+
+												</div>
+        </form>
+        
+          
+    </div>
+ 
+     </div>
+        </div>
+ 
+ <script type="text/javascript">
+  $(function(){
+    $('input[name="pay_type"]').on('click',function(){
+	 // alert($(this).val());
+	   $('#table1').hide(); $('#table2').hide();
+	  $('#table'+$(this).val()).show();
+	});	 
+	
+	 if($('input[name="pay_type"]')==2){
+		 $('#table1').hide(); $('#table2').show();
+	}
+ });
+ </script>
+
+ 
+  <include file="Public:foot"/>

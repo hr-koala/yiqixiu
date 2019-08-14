@@ -1,0 +1,36 @@
+.table td{ vertical-align:middle!important; }
+.table td a{ text-decoration:none; }
+.table td a.label{ margin-right:5px; }
+.table td span.label{ font-weight:normal; margin-right:5px; }
+.table td .media{ margin-bottom:0px; margin-top:8px; }
+.table td .media-left{ padding-right:8px; }
+.table td .media img{ border-radius:0px; max-width:80px; }
+.table td .media .media-body h4{ margin-bottom:0px; }
+.table td .media .media-body h4{ font-size:14px; color:#888; }
+.table td .media .media-body h4 div{ float:right; padding-right:10px; font-size:12px; text-align:right; color:#888;}
+.table td .media .media-body h4 div p{ margin-top:5px; }
+.table td .media .media-body ul{ margin:0px; list-style:none; padding:0px; }
+.table td .messageremark{ margin:0px; font-size:12px; white-space: normal;  }
+table.table tbody tr{ cursor:pointer; }
+table.table tbody tr.activenow td,table.table tbody tr.activenow td:hover{ background:#F3F7F9!important; }
+
+.slidePanel-left, .slidePanel-right{ top:0px; }
+
+.metshop_oder_header{ padding-right:0px; }
+.metshop_oder_header .pearls{ margin-bottom:0px; }
+.metshop_oder_header .pearl-title p{ font-size:12px; color:#999; margin-bottom:0px; }
+.metshop_oder_page h3.panel-title{ margin:0px; padding:0px; margin-bottom:10px; }
+.metshop_oder_page hr{ margin:0px; margin-top:5px; margin-bottom:15px; }
+.metshop_oder_page_btn button{ margin-right:10px; }
+
+.metshop_oder_page .panel-body{ padding:20px; }
+
+.metshop_oder_close{ position:absolute; left:30px; top:10px; width:14px!important; height:14px; color:#333; }
+
+#edit_remark{ border-bottom:none; }
+#edit_remark_btn{ margin-left:5px; width:23px; height:23px; font-size:12px; position:relative; bottom:2px; }
+
+.modal-backdrop{ z-index:1200; }
+.select2-container--default{ z-index:1700; }
+.select2-container--default .select2-selection{ font-family:"Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans","wenquanyi micro hei","Hiragino Sans GB", "Hiragino Sans GB W3", Roboto, Arial,sans-serif;}
+label{ font-weight:normal!important; }

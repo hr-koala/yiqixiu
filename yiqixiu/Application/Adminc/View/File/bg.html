@@ -1,0 +1,78 @@
+
+                
+                
+                
+                
+                
+                
+                
+                
+				<!-- BEGIN PAGE CONTENT-->
+				<div class="row-fluid">
+                
+					<div class="tabbable tabbable-custom tabbable-full-width">
+                   <if condition="$ui.File_index eq 'active'">
+                   
+						<ul class="nav nav-tabs">
+                        <eq name="flag" value="useranli">
+                            <li class="<eq name="fnid" value="">active</eq>"><a  href="{:U('/File/index/flag/useranli/0')}" >全部</a></li>
+							<li class="<eq name="fnid" value="201">active</eq>"><a  href="{:U('/File/lists/flag/useranli/filetype/0/fnid/201')}" >行 业</a></li>
+							<li class="<eq name="fnid" value="202">active</eq>"><a href="{:U('/File/lists/flag/useranli/filetype/0/fnid/202')}">企业</a></li>
+							<li class="<eq name="fnid" value="204">active</eq>"><a href="{:U('/File/lists/flag/useranli/filetype/0/fnid/204')}">个人</a></li>
+							<li class="<eq name="fnid" value="205">active</eq>"><a href="{:U('/File/lists/flag/useranli/filetype/0/fnid/205')}">节日</a></li>
+							<li class="<eq name="fnid" value="203">active</eq>"><a href="{:U('/File/lists/flag/useranli/filetype/0/fnid/203')}">风格</a></li>
+                            <else/> 
+                            <li class="<eq name="fnid" value="">active</eq>"><a  href="{:U('/File/index/filetype/0')}" >全部</a></li>
+                            <li class="<eq name="fnid" value="201">active</eq>"><a  href="{:U('/File/lists/filetype/0/fnid/201')}" >行 业</a></li>
+							<li class="<eq name="fnid" value="202">active</eq>"><a href="{:U('/File/lists/filetype/0/fnid/202')}">企业</a></li>
+							<li class="<eq name="fnid" value="204">active</eq>"><a href="{:U('/File/lists/filetype/0/fnid/204')}">个人</a></li>
+							<li class="<eq name="fnid" value="205">active</eq>"><a href="{:U('/File/lists/filetype/0/fnid/205')}">节日</a></li>
+							<li class="<eq name="fnid" value="203">active</eq>"><a href="{:U('/File/lists/filetype/0/fnid/203')}">风格</a></li> 
+                          </eq>
+						</ul>
+                       <hr> 
+                       
+                       
+                        
+                       
+                       
+                       
+                         <a href="?c=File&a=add&filetype={$filetype}" class="btn green"><i class="icon-plus"></i> 添加背景素材</a>
+                         <else/></if>
+                        </div>
+					</div>
+                         <foreach name='select' item='item' >
+                        <div class="span1" style=" min-width:140px;">
+										<div class="item" style="width:110px;">
+											<a class="fancybox-button" data-rel="fancybox-button" title="图片ID：{$item.fileid_bigint}，添加时间：{$item.create_time}，文件类型：{$item.ext_varchar}" href="/Uploads/{$item.filesrc_varchar}">
+												<div class="zoom">
+													<img src="/Uploads/{$item.filethumbsrc_varchar}" alt="Photo" style="width:110px; height:160px">                    
+													<div class="zoom-icon"></div>
+												</div>
+											</a>
+										<div class="details">
+                                            
+         <if condition="$ui.File_index eq 'active'">                        
+		<a href="/Uploads/{$item.filesrc_varchar}" class="icon"  target="_blank"><i class="icon-link"></i></a>
+		<a href="?c=File&a=e&id={$item.fileid_bigint}&filetype={$item.filetype_int}" class="icon"><i class="icon-pencil"></i></a>
+		<a href="javascript:;" onClick="javascript:if(confirm('你确信要删除[{$item.filename_varchar}]吗？')) window.location='?c=File&a=del&id={$item.fileid_bigint}'" class="icon"><i class="icon-remove"></i></a> 
+ <else/>
+ <a href="/Uploads/{$item.filesrc_varchar}" class="icon" title="查看链接地址" target="_blank"><i class="icon-link"></i></a>
+ <a href="?c=File&a=userancs_e&id={$item.fileid_bigint}&filetype={$item.filetype_int}" class="icon"><i class="icon-pencil"></i></a>
+		<a href="javascript:;" onClick="javascript:if(confirm('你确信要删除[{$item.filename_varchar}]吗？')) window.location='?c=File&a=userancs_del&id={$item.fileid_bigint}'" class="icon"><i class="icon-remove"></i></a></if>  
+											</div>
+                                            
+                  
+										</div>
+									</div>
+                          </foreach>
+                          
+
+
+
+
+	
+         
+
+
+

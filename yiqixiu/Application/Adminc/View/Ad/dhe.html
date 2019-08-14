@@ -1,0 +1,240 @@
+<include file="Public:head"/>
+
+<script src="/Public/kindeditor/kindeditor.js"></script>
+	<script src="/Public/kindeditor/lang/zh_CN.js"></script>
+	<script src="Public/kindeditor/plugins/code/prettify.js"></script>
+	<link rel="stylesheet" href="/Public/kindeditor/themes/default/default.css" />
+	<link rel="stylesheet" href="/Public/kindeditor/plugins/code/prettify.css" /> 
+
+<div class="container-fluid">
+				<!-- BEGIN PAGE HEADER-->   
+
+  <div class="row-fluid">
+
+					<div class="span12 blog-page">
+
+						<!-- BEGIN STYLE CUSTOMIZER --><!-- END BEGIN STYLE CUSTOMIZER -->  
+
+						<h4 class="page-title">
+
+							<if condition="ACTION_NAME  eq 'dh_e'">编辑<else />新建</if>导航菜单</a>
+
+							 <small>advance form layout samples</small>
+
+					  </h4>
+
+						<ul class="breadcrumb">
+
+							<li>
+
+								<i class="icon-home"></i>
+
+								<a href="index.html">管理首页</a> 
+
+								<span class="icon-angle-right"></span>
+
+							</li>
+
+							<li>
+
+								<a href="#">系统分类管理</a>
+
+								<span class="icon-angle-right"></span>
+
+							</li>
+
+							<li><a href="#"> <if condition="ACTION_NAME  eq 'dh_e'">编辑<else />新建</if>导航菜单</a></a></li>
+
+						</ul>
+
+	</div>
+
+				</div>
+
+				<!-- END PAGE HEADER-->
+                
+   
+                            
+               <div class="tabbable tabbable-custom tabbable-full-width">
+							<ul class="nav nav-tabs">
+                            
+                            
+                <li class=""> <a href="#" onclick="history.go(-1);"> 返回 <if condition="$_GET.type  eq '3'">顶部</if><if condition="$_GET.type  eq '4'">底部</if> <if condition="$_GET.type  eq '3'">辅助</if>菜单列表</a> </li>   
+                
+                         
+			 <li class="active"> <a href="#">  <if condition="ACTION_NAME  eq 'dh_e'">编辑<else />新建</if>导航菜单</a> </li>
+		      
+							</ul>
+                        
+                </div>
+<hr />
+		   <input name="ctl00$ContentPlaceHolder1$txt" type="hidden" id="ctl00_ContentPlaceHolder1_txt" />				
+        	<div class="row-fluid">
+					<div class="span12 ">
+						<!-- BEGIN EXAMPLE TABLE PORTLET-->
+							<div class="portlet-body">
+                            
+				
+				<!-- END PAGE HEADER-->
+
+			<!-- BEGIN PAGE CONTENT-->          
+			
+                            
+                            
+                            <div class="portlet-body form">
+
+								<!-- BEGIN FORM-->
+
+                <form action="" class="form-horizontal" method="post">
+							<div class="portlet-body form">
+
+
+									<div class="control-group">
+										<label class="control-label">导航名称</label>
+										<div class="controls">
+                                      <input name="user[name]" type="text"   class="frm_input"  value="{$user.name}"style="width: 120px;"  />
+											<span class="help-inline"></span>
+										</div>
+									</div>
+
+
+                                    
+                                    <div class="control-group">
+                                    
+                                    <label class="control-label">链接地址</label>
+
+										<div class="controls">
+
+										 <input name="user[url]" type="text"    class="frm_input"  value="{$user.url}" style="width: 300px;" />
+
+
+										</div>
+
+									</div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+  	<script>
+	
+	host = window.location.host;
+	KindEditor.ready(function(K){
+    var editor = K.editor({
+      allowFileManager:true
+    });
+	
+	 K('#logo_upload').click(function() {
+      editor.loadPlugin('image', function() {
+        editor.plugin.imageDialog({
+          fileUrl : K('#web_logo').val(),
+          clickFn : function(url, title) {
+            if(url.indexOf("http") > -1){
+              K('#web_logo').val(url);
+            }else{
+              K('#web_logo').val("http://"+host+url);
+            }
+            editor.hideDialog();
+          }
+        });
+      });
+    });
+	
+	
+	
+	
+  });
+</script>                                  
+                                    
+                                    
+          <!--
+									<div class="control-group">
+
+										<label class="control-label">导航图标</label>
+
+										<div class="controls">
+                                        
+                                  
+                                  
+                                  
+                                  
+                                  
+                                    <img upload="image-single" id="web_logo_src" style="max-height:60px;  line-height: 20px;" src="<if condition="$user.logo eq ''">/Public/media/image/jia_thum.jpg
+<else /> {$Think.config.web_logo}</if>"><br />
+					 <input type="text" name="user[logo]" value="{$user.logo}" id="web_logo" class="px" >                
+                      <span class="ke-button-common" >
+                      <a href="#" class="btn blue" id="logo_upload" >点击上传  <i class="icon-plus"></i></a>
+                      </span>&nbsp&nbsp尺寸为90*60px以内的透明图片
+                                  
+                                  
+                                  
+                                   
+                           
+										
+
+										</div>
+
+									</div>                          
+                                    -->
+                                    
+  
+                                    
+                                    
+                                    
+								
+								
+				  <div class="control-group">
+
+										<label class="control-label">排序</label>
+
+										<div class="controls">
+                                        
+                                  <input name="user[sort]" type="text"   class="frm_input" style="width: 60px;" value="{$user.sort}" />   
+                           
+										
+
+										</div>
+
+									</div>
+
+
+								
+
+		
+							
+
+								
+
+									<div class="form-actions">
+      <span id="Span1">
+                          <input type="hidden"  name="id" value="{$user.id}" />
+                          <input type="hidden"  name="filetype" value="{$filetype_int}" />
+                          
+                    <input type="submit" name=" " value="保存"   class="btn green"/></span>                         
+
+									</div>
+
+								</form>
+
+								<!-- END FORM-->       
+
+							</div>
+
+						</div>
+
+						<!-- END SAMPLE FORM PORTLET-->
+
+					</div>
+
+				</div>
+
+		</div>
+
+		
+
+						<!-- END EXTRAS PORTLET--><!-- END PAGE CONTENT--><!-- END PAGE CONTAINER--><!-- END CONTAINER -->
+
+	<!-- BEGIN FOOTER -->
+  <include file="Public:foot"/>

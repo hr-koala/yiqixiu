@@ -1,0 +1,228 @@
+<block name="include"><include file="Public:head" /></block>
+			<!-- BEGIN PAGE CONTAINER-->
+
+			<div class="container-fluid">
+
+				<!-- BEGIN PAGE HEADER-->   
+
+				<div class="row-fluid">
+
+					<div class="span12">
+
+						<!-- BEGIN STYLE CUSTOMIZER -->
+						<!-- END BEGIN STYLE CUSTOMIZER -->   
+
+						<h3 class="page-title">
+官方模板采集<small>   Template editing system</small> 
+
+
+						</h3>
+
+						<ul class="breadcrumb">
+
+							<li>
+
+								<i class="icon-home"></i>
+
+								<a href="index.html">首页</a> 
+
+								<span class="icon-angle-right"></span>
+
+							</li>
+
+							<li>
+
+								<a href="#">场景管理</a>
+
+								<span class="icon-angle-right"></span>
+
+							</li>
+
+							<li><a href="#">官方模板采集 </a></li>
+
+						</ul>
+
+					</div>
+
+				</div>
+
+				<!-- END PAGE HEADER-->
+
+				<!-- BEGIN PAGE CONTENT-->
+
+				<div class="row-fluid">
+
+					<div class="span12">
+
+						<!-- BEGIN SAMPLE FORM PORTLET-->   
+
+		  <div class="tabbable tabbable-custom tabbable-full-width">
+							<ul class="nav nav-tabs">
+                               <li class=""> 
+<a href="{:U('scene/index')}"> 系统模板列表</a> 
+            </li>
+                <li class="<eq name="from" value="0"> active </eq> "> 
+                <a href="?c=reptile&from=0"> 官方模板采集 </a> </li>
+                
+                <li class="<eq name="from" value="70"> active</eq> "> 
+                <a href="?c=reptile&from=70"> 70度模板采集 </a> </li>
+							</ul>
+                            <hr>
+                </div>
+           <div class="portlet-body form">
+           
+           
+  <div class="span4 " style="max-width:260px">
+<div class="portlet box blue">
+
+							<div class="portlet-title">
+
+								<div class="caption"><i class="icon-reorder"></i>已采集内容</div>
+
+								<div class="tools">
+                               <a href="javascript:;" class="reload"></a>
+									<a href="javascript:;" class="collapse"></a>
+
+								</div>
+
+							</div>
+
+							
+  <div class="portlet-body">
+  
+
+        <ol id="cjzt">
+        
+        </ol>
+        </div>          
+           
+           </div></div></div>
+           
+
+      <!--内容显示 Begin-->
+     <div class="col_main span6 ">
+     
+     <div class="portlet box blue">
+
+							<div class="portlet-title">
+
+								<div class="caption"><i class="icon-reorder"></i>采集设置</div>
+
+								<div class="tools">
+
+									<a href="javascript:;" class="collapse"></a>
+
+									<a href="#portlet-config" data-toggle="modal" class="config"></a>
+
+									<a href="javascript:;" class="reload"></a>
+
+									<a href="javascript:;" class="remove"></a>
+
+								</div>
+
+							</div>
+
+							<div class="portlet-body">
+     
+     
+     
+     
+        <div style="padding-top: 10px; padding-left: 10px; padding-right: 10px;">
+           {$fromweb}参数:
+            <input name="scenename_varchar" type="text" id='text'  class="search"  /> 
+            <br><br>
+            入库分类id：<select id="scenetypeB" onChange="changeSceneType()" style="width:120px" >
+                        <foreach name='scene_type_list' item='item' >
+	    <option value="{$item.value}" <eq name="item[value]" value="$user['scenetype_int']"> selected="selected" </eq>>{$item.title}</option>
+          </foreach>                     
+                       
+                       </select>- 
+                       <select  id="scenetypeS" style="width:120px" >
+                        <foreach name='scene_type_list2' item='item' >
+	    <option value="{$item.tagid_int}" <eq name="item[tagid_int]" value="$user['tagid_int']"> selected="selected" </eq>>{$item.name_varchar}</option> 
+          </foreach>     
+                       </select>
+     
+
+<br><br>
+ <input type="checkbox" id="isMusicToSys"  value="1"/>音乐是否加入系统库
+
+
+
+<div class="form-actions">
+
+											
+
+                <input type="submit" class="btn green big"  name="ctl00$ContentPlaceHolder1$btnSearch" value="采集 " id="cj" />
+
+            </span>
+
+       
+            	</div>
+                
+                
+                
+            <br><br>
+             <font color="red"> 状态说明：复制{$fromweb}url地址后台参数,</font>（<span>搜</span><span>虎精</span><span>品社</span><span>区www.s</span><span>ouh</span><span>o.net</span><span>提</span><span>供本源</span><span>码</span>
+）
+        </div>
+        <div>
+        <ul id="cjzt">
+        
+        </ul>
+        </div>
+ 例：<php>if($_GET['from']=='70'):</php>  例：http://www.70c.com/w/SSWWZZ 后面：<b>SSWWZZ</b> <php>else:</php> 例：http://eqxiu.com/s/WT51EvnL 后面：<b>WT51EvnL</b> <php>endif;</php>
+
+    </div>
+           
+</div>
+
+</div>
+
+
+            </div>
+            </div>
+
+<include file="Public:foot"/>
+
+<script type="text/javascript">
+(function($) { 
+    $(document).ready(function(){
+    $("#cj").click(function(){
+		var url = $("#text").val();          
+        if(url != '') {
+        $('#cj').val('正在拼命下载中...');
+        var isMusicToSys=$('#isMusicToSys').attr('checked')? 1:0;
+			var urlapi='index.php?c=Cj&a=index';
+			<php>if($_GET['from']=='70'):</php> urlapi='index.php?c=Cj70&a=index';<php>endif;</php>
+			$.get(urlapi,{cs:url,scenetypeB:$('#scenetypeB').val(),scenetypeS:$('#scenetypeS').val(),isMusicToSys:isMusicToSys},  function(data){
+        if(data.url != null){ 
+			data.url= data.url.replace(/v-/,'index.php?c=view&id=');
+				
+        var html="<p><a href="+data.url+" target=\"_blank\" class=\"btn purple-stripe\"> 点 击 浏 览 </a>   <i class=\"icon-ok\"></i></p>";
+        $('#cjzt').after(html);
+        }else{$('#cjzt').after();
+        }
+        alert(data.msg);
+        $("#cj").val('采集');;
+        },"json");
+        }else{
+         alert('参数不能为空');
+        }
+	 });
+  $("#dtagid").change(function(){ 
+//  var url = $("#text").val();
+  var biztype = $("#dtagid").val();
+  $("#tagid").empty();
+   $.get("index.php?c=Cj&a=Type",{biztype:biztype}, function(data){
+if(data != null){
+   $("#tagid ").append(data);
+    }else{$('#tagid').after();
+        }
+   });
+    }); 
+	});
+	})(jQuery); 
+	
+	
+</script>

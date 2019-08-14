@@ -1,0 +1,14 @@
+
+
+
+安装步骤：
+
+1、把导入数据库文件db.sql到数据库
+
+2、修改Application/Common/Conf/systemConfig.php里的数据库连接信息
+
+3、后台地址：http://域名/adminc.php
+
+   默认后台账号密码都是test@souho.net www.souho.net
+
+   另外建议把php.ini里面的  max_execution_time  改成500  不然可能采集失败

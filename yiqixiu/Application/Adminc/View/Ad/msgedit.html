@@ -1,0 +1,88 @@
+<include file="Public:head"/>
+<div class="container-fluid">
+				<!-- BEGIN PAGE HEADER-->
+				<div class="row-fluid">
+					<div class="span12">
+						<!-- BEGIN PAGE TITLE & BREADCRUMB-->
+						<h3 class="page-title">系统管理 <small>    System management</small></h3>
+
+						<ul class="breadcrumb">
+							<li><i class="icon-home"></i><a href="index.html">首页</a> 
+								<i class="icon-angle-right"></i></li>
+
+							<li><a href="#">系统管理</a><i class="icon-angle-right"></i></li>
+							<li><a href="#"></i><a href="/adminc.php?c=ad&a=msgList">公告管理</a><i class="icon-angle-right"></i></li>
+							<li><a href="#">编辑公告</a></li>
+						</ul>
+						<!-- END PAGE TITLE & BREADCRUMB-->
+					</div>
+				</div>
+
+				<!-- END PAGE HEADER-->
+     <!--内容显示 Begin-->
+    <div class="col_main">
+        <input name="ctl00$ContentPlaceHolder1$txt" type="hidden" id="ctl00_ContentPlaceHolder1_txt" />
+        <div class="main_hd">
+            <div class="title_tab" id="topTab">
+                <ul class="tab_navs mt title_tab">
+                </ul>
+            </div>
+             <p class="extra_info">
+              
+            </p>
+        </div>
+        
+        
+        
+       <form action="" method="post" enctype="multipart/form-data"  >
+        <div style="text-align: left; padding: 1px; text-align: left;">
+            <hr style="width: 50%; size: 1px; border: none;" />
+            <table style="vertical-align: top;"> 
+          <tr style="height: 50px;  border-bottom: 1px solid #ccc;">
+            		<td>选择类型：</td>
+            		<td style="width: 98px;">
+                      <select name="msg[bizType]" id="bizType">
+            <option value="">选择</option>
+<option value="1">公告</option>
+<option value="2">通知</option>
+ 
+</select>
+</td>
+</tr>  
+<tr style="height: 50px;">
+ <td> 标题：</td>
+ <td>
+<span class="frm_input_box">
+<input name="msg[title]" type="text"   class="frm_input" style="width: 200px;" value="{$msglist.title}" /></span>
+                    </td>
+</tr>
+ 
+  <tr>
+  <td height="48" align="right">内容 :</td>
+                    <td><textarea name="msg[content]" style="width:450px;height:60px;margin:5px 0 5px 0;">{$msglist.content}</textarea> <span>&nbsp;&nbsp;一般不超过200个字符</span>
+                </tr>
+ 
+            </table>
+          <div class="form-actions">
+                <span id="Span1" class="btn btn_primary btn_input">
+                 <input type="hidden"  name="id" value="{$msglist.id}" />
+                   <button type="submit" class="btn blue"><i class="icon-ok"></i> 保存</button>
+            </div>
+        </div>
+        </form>
+        
+    </div>
+  <script type="text/javascript">
+   function checkForm(){
+	   if($('#title').val()==''){
+		   alert('文件名不能为空');
+		 return false;  
+		 }
+		 return true;
+	}
+  
+ 
+  </script>
+ </div> </div>
+
+  <include file="Public:foot"/>

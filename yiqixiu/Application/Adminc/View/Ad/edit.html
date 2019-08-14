@@ -1,0 +1,104 @@
+<include file="Public:head"/>
+<div class="container-fluid">
+				<!-- BEGIN PAGE HEADER-->
+				<div class="row-fluid">
+					<div class="span12">
+						<!-- BEGIN PAGE TITLE & BREADCRUMB-->
+						<h3 class="page-title">广告管理 <small>    发布新广告</small></h3>
+
+							<ul class="breadcrumb">
+							<li><i class="icon-home"></i><a href="index.html">首页</a> 
+								<i class="icon-angle-right"></i></li>
+                            <li><a href="#"></i><a href="adminc.php?c=ad&a=index">广告列表管理</a><i class="icon-angle-right"></i></li>
+							<li><a href="#">添加广告</a></li>
+						</ul>
+						<!-- END PAGE TITLE & BREADCRUMB-->
+					</div>
+				</div>
+
+				<!-- END PAGE HEADER-->
+     <!--内容显示 Begin-->
+    <div class="col_main">
+        <input name="ctl00$ContentPlaceHolder1$txt" type="hidden" id="ctl00_ContentPlaceHolder1_txt" />
+        <div class="main_hd">
+            <div class="title_tab" id="topTab">
+                <ul class="tab_navs mt title_tab"> 
+                </ul>
+            </div>
+            
+        </div>
+       <form action="" method="post" enctype="multipart/form-data" onSubmit="return checkForm()">
+        <div style="text-align: left; padding: 1px; text-align: left;">
+            <hr style="width: 50%; size: 1px; border: none;" />
+            <table style="vertical-align: top;">
+                      <tr>
+                    <td >
+                       <strong class="btn red-stripe"> 类型
+                    </td>
+                    <td colspan="2"> 
+                       <select name="ad[type]"> 
+                       <option  name="2" value="2">  首页大图 </option>
+                       <option  name="1" value="1">首页LOGO   </option>
+                        <option  name="3" value="3"> 场景浏览背景</option>
+                        </select>
+   
+                    </td>
+                </tr>
+                         <tr>
+                    <td style="width: 98px;">
+            <strong class="btn green-stripe">文件名
+                    </td>
+                    <td colspan="2">
+                          <span class="frm_input_box">
+                            <input name="ad[name]" type="text"  id="title"  class="frm_input"  value="{$ad.name}" /></span>
+                    </td>
+                </tr>
+                <tr>
+                    		
+										<div class="controls">
+											<div class="fileupload fileupload-new" data-provides="fileupload">
+												<div class="fileupload-new thumbnail" >
+													<img src="/Uploads/{$ad.url|default="default_t.jpg"}"  class="thbnail"  style="max-height: 150px; line-height: 20px;"> 
+												</div>
+			<div class="fileupload-preview fileupload-exists thumbnail" style="max-height: 150px; line-height: 20px;"></div>
+<div>
+
+													<span class="btn btn-file"><span class="fileupload-new">上传图片</span>
+													<span class="fileupload-exists">改变</span>
+													 <input type="file" name="photo2"> </span>
+													<a href="#" class="btn fileupload-exists" data-dismiss="fileupload">删除</a>
+												</div></div></div>
+                </tr>
+                <tr>
+                    <td>  
+                    </td>
+                    <td colspan="2">
+                    </td>
+                </tr>
+            </table>
+          <div class="form-actions">
+                <span id="Span1" class="btn btn_primary btn_input">
+                 <input name="id" type="hidden"  id="id"  class="frm_input"  value="{$ad.id}" />
+                   
+                  <button type="submit" class="btn blue"><i class="icon-ok"></i> 保存</button>
+            </div>
+        </div>
+        </form>
+        
+    </div>
+    <!--内容显示 End-->
+
+  <script type="text/javascript">
+   function checkForm(){
+	   if($('#title').val()==''){
+		   alert('文件名不能为空');
+		 return false;  
+		 }
+		 return true;
+	}
+  </script>
+    </div> </div> </div> </div>
+ 
+
+
+  <include file="Public:foot"/>

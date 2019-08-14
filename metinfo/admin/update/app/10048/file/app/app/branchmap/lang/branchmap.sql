@@ -1,0 +1,27 @@
+INSERT INTO {$_M['config']['tablepre']}cloud_config SET name='typeon',m_name='branchmap',value='0',lang='cn' ON DUPLICATE KEY UPDATE value='0' #;#;
+INSERT INTO {$_M['config']['tablepre']}cloud_config SET name='typeon',m_name='branchmap',value='0',lang='en' ON DUPLICATE KEY UPDATE value='0' #;#;
+INSERT INTO {$_M['config']['tablepre']}cloud_config SET name='typeon',m_name='branchmap',value='0',lang='tc' ON DUPLICATE KEY UPDATE value='0' #;#;
+INSERT INTO {$_M['config']['tablepre']}cloud_config SET name='webtext2',m_name='branchmap',value='<p>应用配置--前台提示文字</p>',lang='cn' ON DUPLICATE KEY UPDATE value='<p>应用配置--前台提示文字</p>' #;#;
+INSERT INTO {$_M['config']['tablepre']}cloud_config SET name='select1',m_name='branchmap',value='北京',lang='cn' ON DUPLICATE KEY UPDATE value='北京' #;#;
+INSERT INTO {$_M['config']['tablepre']}cloud_config SET name='webtext1',m_name='branchmap',value='<p>应用配置--前台提示文字</p>',lang='cn' ON DUPLICATE KEY UPDATE value='<p>应用配置--前台提示文字</p>' #;#;
+INSERT INTO {$_M['config']['tablepre']}cloud_config SET name='state',m_name='branchmap',value='1',lang='cn' ON DUPLICATE KEY UPDATE value='1' #;#;
+INSERT INTO {$_M['config']['tablepre']}cloud_config SET name='radio',m_name='branchmap',value='0',lang='cn' ON DUPLICATE KEY UPDATE value='0' #;#;
+INSERT INTO {$_M['config']['tablepre']}cloud_config SET name='city',m_name='branchmap',value='北京',lang='cn' ON DUPLICATE KEY UPDATE value='北京' #;#;
+INSERT INTO {$_M['config']['tablepre']}cloud_config SET name='webtext2',m_name='branchmap',value='<p>应用配置--前台提示文字</p>',lang='en' ON DUPLICATE KEY UPDATE value='<p>应用配置--前台提示文字</p>' #;#;
+INSERT INTO {$_M['config']['tablepre']}cloud_config SET name='select1',m_name='branchmap',value='北京',lang='en' ON DUPLICATE KEY UPDATE value='北京' #;#;
+INSERT INTO {$_M['config']['tablepre']}cloud_config SET name='webtext1',m_name='branchmap',value='<p>应用配置--前台提示文字</p>',lang='en' ON DUPLICATE KEY UPDATE value='<p>应用配置--前台提示文字</p>' #;#;
+INSERT INTO {$_M['config']['tablepre']}cloud_config SET name='state',m_name='branchmap',value='1',lang='en' ON DUPLICATE KEY UPDATE value='1' #;#;
+INSERT INTO {$_M['config']['tablepre']}cloud_config SET name='radio',m_name='branchmap',value='0',lang='en' ON DUPLICATE KEY UPDATE value='0' #;#;
+INSERT INTO {$_M['config']['tablepre']}cloud_config SET name='city',m_name='branchmap',value='北京',lang='en' ON DUPLICATE KEY UPDATE value='北京' #;#;
+INSERT INTO {$_M['config']['tablepre']}cloud_config SET name='webtext2',m_name='branchmap',value='<p>应用配置--前台提示文字</p>',lang='tc' ON DUPLICATE KEY UPDATE value='<p>应用配置--前台提示文字</p>' #;#;
+INSERT INTO {$_M['config']['tablepre']}cloud_config SET name='select1',m_name='branchmap',value='北京',lang='tc' ON DUPLICATE KEY UPDATE value='北京' #;#;
+INSERT INTO {$_M['config']['tablepre']}cloud_config SET name='webtext1',m_name='branchmap',value='<p>应用配置--前台提示文字</p>',lang='tc' ON DUPLICATE KEY UPDATE value='<p>应用配置--前台提示文字</p>' #;#;
+INSERT INTO {$_M['config']['tablepre']}cloud_config SET name='state',m_name='branchmap',value='1',lang='tc' ON DUPLICATE KEY UPDATE value='1' #;#;
+INSERT INTO {$_M['config']['tablepre']}cloud_config SET name='radio',m_name='branchmap',value='0',lang='tc' ON DUPLICATE KEY UPDATE value='0' #;#;
+INSERT INTO {$_M['config']['tablepre']}cloud_config SET name='city',m_name='branchmap',value='北京',lang='tc' ON DUPLICATE KEY UPDATE value='北京' #;#;
+INSERT INTO {$_M['config']['tablepre']}language SET name='branchmap_info',value='实现全国所有加盟店、分店、门店、分销店等店面查询。',site='1',no_order='0',array='0',lang='cn',app = '{$this->no}' #;#;
+INSERT INTO {$_M['config']['tablepre']}language SET name='branchmap_name',value='加盟店查询',site='1',no_order='0',array='0',lang='cn',app = '{$this->no}' #;#;
+INSERT INTO {$_M['config']['tablepre']}language SET name='branchmap_name',value='Join store query',site='1',no_order='0',array='0',lang='en',app = '{$this->no}' #;#;
+INSERT INTO {$_M['config']['tablepre']}language SET name='branchmap_info',value='Achieve all the franchise stores, stores, stores, distribution stores and other store inquiries.',site='1',no_order='0',array='0',lang='en',app = '{$this->no}' #;#;
+INSERT INTO {$_M['config']['tablepre']}language SET name='branchmap_name',value='加盟店査詢',site='1',no_order='0',array='0',lang='tc',app = '{$this->no}' #;#;
+INSERT INTO {$_M['config']['tablepre']}language SET name='branchmap_info',value='實現全國所有加盟店、分店、門店、分銷店等店面査詢。',site='1',no_order='0',array='0',lang='tc',app = '{$this->no}' 

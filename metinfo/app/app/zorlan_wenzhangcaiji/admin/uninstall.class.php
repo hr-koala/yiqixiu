@@ -1,0 +1,2 @@
+<?php
+defined('IN_MET') or exit ('No permission'); load::sys_func('file'); class uninstall { public function dodel() { global $_M; $no='10045'; $del_tables=array(); foreach($del_tables as $del_table){ $sql="DROP TABLE IF EXISTS `{$_M['config']['tablepre']}{$del_table}`"; DB::query($sql); del_table("{$_M['config']['tablepre']}{$del_table}"); } DB::query("DELETE FROM {$_M['table']['applist']} WHERE `no`='{$no}'"); deldir(PATH_WEB.'./app/app/zorlan_wenzhangcaiji');  } } ?>

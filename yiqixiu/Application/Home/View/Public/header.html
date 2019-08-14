@@ -1,0 +1,12 @@
+<div class="navbar-header">
+<a href="/" class="logo" style="background:url('{$logo_url}') no-repeat center center;">  </a></div>
+<ul class="navbar-right">
+<ul class="links">
+<li><a href="/">首页</a></li>
+<volist name="adlist3" id="vo">
+<li><a href="{$vo.url}" style="background:url({$vo.logo}) no-repeat center 15px;" target="_blank"><if condition="$vo.logo  eq  '' ">{$vo.name}<else /> &nbsp;&nbsp;</if></a></li> 
+</volist>
+ 
+<li  style=" width:60px"><a href="{$Think.config.site_url}#/home/register" style=" width:60px">注册</a></li>
+<li  style=" width:60px"><a  href="{$Think.config.site_url}#/home/login"  style=" width:60px">登录</a></li>
+<!--li><a href="#" target="_blank">帮助中心</a></li--></ul></div>

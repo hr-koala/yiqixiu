@@ -1,0 +1,88 @@
+<include file="Public:head"/>
+<div class="container-fluid">
+				<!-- BEGIN PAGE HEADER-->
+				<div class="row-fluid">
+					<div class="span12">
+						<!-- BEGIN PAGE TITLE & BREADCRUMB-->
+						<h3 class="page-title">分类管理 <small>    添加分类</small></h3>
+
+						<ul class="breadcrumb">
+							<li><i class="icon-home"></i><a href="index.html">首页</a> 
+								<i class="icon-angle-right"></i></li>
+
+							<li><a href="#"></i><a href="/adminc.php?c=tag">分类列表管理</a><i class="icon-angle-right"></i></li>
+							<li><a href="#">分类管理</a></li>
+						</ul>
+						<!-- END PAGE TITLE & BREADCRUMB-->
+					</div>
+				</div>
+
+				<!-- END PAGE HEADER-->
+       <form action="" method="post">
+        <div style="text-align: left; padding: 1px; text-align: left;" id="mphelper">
+            <hr style="width: 50%; size: 1px; border: none;" />
+            <table style="vertical-align: top;">
+			<tr> 
+                    <td ><strong class="btn red-stripe">所属分类</td>
+                    <td>
+                      <select name="user[biztype_int]">
+                             <foreach name='catelist' item='item' >
+	    <option value="{$item.value}" <eq name="item[value]" value="$user['biztype_int']"> selected="selected" </eq>>{$item.title}</option> 
+          </foreach>     
+                           </select>
+                    </td>
+                </tr>   
+		<tr> 
+                   <td ><strong class="btn red-stripe">前台分组</td>
+                    <td>
+                        <select name="user[groupid_int]">
+							<foreach name='grouplist' item='item' >
+	    <option value="{$item.value}" <eq name="item[value]" value="$user['groupid_int']"> selected="selected" </eq>>{$item.title}</option> 
+          </foreach>     
+ 
+                        </select>
+                    </td>
+                </tr> 				
+                
+                 <tr>
+                    <td ><strong class="btn green-stripe">分类名</td>
+                    <td>
+                        <span class="frm_input_box">
+                            <input name="user[name_varchar]" type="text"   class="frm_input" style="width: 200px;" value="{$user.name_varchar}" /></span>
+                    </td>
+                </tr>
+                  <tr>
+                    <td ><strong class="btn purple-stripe">排序</td>
+                    <td>
+                        <span class="frm_input_box">
+                            <input name="user[sort]" type="text"   class="frm_input" style="width: 200px;" value="{$user.sort}" /></span>
+                    </td>
+                </tr>    
+ 
+</table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+				
+            </table>
+			
+          <div class="form-actions">
+                <span id="Span1" class="btn btn_primary btn_input">
+                 <input type="hidden"  name="id" value="{$user.tagid_int}" />
+                          <input type="hidden"  name="filetype" value="{$filetype_int}" />
+                          
+                   <button type="submit" class="btn blue"><i class="icon-ok"></i> 保存</button>
+            </div>
+        </div>
+        </form>
+        
+    </div> </div> </div> </div>
+ 
+
+
+  <include file="Public:foot"/>

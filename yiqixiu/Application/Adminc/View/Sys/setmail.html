@@ -1,0 +1,77 @@
+<include file="Public:head"/>
+<div class="container-fluid">
+				<!-- BEGIN PAGE HEADER-->
+				<div class="row-fluid">
+					<div class="span12">
+						<!-- BEGIN PAGE TITLE & BREADCRUMB-->
+						<h3 class="page-title">系统管理 <small>    System management</small></h3>
+
+						<ul class="breadcrumb">
+							<li><i class="icon-home"></i><a href="index.html">首页</a> 
+								<i class="icon-angle-right"></i></li>
+
+							<li><a href="#">系统管理</a><i class="icon-angle-right"></i></li>
+							<li><a href="#">邮件服务器配置</a></li>
+						</ul>
+						<!-- END PAGE TITLE & BREADCRUMB-->
+					</div>
+				</div>
+
+				<!-- END PAGE HEADER-->
+                <div class="tabbable tabbable-custom tabbable-full-width">
+							<ul class="nav nav-tabs">
+				<include file="Sys:_menu"/>
+							</ul>
+                            <hr>
+                </div>
+				<!-- BEGIN PAGE CONTENT-->          
+		
+       <form action="" method="post" class="form-horizontal">
+
+            <table style="vertical-align: top;">
+            	         <tr> 
+      <td  height="48" align="right">smtp服务器的名称：</td>
+      <td><input type="text" name="MAIL_HOST" value="{$Think.config.MAIL_HOST}" <span>&nbsp;&nbsp;例:smtp.exmail.qq.com</span>
+    </tr>  
+                <tr>
+                    <td height="48" align="right">你的邮箱名:</td>
+                    <td>
+                  <input name="MAIL_USERNAME" type="text" value="{$Think.config.MAIL_USERNAME}" />
+                  <span>&nbsp;&nbsp;例：e@wxking.net</span>
+                    </td>
+                </tr>
+
+               <tr>
+                    <td height="48" align="right">发件人地址:</td>
+                    <td>
+                  <input name="MAIL_FROM" type="text" value="{$Think.config.MAIL_FROM}" />
+                  <span>&nbsp;&nbsp;例：pm@wxking.net</span>
+                    </td>
+                </tr>
+               <tr>
+                    <td height="48" align="right">发件人名称:</td>
+                    <td>
+                  <input name="MAIL_FROMNAME" type="text" value="{$Think.config.MAIL_FROMNAME}" />
+                  <span>&nbsp;&nbsp;例：搜虎精品社区安全中心</span>
+                    </td>
+                </tr>  
+       <tr>
+                    <td height="48" align="right">邮箱密码:</td>
+                    <td>
+                  <input name="MAIL_PASSWORD" type="text" value="{$Think.config.MAIL_PASSWORD}" />
+                  <span>&nbsp;&nbsp;例：wxking</span></td>
+                </tr>  
+ 
+            </table>
+          <div class="form-actions">
+                    <input type="hidden" name="files" value="info.php" /> 
+                  	<button type="submit" class="btn blue"><i class="icon-ok"></i> 保存</button>
+
+													<button type="button" class="btn">放弃</button>
+            </div>
+     
+        </form>
+        
+    </div>   </div>   </div>
+ 
+  <include file="Public:foot"/>

@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<style type="text/css">
+*{margin:0;padding:0;}
+ul{list-style:none}
+.tags{width:100%;overflow:hidden;line-height:20px;}
+.tags li{float:left;margin:5px 10px;}
+.tags li a{float:left;border:solid 1px;padding:0 5px;margin-right:5px;text-decoration:none;}
+</style>
+<script type="text/javascript" src="jquery.min.js"></script>
+
+</head>
+<body>
+<ul class="tags">
+	<li><a href="javascript:;">script</a>js脚本</li>
+	<li><a href="javascript:;">style</a>css样式</li>
+	<li><a href="javascript:;">link</a>样式外部链接</li>
+	<li><a href="javascript:;">img</a>图片</li>
+	<li><a href="javascript:;">a</a>超链接</li>
+	<li><a href="javascript:;">form</a>表单</li>
+	<li><a href="javascript:;">iframe</a>框架</li>
+	<li><a href="javascript:;">object</a>对象</li>
+</ul>
+
+
+<script type="text/javascript">
+//获取url中的参数
+function getUrlParam(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+    var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+    if (r != null) return unescape(r[2]); return null; //返回参数值
+}
+var inputid = getUrlParam('inputid');
+inputid=inputid?inputid:'filtertag';//文本框id
+
+//赋值到文本框
+$('.tags a').live('click',function(){
+	var tags=$('#'+inputid,window.parent.document).val();
+	if(tags){
+		tags+=','+$(this).html();
+	}else{
+		tags=$(this).html();
+	}
+	$('#'+inputid,window.parent.document).val(tags);
+})
+</script>
+
+</body>
+</html>

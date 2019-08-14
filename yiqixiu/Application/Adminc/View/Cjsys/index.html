@@ -1,0 +1,236 @@
+<block name="include"><include file="Public:head" /></block>
+			<!-- BEGIN PAGE CONTAINER-->
+
+			<div class="container-fluid">
+
+				<!-- BEGIN PAGE HEADER-->   
+
+				<div class="row-fluid">
+
+					<div class="span12">
+
+						<!-- BEGIN STYLE CUSTOMIZER -->
+						<!-- END BEGIN STYLE CUSTOMIZER -->   
+
+						<h3 class="page-title">
+采集易企秀组件 <small>   Template editing system</small> 
+
+
+						</h3>
+
+						<ul class="breadcrumb">
+
+							<li>
+
+								<i class="icon-home"></i>
+
+								<a href="index.html">首页</a> 
+
+								<span class="icon-angle-right"></span>
+
+							</li>
+
+							<li>
+
+								<a href="#">场景管理</a>
+
+								<span class="icon-angle-right"></span>
+
+							</li>
+
+							<li><a href="#">采集官方组件 </a></li>
+
+						</ul>
+
+					</div>
+
+				</div>
+
+				<!-- END PAGE HEADER-->
+
+				<!-- BEGIN PAGE CONTENT-->
+
+				<div class="row-fluid">
+
+					<div class="span12">
+
+						<!-- BEGIN SAMPLE FORM PORTLET-->   
+
+		  <div class="tabbable tabbable-custom tabbable-full-width">
+          
+             
+          
+							<ul class="nav nav-tabs">
+							<li class=""> 
+<a href="{:U('scene/index')}"> 系统模板列表</a> 
+            </li>
+                <li > <a href="adminc.php?c=reptile&from=0"> 官方模板采集</a> </li>
+                <li>  <a href="adminc.php?c=reptile&from=70"> 70度模板采集 </a> </li>
+                <li  class="active" ><a href="#">采集官方组件 </a></li>
+							</ul>
+                            <hr>
+                </div>
+           <div class="portlet-body form">
+          
+          
+          
+          
+          
+
+                <div id="ctl00_ContentPlaceHolder1_UpdatePanel1">
+ 
+      <!--内容显示 Begin-->
+        
+     <div class="col_main">
+        <div style="padding-top: 30px; padding-left: 10px; ">
+           系统组件采集
+		    <!--
+<select name="tagid" id="tagid"  style="width:120px">
+<option value="1">图文</option>
+<option value="2">图集</option>
+<option value="4">文字</option> 
+<option value="5">图表</option>
+<option value="15">黑白</option>
+<option value="16">红色</option>
+<option value="17">怀旧</option>
+<option value="18">现代</option>
+<option value="19">扁平化</option>
+<option value="120">黄色</option>
+<option value="121">绿色</option>
+<option value="122">紫色</option>
+<option value="123">黑色</option>
+<option value="124">白色</option>
+<option value="125">其他</option>
+<option value="260">English</option>
+<option value="262">Android</option>
+<option value="6">报名表</option>
+<option value="8">留言</option>
+<option value="9">联系</option>
+</select>
+-->
+            <span  >
+            
+            
+             <input type="submit"  value="开始采集" id='cjsys' class="btn green " style=" margin-top:-8px"/> 
+      
+            
+            
+            </span>
+            <br /> (数据量较大，大概需要5~10分钟，请调整好php的超时时间，否则超时采集失败)
+        </div>
+
+         
+         <hr /  >
+         <div style="padding-top: 30px; padding-left: 10px; " id='fnid'>
+         
+ 
+ 系统素材：
+ <select name="Type" id="Type" style="width:120px ">
+<option value=" ">选择类型</option>
+<option value="1">图片</option> 
+<option value="7">形状</option>
+</select> -
+ <select name="dtagid" id="dtagid" style="width:120px"></select>
+ -
+<select name="tagid" id="tagid2" style="width:120px"> </select>		
+            <button type="submit"  id='sccj'  class="btn blue"  style=" margin-top:-8px"> 开始采集   <i class="icon-hand-right"></i></button>
+  
+
+             
+         </from>
+         </div>
+       
+         
+          <hr />  
+         
+     <div style="padding-top:20px;padding-left: 360px;" id='fnid'>  
+     系统音效：<a href="adminc.php?c=Cjsys&a=yxcj" class="btn blue" >同步音效</a>
+     </div>
+     
+       <hr />  
+     
+        <ul id="cjzt">
+        </ul>
+        </div>
+ 
+    </div>
+           
+</div>
+            </div>
+        </div>
+    </div> </div>
+    
+      <include file="Public:foot"/>  
+    
+
+<script type="text/javascript">
+    $(document).ready(function(){
+    $("#cjsys").click(function(){
+    var tagid = $('#tagid').val();   
+        if(tagid != '') {
+        $('#cjsys').val('正在拼命下载中...');
+        $.post("/adminc.php?c=Cjsys&a=cjsys",{tagid:tagid}, function(data){
+         $('#cjzt').after(data);
+         $("#cjsys").val('开始采集');
+        })
+        }
+	 });
+     $("#sccj").click(function(){
+     $('#cjzt').after();
+     var Type = $('#Type').val(); 
+     var dtagid = $('#dtagid').val();   
+     var tagid2 = $('#tagid2').val(); 
+    $('#sccj').val('正在拼命下载中...');
+    $.post("/adminc.php?c=Cjsys&a=sccj",{filetype:Type,biztype:dtagid,tagid:tagid2}, function(data){
+    $('#cjzt').after(data);
+    $("#sccj").val('开始采集');
+    })
+    
+     });
+	});
+</script>
+  <script type="text/javascript">
+     $("#Type").change(function(){
+   	var id = $('#Type').val(); 
+     $("#dtagid").empty();
+   	if(id ==0){var type='bgType'}
+   	if(id ==1){var type='tpType'}
+   	if(id ==7){var type='sqType'}
+    if(type != ''){
+   $.ajax({
+   	url:"/adminc.php?c=upfile&a=systag",
+   	type:"get",
+   	data:{type:type},
+     dataType: 'json',
+    async : true,
+	success:function(data){
+		$.each(data.list, function(value,name){
+        var html="<option value="+name.value+">"+name.name+"</option>";
+        $('#dtagid').append(html); 
+		})
+   } 	
+   });}
+$("#dtagid").change(function(){
+    var biztype = $("#dtagid").val();
+    $("#tagid2").empty();
+    if(biztype != ''){
+   $.ajax({
+   	url:"/adminc.php?c=upfile&a=systag&type=11",
+   	type:"get",
+   	data:{bizType:biztype},
+     dataType: 'json',
+    async : true,
+	success:function(data){
+		$.each(data.list, function(value,name){
+        var html="<option value="+name.id+">"+name.name+"</option>";
+     $('#tagid2').append(html); 
+        
+		})
+   }	
+   });
+    }
+    });
+   });
+  </script>
+  
+  

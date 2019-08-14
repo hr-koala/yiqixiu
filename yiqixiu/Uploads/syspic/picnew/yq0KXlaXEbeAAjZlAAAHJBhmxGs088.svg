@@ -1,0 +1,20 @@
+<svg width="120px" height="90px" viewBox="0 0 120 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
+    <title>briefcase icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Pricing-page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g sketch:type="MSArtboardGroup" transform="translate(-569.000000, -424.000000)" id="Plan-Pro">
+            <g sketch:type="MSLayerGroup" transform="translate(490.000000, 325.000000)">
+                <g id="briefcase-icon" transform="translate(79.000000, 99.000000)" sketch:type="MSShapeGroup">
+                    <rect id="Rectangle-3" fill-opacity="0" fill="#FFFFFF" x="0" y="0" width="120" height="90"></rect>
+                    <path d="M15,79 L15,21 L105,21 L105,79 C105,81.761 102.762,84 100,84 L20,84 C17.239,84 15,81.761 15,79" id="Fill-1" fill="#89776A"></path>
+                    <path d="M105,21 L15,21 L15,56.428 L55.5,62.942 L64.5,62.942 L105,56.428 L105,21" id="Fill-2" fill="#736357"></path>
+                    <path d="M106.662,16 L13.338,16 L11.019,46.789 C10.822,49.403 12.678,51.726 15.271,52.11 L55,58 L65,58 L104.729,52.11 C107.322,51.726 109.178,49.403 108.981,46.789 L106.662,16" id="Fill-3" fill="#998675"></path>
+                    <path d="M60,71 L60,71 C57.239,71 55,68.761 55,66 L55,58 L65,58 L65,66 C65,68.761 62.761,71 60,71" id="Fill-4" fill="#DEE0E2"></path>
+                    <path d="M41,7 L41,16 L48,16 L48,8 L72,8 L72,16 L79,16 L79,7 C79,3.686 76.314,1 73,1 L47,1 C43.686,1 41,3.686 41,7" id="Fill-5" fill="#565D64"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

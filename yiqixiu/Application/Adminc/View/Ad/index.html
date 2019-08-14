@@ -1,0 +1,184 @@
+ 
+<include file="Public:head"/>
+<div class="container-fluid">
+
+				<!-- BEGIN PAGE HEADER-->   
+
+  <div class="row-fluid">
+
+					<div class="span12 blog-page">
+
+						<!-- BEGIN STYLE CUSTOMIZER --><!-- END BEGIN STYLE CUSTOMIZER -->  
+
+						<h3 class="page-title">
+
+							广告管理
+
+							 <small>Advertising management</small>
+
+					  </h3>
+
+						<ul class="breadcrumb">
+
+							<li>
+
+								<i class="icon-home"></i>
+
+								<a href="index.html">管理首页</a> 
+
+								<span class="icon-angle-right"></span>
+
+							</li>
+
+							<li>
+
+								<a href="#">公告管理</a>
+
+								<span class="icon-angle-right"></span>
+
+							</li>
+
+							<li><a href="#">公告列表</a></li>
+
+						</ul>
+
+	</div>
+
+				</div>
+
+				<!-- END PAGE HEADER-->
+                
+           
+               <div class="tabbable tabbable-custom tabbable-full-width">
+							<ul class="nav nav-tabs">
+			     <li class="{$ui.Ad_msgList}"> <a href="{:U('Ad/msgList')}"> 公告管理</a> </li>
+		          <li class="{$ui.Ad_index}"> <a href="{:U('Ad/index')}"> 广告管理</a> </li>
+							</ul>
+                        
+                </div>
+				
+               <a class="btn green" href='?c=ad&a=add' style='margin-bottom: 20px;'> 填加广告</a>
+         
+            </p>
+	
+
+<script type="text/javascript">
+    function setCommonClick() {        
+       document.getElementById('ctl00_ContentPlaceHolder1_gvPager_hidIsCommonClick').value = "1";
+    }
+</script>
+
+<script type="text/javascript" language="javascript">
+    function getChecked() {
+    var ids = new Array();
+    $.each($('table input:checked'), function(i, n){
+        ids.push( $(n).val() );
+    });
+    return ids;
+}
+
+function checkon(o){
+    if( o.checked == true ){
+        $(o).parents('tr').addClass('bg_on') ;
+    }else{
+        $(o).parents('tr').removeClass('bg_on') ;
+    }
+}
+
+function checkAll(o){
+    if( o.checked == true ){
+        $('input[name="checkbox"]').attr('checked','true');
+        $('tr[overstyle="on"]').addClass("bg_on");
+    }else{
+        $('input[name="checkbox"]').removeAttr('checked');
+        $('tr[overstyle="on"]').removeClass("bg_on");
+    }
+}
+ //搜索用户
+     $(document).ready(function(){
+        $("button").click(function(){
+		var fn = $("#filetype_int:input").val();
+        var top = $("#filetype_int2:input").val();
+        $.get("adminc.php?c=file", {fnid:fn, top:top},function(data){});
+ });   
+ });
+
+</script>
+ 
+         <div class="row-fluid"
+        <div style="padding-top: 10px; padding-left: 10px; padding-right: 10px;">
+        </div>
+        <div style="padding: 1px;">
+            <div id="ctl00_ContentPlaceHolder1_UpdatePanel1">
+	<div class="portlet-body" style=" margin-top:15px;">
+														<table class="table table-striped table-bordered table-advance table-hover">
+															<thead>
+																<tr>
+                            <th scope="col" width="3%"><i class="icon-briefcase"></i>ID</th>
+                              <th align="center" scope="col" abbr="lbtnOperate"><i class="icon-bookmark"></i>操作</th>
+                               <th scope="col" width="20%">名称</th>
+                              <th scope="col" width="15%"><i class="icon-question-sign"></i>类型</th>
+                            
+                            <th scope="col" width="15%"><i class="icon-bookmark"></i>缩略图</th>
+                            
+                            <th scope="col" width="15%"><i class="icon-bookmark"></i>添加时间</th>
+                        </tr>
+
+															</thead>
+
+															<tbody>
+                              <foreach name='select' item='item' >
+                                <tr>
+                                    <td align="center"> {$item.id} </td>
+                                    <td align="center" style="width:20px;"> <a href="?c=ad&a=edit&id={$item.id}"class="btn blue"><i class=" icon-edit"> </i>编辑 </a>  <a href="javascript:;" onClick="javascript:if(confirm('你确信要删除[{$item.name}]吗？')) window.location='?c=ad&a=del&id={$item.id}<eq name="flag" value="useranli">&flag=useranli</eq>'"class="btn"><i class="icon-remove icon-white"></i> 删除</a>
+                                      </if>
+                                    </div></td>
+                                   <td>{$item.name} </td>
+                                    <td> 
+                                  	<switch name="item.type">    
+                                  		<case value="2">首页大图</case> 
+                                        <case value="1">首页logo</case>  
+                                    <case value="3">场景浏览背景</case>                                
+                                    
+                                  		<default />其它图</switch>
+                                  	
+                                  	 </td>
+                             
+                                    <td>
+                                    <eq name="item.filetype_int" value="2"> <audio src="/Uploads/{$item.url}" controls="controls"></audio> <else/>  <img src="/Uploads/{$item.url}" class="thbnail"></eq>
+                                   
+                                    </td>
+                                    
+                                    <td >{$item.date|date='Y-m-d H:i:s',###} </td>
+                                </tr>
+                                  </foreach>
+                                <tr>
+                                <td colspan="12">  </td>  </tr>
+                    </table><div class="pages">{$page}</div>               
+</div>
+        </div>
+    </div>
+<div id="divIsSetHeight" style="display: none;">
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+    $("#fnid").bind("change",function(){
+	 var url = $("#fnid").val();
+     $.get("/adminc.php?c=ad",{fnid:url},function(){   
+   
+  });
+ 
+         });
+	 });
+</script>
+
+
+ </div>
+        </form>
+        
+    </div> </div> </div> </div>
+ 
+
+
+  <include file="Public:foot"/>

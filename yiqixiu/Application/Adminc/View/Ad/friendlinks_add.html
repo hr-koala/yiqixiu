@@ -1,0 +1,152 @@
+  <include file="Public:head" />
+
+  
+			<!-- BEGIN PAGE CONTAINER-->
+			<div class="container-fluid">
+				<!-- BEGIN PAGE HEADER-->   
+				<div class="row-fluid">
+					<div class="span12">
+						<!-- BEGIN STYLE CUSTOMIZER -->
+						<!-- END BEGIN STYLE CUSTOMIZER -->   
+						<h3 class="page-title">
+	<eq name="ui['ad_add']" value="active">首页广告管理<small>   Template editing system</small><else/>友情链接管理 <small>   Edit user case</small></eq> 
+						</h3>
+						<ul class="breadcrumb">
+							<li>
+								<i class="icon-home"></i>
+
+								<a href="index.html">首页</a> 
+
+								<span class="icon-angle-right"></span>
+
+							</li>
+                            
+                            
+  <eq name="ui['ad_add']" value="active">
+   <li class=""> 
+<a href="{:U('ad/banner')}"> 首页广告管理</a> 
+	<span class="icon-angle-right"></span>
+            </li>
+                <li> 
+                <a href=""> 首页广告编辑 </a> </li>
+<else/>
+  <li class=""> 
+<a href=""> 友情链接管理</a> 
+	<span class="icon-angle-right"></span>
+            </li>
+                <li > 
+                <a href=""> 友情链接编辑 </a> </li>
+</eq>         
+                            
+
+
+						</ul>
+
+					</div>
+
+				</div>
+
+				<!-- END PAGE HEADER-->
+
+				<!-- BEGIN PAGE CONTENT-->
+
+				<div class="row-fluid">
+
+					<div class="span12">
+
+						<!-- BEGIN SAMPLE FORM PORTLET-->   
+
+		  <div class="tabbable tabbable-custom tabbable-full-width">
+							<ul class="nav nav-tabs">
+                            
+   
+<eq name="ui.ad_add" value="active">
+   <li class=""> 
+<a href="{:U('ad/index')}"> 首页广告列表</a> 
+            </li>
+                <li class="active"> 
+                <a href=""> 首页广告编辑 </a> </li>
+<else/>
+  <li class=""> 
+<a href="{:U('ad/friendlinks')}"> 友情链接列表</a> 
+            </li>
+                <li class="active"> 
+                <a href=""> 友情链接编辑 </a> </li>
+</eq>  
+                            
+                            
+                     
+							</ul>
+                            <hr>
+                </div>
+							
+                            
+                            
+        <div class="portlet-body form">
+       <form action="" method="post" enctype="multipart/form-data" onSubmit="return checkForm()">
+        <div style="text-align: left; padding: 20px; text-align: left;">
+            <hr style="width: 50%; size: 1px; border: none;" />
+            <table style="vertical-align: top;">
+              
+                  
+ <tr><td style="width: 98px;">网站名称：</td>
+                    <td colspan="2"><span class="frm_input_box">
+                            <input name="ad[name]" type="text"  id="title"  class="frm_input"  value="{$ad.name}" /></span></td></tr>  
+                  
+                <tr> <td> 网站LOGO：</td>
+                    <td>
+                      <div class="control-group">
+										<div class="controls">
+											<div class="fileupload fileupload-new" data-provides="fileupload">
+												<div class="fileupload-new thumbnail" >
+<img src="/Uploads/{$ad.logo|default="jia_thum.jpg"}   " alt="" style="max-height: 160px; line-height: 20px;"></div>
+<div class="fileupload-preview fileupload-exists thumbnail" style="max-height: 220px; line-height: 20px;"></div>
+<div><span class="btn btn-file"><span class="fileupload-new">上传图片</span>
+													<span class="fileupload-exists">改变</span>
+                                                    <input type='file'  name='photo2' class="default"> 
+												</span>
+													<a href="#" class="btn fileupload-exists" data-dismiss="fileupload">删除</a>
+											  </div></div></div></td></tr>
+                 <tr><td style="width: 98px;">链接地址：</td>
+                    <td colspan="2"><span class="frm_input_box">
+                            <input name="ad[url]" type="text"    class="frm_input"  value="{$ad.url}" />
+
+                            </span></td></tr> 
+                
+                 <tr><td style="width: 98px;">网站简介：</td>
+                    <td colspan="2"><span class="frm_input_box">
+                            <textarea name="ad[link]" cols="45" rows="5">{$ad.link}</textarea>
+                            </span></td></tr> 
+                <tr>
+                   <td style="width: 98px;">
+                    </td>
+                    <td colspan="2">
+                                      <div class="with_form span10"  style="margin:10px 0 80px">
+                             <input type="hidden"  name="pageCode" value="{$ad.home}" />  
+                             <input type="hidden"  name="id" value="{$ad.id}" />           
+          <button class="btn blue btn-block" id="Span1" type="submit" >保存 <i class="m-icon-swapright m-icon-white"></i></button>
+            </div>
+        
+        
+        
+        
+                    </td>
+                </tr>
+            </table>
+      
+        </form>
+        
+    </div> </div></div></div>
+    <!--内容显示 End-->
+
+  <script type="text/javascript">
+   function checkForm(){
+	   if($('#title').val()==''){
+		   alert('文件名不能为空');
+		 return false;  
+		 }
+		 return true;
+	}
+  </script>
+ 
+<include file="Public:foot" />

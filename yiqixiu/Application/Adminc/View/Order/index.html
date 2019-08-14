@@ -1,0 +1,157 @@
+<include file="Public:head"/>
+<div class="container-fluid">
+				<!-- BEGIN PAGE HEADER-->
+				<div class="row-fluid">
+					<div class="span12">
+						<!-- BEGIN PAGE TITLE & BREADCRUMB-->
+						<h3 class="page-title">订单列表管理 <small>    OrderInfo management</small></h3>
+
+						<ul class="breadcrumb">
+							<li><i class="icon-home"></i><a href="index.html">首页</a> 
+								<i class="icon-angle-right"></i></li>
+                            <li><a href="#"></i><a href="/adminc.php?c=order">订单列表管理</a><i class="icon-angle-right"></i></li>
+
+						</ul>
+							</ul>
+						<!-- END PAGE TITLE & BREADCRUMB-->
+					</div>
+				</div>
+				<!-- END PAGE HEADER-->
+
+ 
+        </div>
+        <div class="portlet-body" style=" margin-top:-50px;">
+
+<script type="text/javascript">
+    function sureDelete() {        
+        return confirm("您确认要删除吗?");
+    }
+</script>
+
+<script type="text/javascript">
+    function setCommonClick() {        
+       document.getElementById('ctl00_ContentPlaceHolder1_gvPager_hidIsCommonClick').value = "1";
+    }
+</script>
+
+<script type="text/javascript" language="javascript">
+    function getChecked() {
+    var ids = new Array();
+    $.each($('table input:checked'), function(i, n){
+        ids.push( $(n).val() );
+    });
+    return ids;
+}
+
+function checkon(o){
+    if( o.checked == true ){
+        $(o).parents('tr').addClass('bg_on') ;
+    }else{
+        $(o).parents('tr').removeClass('bg_on') ;
+    }
+}
+
+function checkAll(o){
+    if( o.checked == true ){
+        $('input[name="checkbox"]').attr('checked','true');
+        $('tr[overstyle="on"]').addClass("bg_on");
+    }else{
+        $('input[name="checkbox"]').removeAttr('checked');
+        $('tr[overstyle="on"]').removeClass("bg_on");
+    }
+}
+ 
+ 
+</script>
+ 
+<div class="row-fluid"
+        <div style="padding-top: 10px; padding-left: 10px; padding-right: 10px;">
+        </div>
+        <div style="padding:20px;">
+            <div id="ctl00_ContentPlaceHolder1_UpdatePanel1">
+	<div class="portlet-body" style=" margin-top:15px;">
+														<table class="table table-striped table-bordered table-advance table-hover">
+															<thead>
+																<tr>
+				<th align="left" scope="col" style="width:40px;"><i class="icon-bookmark"></i>ID</th>
+                <th align="center" scope="col" abbr="lbtnOperate"  ><i class="icon-bookmark"></i> 操作</th>
+         
+                <th align="left" scope="col"><i class="icon-bookmark"></i>订单号</th>
+                <th align="left" scope="col"><i class="icon-yen"></i>金额</th>
+                  <th align="left" scope="col"> 用户名</th>
+                   <th align="left" scope="col"> 商品</th>
+                   <th align="left" scope="col"> 订单状态</th>
+                <th align="left" scope="col"><i class="icon-bookmark"></i> 创建时间</th>
+			</tr>
+
+															</thead>
+
+															<tbody>
+            <foreach name='select' item='item' >
+            <tr>
+				<td >
+                  {$item.id}
+                </td>
+                <td align="center" ><!--<a  href="?c=order&a=e&id={$item.id}" ><i class="btn black"><i class="icon-edit icon-white"></i></i></a>--> <a  href="javascript:;" onClick="javascript:if(confirm('你确信要删除[{$item.title}]吗？')) window.location='?c=order&a=del&id={$item.id}&type={$type}'"><i class="btn black"><i class="icon-remove icon-white"></i></i></a>
+                
+                </td>
+                <td>  {$item.order_sn}</td>
+                <td>{$item.order_amount} </td>
+                 <td>{$item.user_name} </td>
+                  <td>{$item.goods_name} </td>
+                  <td>  {$item.order_status|getOrderStatus=$item[pay_status],###}</td>
+                <td> <if condition="$item['add_time'] gt 0">{$item.add_time|date="Y-m-d H:i",###}</if></td>
+               
+               </td>
+			</tr> 
+          </foreach>
+            
+		</table>
+	</div>
+
+
+    
+            <table cellpadding="1" cellspacing="0" width="100%">
+                <tr>
+                  <td align="center">
+                     <div class="row-fluid">
+<div class="span12">
+<div class="pagination pull-right">
+<div class="pages">
+                        {$page}
+                </div>
+</div>
+</div>
+</div>
+                  </td>
+                </tr>
+            </table>
+        
+
+<div id="divIsSetHeight" style="display: none;">
+ 
+</div>
+
+<script type="text/javascript">
+    // <![CDATA[
+    //    function ShowVisibleColumnWindow() {
+    //        pcVisibleColumn.Show();
+    //    }
+    // ]]> 
+</script>
+
+ 
+
+
+                    
+</div>
+            </div>
+</div>
+    </div>
+
+ 
+		<!-- END PAGE CONTENT-->
+
+			</div>
+            
+            <include file="Public:foot"/>

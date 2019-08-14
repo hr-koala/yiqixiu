@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="64px"
+	 height="64px" viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
+<g id="Layer_1">
+	<g>
+		<circle style="fill:#77B3D4;" cx="31.833" cy="32" r="32"/>
+	</g>
+	<g style="opacity:0.2;">
+		<path style="fill:#231F20;" d="M52,48c0,1.105-0.895,2-2,2H14c-1.105,0-2-0.895-2-2l0,0c0-1.105,0.895-2,2-2h36
+			C51.105,46,52,46.895,52,48L52,48z"/>
+	</g>
+	<g>
+		<path style="fill:#E0995E;" d="M52,46c0,1.105-0.895,2-2,2H14c-1.105,0-2-0.895-2-2l0,0c0-1.105,0.895-2,2-2h36
+			C51.105,44,52,44.895,52,46L52,46z"/>
+	</g>
+	<g>
+		<path style="fill:#C75C5C;" d="M23,20h-4c-1.657,0-3,1.343-3,3v17v1v3h3h4h3v-3v-1V23C26,21.343,24.657,20,23,20z"/>
+	</g>
+	<g>
+		<path style="fill:#E0E0D1;" d="M45,16h-4c-1.657,0-3,1.343-3,3v21v1v3h3h4h3v-3v-1V19C48,17.343,46.657,16,45,16z"/>
+	</g>
+	<g>
+		<rect x="16" y="24" style="fill:#E0995E;" width="10" height="3"/>
+	</g>
+	<g>
+		<rect x="16" y="37" style="fill:#E0995E;" width="10" height="3"/>
+	</g>
+	<g>
+		<rect x="38" y="37" style="fill:#FFFFFF;" width="10" height="3"/>
+	</g>
+	<g>
+		<rect x="38" y="20" style="fill:#FFFFFF;" width="10" height="3"/>
+	</g>
+	<g>
+		<g style="opacity:0.2;">
+			<path style="fill:#231F20;" d="M40,40V16.184c-1.163,0.413-2,1.512-2,2.816v21v1v3h2v-3V40z"/>
+		</g>
+		<g style="opacity:0.2;">
+			<path style="fill:#231F20;" d="M26,40V23c0-1.304-0.837-2.403-2-2.816V40v1v3h2v-3V40z"/>
+		</g>
+	</g>
+	<g>
+		<path style="fill:#4F5D73;" d="M35,12h-6c-1.657,0-3,1.343-3,3v25v1v3h3h6h3v-3v-1V15C38,13.343,36.657,12,35,12z"/>
+	</g>
+	<g>
+		<rect x="26" y="16" style="fill:#76C2AF;" width="12" height="3"/>
+	</g>
+	<g>
+		<rect x="26" y="37" style="fill:#76C2AF;" width="12" height="3"/>
+	</g>
+</g>
+<g id="Layer_2">
+</g>
+</svg>

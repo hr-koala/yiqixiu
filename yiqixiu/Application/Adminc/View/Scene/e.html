@@ -1,0 +1,260 @@
+<block name="include"><include file="Public:head" /></block>
+			<!-- BEGIN PAGE CONTAINER-->
+
+			<div class="container-fluid">
+
+				<!-- BEGIN PAGE HEADER-->   
+
+				<div class="row-fluid">
+
+					<div class="span12">
+
+						<!-- BEGIN STYLE CUSTOMIZER -->
+						<!-- END BEGIN STYLE CUSTOMIZER -->   
+
+						<h3 class="page-title">
+
+							 <eq name="user[userid_int]" value="0"> 系统模板编辑模板<small>   Template editing system</small><else/>用户案例编辑 <small>   Edit user case</small></eq> 
+
+
+						</h3>
+
+						<ul class="breadcrumb">
+
+							<li>
+
+								<i class="icon-home"></i>
+
+								<a href="index.html">首页</a> 
+
+								<span class="icon-angle-right"></span>
+
+							</li>
+
+							<li>
+
+								<a href="#">场景管理</a>
+
+								<span class="icon-angle-right"></span>
+
+							</li>
+
+							<li><a href="#"> <eq name="user[userid_int]" value="0"> 系统模板编辑<else/>用户案例编辑 </eq> </a></li>
+
+						</ul>
+
+					</div>
+
+				</div>
+
+				<!-- END PAGE HEADER-->
+
+				<!-- BEGIN PAGE CONTENT-->
+
+				<div class="row-fluid">
+
+					<div class="span12">
+
+						<!-- BEGIN SAMPLE FORM PORTLET-->   
+
+		  <div class="tabbable tabbable-custom tabbable-full-width">
+							<ul class="nav nav-tabs">
+                               <li class=""> 
+<eq name="user[is_tpl]" value="1">  <a href="{:U('scene/index')}"> 系统模板列表</a> <else/> <a href="{:U('/Scene/index/flag/useranli')}"> 用户案例列表</a> </eq> 
+            </li>
+                <li class="<eq name="user[userid_int]" value="0"> active<else/>active </eq> "> 
+                <a href=""> <eq name="user[userid_int]" value="0"> 系统模板编辑<else/>用户案例编辑 </eq> </a> </li>
+							</ul>
+                            <hr>
+                </div>
+							
+                            
+                            
+                            <div class="portlet-body form">
+
+								<!-- BEGIN FORM-->
+   <input name="ctl00$ContentPlaceHolder1$txt" type="hidden" id="ctl00_ContentPlaceHolder1_txt" />
+                
+                <form action="" class="form-horizontal" method="post">
+
+									<div class="control-group">
+
+										<label class="control-label"></label>
+
+										<div class="controls">
+
+							<img src="/Uploads/{$user.thumbnail_varchar|default="defaultuser.jpg"}" width="180" height="180" />
+                            <img src="http://qr.liantu.com/api.php?w=180&m=10&text={$_SERVER['HTTP_HOST']}/v-{$user.scenecode_varchar}" style="border: 1px solid #CCC;"/>
+										</div>
+
+									</div>
+                            
+
+							<div class="portlet-body form">
+
+								<!-- BEGIN FORM-->
+
+								
+
+									<div class="control-group">
+										<label class="control-label"><eq name="user[userid_int]" value="0"> 模板名<else/> 案例名称</eq></label>
+										<div class="controls">
+<input name="user[scenename_varchar]" type="text"   class="m-wrapt" value="{$user.scenename_varchar}" style="width:360px"/>
+	
+
+											<span class="help-inline"></span>
+
+										</div>
+
+									</div>
+                                    
+      
+                                    
+                                    
+                                    
+                              <div class="control-group">
+
+													<label class="control-label">翻页方式</label>
+
+													<div class="controls">
+<select name="user[movietype_int]" style="width:180px">
+<option value="">选择</option>
+  <foreach name='movietypelist' item='item' key='key'>
+  <option value="{$key}" <eq name="key" value="$user['movietype_int']">selected</eq>>{$item}</option>
+     </foreach>   
+ 
+ </select>   
+													</div>
+												</div>              
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                <div class="control-group">
+													<label class="control-label">类型</label>
+
+													<div class="controls">
+ 
+ 
+ <select name="user[scenetype_int]" id="scenetypeB" onChange="changeSceneType()" style="width:120px" >
+                        <foreach name='scene_type_list' item='item' >
+	    <option value="{$item.value}" <eq name="item[value]" value="$user['scenetype_int']"> selected="selected" </eq>>{$item.title}</option>
+          </foreach>                     
+                       
+                       </select>- 
+                       <select name="user[tagid_int]" id="scenetypeS" style="width:120px" >
+                        <foreach name='scene_type_list2' item='item' >
+	    <option value="{$item.tagid_int}" <eq name="item[tagid_int]" value="$user['tagid_int']"> selected="selected" </eq>>{$item.name_varchar}</option> 
+          </foreach>     
+                       </select>
+      
+													</div>
+												</div>     
+                                    
+                                    
+                                    
+<eq name="user[is_tpl]" value="1"> 
+	<div class="control-group">
+										<label class="control-label">消耗秀点</label>
+										<div class="controls">
+											 
+                                            
+                                   <input name="user[price]" type="text"   class="m-wrapt" style="width: 200px;" value="{$user.price}" /> 
+											 
+										</div>
+								  </div>
+ <else/>
+	  <php>if(C('SYS_LINK')):</php>
+           <div class="control-group">
+										<label class="control-label">打开次数</label>
+										<div class="controls">
+											 
+                                            
+                                   <input name="user[vi_hittimes_set]" type="text"   class="m-wrapt" style="width: 200px;" value="{$user.vi_hittimes_set}" /> 
+											 
+										</div>
+								  </div>
+     			 <div class="control-group">
+										<label class="control-label">超时设置</label>
+										<div class="controls">
+											 
+                                            
+                                    是否开启 <input type="checkbox" value="1" name="user[vi_timeout][enable]" <php>if($user[vi_timeout][enable]==1):</php>checked="checked" <php>endif;</php>>  <br /> 
+                             限制场景打开的时间<input name="user[vi_timeout][time]" type="text"    style="width: 100px;" value="{$user.vi_timeout.time}" /> （单位分钟）
+											 
+										</div>
+								  </div>
+                
+                <php>endif;</php>			
+                
+             </eq>      				
+								
+			<div class="control-group" id="ctl00_ContentPlaceHolder1_rdiIsEnable_help">
+
+					<label class="control-label">启用状态</label>
+
+			<div class="controls">
+<label class="radio"> <input id="ctl00_ContentPlaceHolder1_rdiIsEnable_help_1" type="radio"   name="user[delete_int]" value="0" <eq name="user['delete_int']" value="0">checked="checked" </eq>/>启用</label>
+
+<label class="radio"> <input id="ctl00_ContentPlaceHolder1_rdiIsEnable_help_0" type="radio" name="user[delete_int]" value="1" <eq name="user['delete_int']" value="1">checked="checked" </eq>/>禁用</label>  
+
+
+													</div>
+
+												</div>
+
+								
+
+							
+
+								
+
+									<div class="form-actions">
+    <input type="hidden"  name="id" value="{$user.sceneid_bigint}" />
+										<button type="submit" class="btn blue">确定提交</button>
+
+										<button type="button" class="btn">放弃</button>                            
+
+									</div>
+
+								</form>
+
+								<!-- END FORM-->       
+
+							</div>
+
+						</div>
+
+						<!-- END SAMPLE FORM PORTLET-->
+
+					</div>
+
+				</div>
+
+		
+
+						<!-- END EXTRAS PORTLET-->
+
+					</div>
+
+			<!-- END PAGE CONTENT--><!-- END PAGE CONTAINER-->
+<include file="Public:foot" />                        
+<script type="text/javascript">
+$("#dtagid").change(function(){ 
+//  var url = $("#text").val();
+ var biztype = $("#dtagid").val();
+ $("#tagid").empty();
+ $.get("adminc.php?c=Scene&a=Type",{biztype:biztype}, function(data){
+if(data != null){
+   $("#tagid ").append(data);
+    }else{$('#tagid').after();
+        }
+   });
+    }); 
+</script>    
+	<!-- END CONTAINER -->
+

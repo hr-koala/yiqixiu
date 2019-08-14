@@ -1,0 +1,100 @@
+<include file="Public:head"/>
+<div class="container-fluid">
+				<!-- BEGIN PAGE HEADER-->
+				<div class="row-fluid">
+					<div class="span12">
+						<!-- BEGIN PAGE TITLE & BREADCRUMB-->
+						<h3 class="page-title">商品管理 <small>    发布新商品</small></h3>
+
+							<ul class="breadcrumb">
+							<li><i class="icon-home"></i><a href="index.html">首页</a> 
+								<i class="icon-angle-right"></i></li>
+                            <li><a href="#"></i><a href="adminc.php?c=goods">商品列表管理</a><i class="icon-angle-right"></i></li>
+							<li><a href="#">添加商品</a></li>
+						</ul>
+						<!-- END PAGE TITLE & BREADCRUMB-->
+					</div>
+				</div>
+
+				<!-- END PAGE HEADER-->
+    
+     <!--内容显示 Begin-->
+    <div class="col_main">
+        <input name="ctl00$ContentPlaceHolder1$txt" type="hidden" id="ctl00_ContentPlaceHolder1_txt" />
+        <div class="main_hd">
+            <div class="title_tab" id="topTab">
+                <ul class="tab_navs mt title_tab">
+                </ul>
+            </div>
+             <p class="extra_info">
+              
+            </p>
+        </div>
+        
+        
+        
+       <form action="" method="post" enctype="multipart/form-data"  >
+        <div style="text-align: left; padding: 1px; text-align: left;">
+            <hr style="width: 50%; size: 1px; border: none;" />
+            <table style="vertical-align: top;"> 
+           
+<tr style="height: 50px;">
+ <td><strong class="btn green-stripe">商品标题</strong></td>
+ <td>
+<span class="frm_input_box">
+<input name="user[goods_name]" type="text"  id="goods_name"   class="frm_input" style="width: 200px;" value="{$user.goods_name}" /></span>
+                    </td>
+</tr>
+ 
+  <tr>
+  <td> <strong class="btn purple-stripe">秀点值</strong></td>
+                    <td> <span class="frm_input_box">
+<input name="user[xd_value]" type="text" id="xd_value"  class="frm_input" style="width: 200px;" value="{$user.xd_value}" /></span><span>&nbsp;&nbsp;20、50、100个</span>
+  </td>
+              </tr>
+ <tr style="height: 50px;">
+ <td><strong class="btn green-stripe">价格</strong></td>
+ <td>
+<span class="frm_input_box">
+<input name="user[price]" type="text"  id="price"  class="frm_input" style="width: 200px;" value="{$user.price}" /></span>
+                    </td>
+</tr>
+            </table>
+          <div class="form-actions">
+                <span id="Span1" class="btn btn_primary btn_input">
+                 <input type="hidden"  name="id" value="{$user.id}" />
+                   <button type="submit" class="btn blue"><i class="icon-ok"></i> 保存</button>
+            </div>
+        </div>
+        </form>
+        
+    </div>
+  <script type="text/javascript">
+   function checkForm(){
+	   if($('#goods_name').val()==''){
+		   alert('商品名不能为空');
+		 return false;  
+		 }
+		  if($('#xd_value').val()==''){
+		   alert('秀点值不能为空');
+		 return false;  
+		 }
+		  if($('#price').val()==''){
+		   alert('价格不能为空');
+		 return false;  
+		 }
+		 return true;
+	}
+   $(document).ready(function(){
+   
+ 
+   });
+  </script>
+</div>
+        </form> 
+
+
+  <include file="Public:foot"/>
+
+
+ 

@@ -1,0 +1,27 @@
+<svg width="97px" height="86px" viewBox="0 0 97 86" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
+    <title>diamond sparkles icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Pricing-page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g sketch:type="MSArtboardGroup" transform="translate(-912.000000, -423.000000)" id="Plan-Unlimited">
+            <g sketch:type="MSLayerGroup" transform="translate(810.000000, 325.000000)">
+                <g id="diamond-sparkles-icon" transform="translate(102.000000, 98.000000)" sketch:type="MSShapeGroup">
+                    <rect id="Rectangle-3" fill-opacity="0" fill="#FFFFFF" x="0" y="0" width="120" height="90"></rect>
+                    <path d="M80.682,0 L16.55,0 L0.517,25 L48.616,85.936 L96.715,25 L80.682,0" id="Fill-1" fill="#E1F3F7"></path>
+                    <path d="M32.5,25 L16.55,0 L0.517,25 L32.5,25" id="Fill-2" fill="#A3BECD"></path>
+                    <path d="M16.55,0 L32.5,25 L48.616,0 L16.55,0" id="Fill-3" fill="#E1F3F7"></path>
+                    <path d="M64.731,25 L48.616,0 L32.5,25 L64.731,25" id="Fill-4" fill="#BED5DC"></path>
+                    <path id="Fill-5" fill="#BED5DC"></path>
+                    <path d="M96.715,25 L80.682,0 L64.731,25 L96.715,25" id="Fill-6" fill="#93B0C6"></path>
+                    <path d="M48.616,0 L64.731,25 L80.682,0 L48.616,0" id="Fill-7" fill="#E1F3F7"></path>
+                    <path d="M0.517,25 L48.616,85.936 L36.275,25 L0.517,25" id="Fill-8" fill="#BED5DC"></path>
+                    <path d="M96.715,25 L59.662,25 L48.616,85.936 L96.715,25" id="Fill-9" fill="#7093B4"></path>
+                    <path d="M48.616,85.936 L64.731,25 L32.5,25 L48.616,85.936" id="Fill-10" fill="#93B0C6"></path>
+                    <path d="M95.88,69 C84.048,70.683 82.683,72.048 81,83.881 C79.317,72.048 77.952,70.683 66.119,69 C77.952,67.317 79.317,65.952 81,54.119 C82.683,65.952 84.048,67.317 95.88,69" id="Fill-11" fill="#BED5DC"></path>
+                    <path d="M70.277,50.233 C60.365,51.643 59.221,52.786 57.811,62.699 C56.401,52.786 55.259,51.643 45.346,50.233 C55.259,48.823 56.401,47.68 57.811,37.768 C59.221,47.68 60.365,48.823 70.277,50.233" id="Fill-12" fill="#FFFFFF"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

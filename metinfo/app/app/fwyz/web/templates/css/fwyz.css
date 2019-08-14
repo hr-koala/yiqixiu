@@ -1,0 +1,63 @@
+
+                    div.yun_fwyz .yun_section{background:#F2F2F2;}
+                    div.yun_fwyz .colmd h2{ 
+                        margin: 0; line-height: 78px; font-size: 20px; color: #424242; font-weight: normal;     border-bottom: 1px solid #e0e0e0;
+                    }
+                    div.yun_fwyz .colmd h3 {
+                        font-size: 18px; color: #616161; font-weight: normal;
+                    }
+                    div.yun_fwyz .section_z{padding:0px 40px; }
+                    input.yun_input{outline: 0;}
+                    div.yun_fwyz .section_info .yun_input{ 
+                        width: 100px; padding: 10px 5px; border: 1px solid #e0e0e0; font-size: 14px; line-height: 18px; 
+                        background: #fff; -webkit-transition: border-color .2s linear; transition: border-color .2s linear; 
+                        margin: 0; vertical-align: baseline; float: left;  margin-right: 10px; margin-top:15px;
+                    }
+                    div.yun_fwyz .section_info .yun_input:hover{border-color: #b0b0b0;}
+                    div.yun_fwyz .section_info input.yun_input:focus{ border-color: #3498DB;}
+
+                    div.yun_fwyz button{width: 160px; height: 40px; background: #3498DB; border-color: #3498DB;}
+                    div.yun_fwyz button:hover{background-color:#3498DB; border-color: #3498DB;}
+
+                    div.yun_fwyz .section_y{padding:0px 20px;}
+                    div.yun_fwyz .section_y .section_yinfo{padding:10px 0px;}
+                    
+                    @media (min-width: 970px) {
+                        div.yun_fwyz{
+                            max-width:70%; margin:0 auto; padding:30px 0px; overflow: hidden;
+                        }
+                        
+                        div.yun_fwyz .section_info .yun_input{padding: 10px 16px;}
+                        
+                        div.yun_fwyz .section_z .section_info{
+                            padding: 40px 20px 0px 210px; 
+                            background: url(http://localhost/ayanshi/app/app/fwyz/lang/s_logo.png) no-repeat 50px 50px;
+                            overflow: hidden;
+                        }
+
+                        div.yun_fwyz .form-section{ margin-bottom:20px; overflow: hidden;}
+                    }
+                    @media (max-width: 970px) {
+                        div.yun_fwyz{
+                            margin:0 auto; padding-bottom:20px; overflow: hidden;
+                        }
+                        div.yun_fwyz .colmd{margin-top:20px;}
+                        
+                        div.yun_fwyz .section_z .section_info{
+                            padding: 10px 0px; overflow: hidden;
+                        }
+                        div.yun_fwyz .form-section{margin: 0 auto; margin-bottom:20px; overflow: hidden;}
+                    }
+                    
+                    .yun_table_info{
+                        width:70%; overflow: hidden; margin:0 auto; padding:20px 0px; background: #ffffff;
+                        box-sizing:border-box; -moz-box-sizing:border-box; /* Firefox */ -webkit-box-sizing:border-box; /* Safari */
+                    }
+                    .yun_fwyz_info{padding:0px 10px;}
+                    .yun_table_info h3{
+                        text-align:center; padding: 10px 0px; font-size:16px; letter-spacing: 15px;  margin: 0px;
+                        background:#FFFFFF; color:#333333;
+                    }
+                    .yun_table_info .yun_table_div{padding:15px; line-height: 26px; margin:0 auto; overflow: hidden;}
+                    .yun_table_info .table{margin-bottom:0px;}
+                    .yun_table_info th{text-align: center;}

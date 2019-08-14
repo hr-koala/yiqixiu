@@ -1,0 +1,150 @@
+[ 2018-07-16T09:19:57+08:00 ] 127.0.0.1 /index.php?c=ad&a=logo
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2018-07-16T09:19:57+08:00 ] 127.0.0.1 /index.php?c=statics&a=typelistb
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2018-07-16T09:19:57+08:00 ] 127.0.0.1 /index.php?c=ad&a=getBanner70
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2018-07-16T09:19:57+08:00 ] 127.0.0.1 /index.php?c=ad&a=getMenu70
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2018-07-16T09:19:57+08:00 ] 127.0.0.1 /index.php?c=scene&a=promotion&pageNo=1&pageSize=12
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2018-07-16T09:19:57+08:00 ] 127.0.0.1 /index.php?c=ad&a=friendlinks
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2018-07-16T09:19:58+08:00 ] 127.0.0.1 /%7B%7Bad.path%7D%7D
+ERR: 无法加载控制器:{{ad.path}}
+
+[ 2018-07-16T09:19:58+08:00 ] 127.0.0.1 /assets/images/eqxiulogo1.svg
+ERR: 无法加载控制器:Assets
+
+[ 2018-07-16T09:20:00+08:00 ] 127.0.0.1 /favicon.ico
+ERR: 无法加载控制器:Favicon.ico
+
+[ 2018-07-16T09:20:12+08:00 ] 127.0.0.1 /index.php?c=ad&a=logo
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2018-07-16T09:20:12+08:00 ] 127.0.0.1 /index.php?c=eqs&a=promotion&recommend=1&pageNo=1&pageSize=16
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2018-07-16T09:20:12+08:00 ] 127.0.0.1 /index.php?c=ad&a=friendlinks?pageCode=index
+ERR: 非法操作:friendlinks?pageCode=index
+
+[ 2018-07-16T09:20:12+08:00 ] 127.0.0.1 /index.php?c=statics&a=typelistb
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2018-07-16T09:20:12+08:00 ] 127.0.0.1 /assets/images/eqxiulogo1.svg
+ERR: 无法加载控制器:Assets
+
+[ 2018-07-16T09:20:13+08:00 ] 127.0.0.1 /assets/images/discount_red.svg
+ERR: 无法加载控制器:Assets
+
+[ 2018-07-16T10:11:32+08:00 ] 127.0.0.1 /index.php?c=ad&a=logo
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2018-07-16T10:11:32+08:00 ] 127.0.0.1 /index.php?c=statics&a=typelistb
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2018-07-16T10:11:33+08:00 ] 127.0.0.1 /index.php?c=ad&a=getBanner70
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2018-07-16T10:11:33+08:00 ] 127.0.0.1 /index.php?c=ad&a=getMenu70
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2018-07-16T10:11:33+08:00 ] 127.0.0.1 /index.php?c=scene&a=promotion&pageNo=1&pageSize=12
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2018-07-16T10:11:33+08:00 ] 127.0.0.1 /index.php?c=ad&a=friendlinks
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2018-07-16T10:11:33+08:00 ] 127.0.0.1 /%7B%7Bad.path%7D%7D
+ERR: 无法加载控制器:{{ad.path}}
+
+[ 2018-07-16T10:11:33+08:00 ] 127.0.0.1 /assets/images/eqxiulogo1.svg
+ERR: 无法加载控制器:Assets
+
+[ 2018-07-16T10:11:41+08:00 ] 127.0.0.1 /admin
+ERR: 无法加载控制器:Admin
+
+[ 2018-07-16T14:54:27+08:00 ] 127.0.0.1 /index.php?c=ad&a=getMenu70
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2018-07-16T14:54:27+08:00 ] 127.0.0.1 /index.php?c=scene&a=promotion&pageNo=1&pageSize=12
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2018-07-16T14:54:27+08:00 ] 127.0.0.1 /index.php?c=ad&a=logo
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2018-07-16T14:54:27+08:00 ] 127.0.0.1 /index.php?c=statics&a=typelistb
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2018-07-16T14:54:27+08:00 ] 127.0.0.1 /index.php?c=ad&a=getBanner70
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2018-07-16T14:54:27+08:00 ] 127.0.0.1 /index.php?c=ad&a=friendlinks
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2018-07-16T14:54:28+08:00 ] 127.0.0.1 /%7B%7Bad.path%7D%7D
+ERR: 无法加载控制器:{{ad.path}}
+
+[ 2018-07-16T14:54:28+08:00 ] 127.0.0.1 /assets/images/eqxiulogo1.svg
+ERR: 无法加载控制器:Assets
+
+[ 2018-07-16T14:55:57+08:00 ] 127.0.0.1 /admin
+ERR: 无法加载控制器:Admin
+
+[ 2018-07-16T14:56:24+08:00 ] 127.0.0.1 /install
+ERR: 无法加载控制器:Install
+
+[ 2018-07-16T15:17:30+08:00 ] 127.0.0.1 /admin
+ERR: 无法加载控制器:Admin
+
+[ 2018-07-16T15:26:13+08:00 ] 127.0.0.1 /%7B%7Bad.path%7D%7D
+ERR: 无法加载控制器:{{ad.path}}
+
+[ 2018-07-16T15:27:48+08:00 ] 127.0.0.1 /%7B%7Bad.path%7D%7D
+ERR: 无法加载控制器:{{ad.path}}
+
+[ 2018-07-16T15:27:53+08:00 ] 127.0.0.1 /%7B%7Bad.path%7D%7D
+ERR: 无法加载控制器:{{ad.path}}
+
+[ 2018-07-16T15:27:57+08:00 ] 127.0.0.1 /%7B%7Bad.path%7D%7D
+ERR: 无法加载控制器:{{ad.path}}
+
+[ 2018-07-16T15:28:00+08:00 ] 127.0.0.1 /%7B%7Bad.path%7D%7D
+ERR: 无法加载控制器:{{ad.path}}
+
+[ 2018-07-16T15:28:03+08:00 ] 127.0.0.1 /assets/images/privilege/title1.svg
+ERR: 无法加载控制器:Assets
+
+[ 2018-07-16T15:28:23+08:00 ] 127.0.0.1 /%7B%7Bad.path%7D%7D
+ERR: 无法加载控制器:{{ad.path}}
+
+[ 2018-07-16T15:28:26+08:00 ] 127.0.0.1 /%7B%7Bad.path%7D%7D
+ERR: 无法加载控制器:{{ad.path}}
+
+[ 2018-07-16T15:28:31+08:00 ] 127.0.0.1 /%7B%7Bad.path%7D%7D
+ERR: 无法加载控制器:{{ad.path}}
+
+[ 2018-07-16T15:28:32+08:00 ] 127.0.0.1 /%7B%7Bad.path%7D%7D
+ERR: 无法加载控制器:{{ad.path}}
+
+[ 2018-07-16T15:28:37+08:00 ] 127.0.0.1 /%7B%7Bad.path%7D%7D
+ERR: 无法加载控制器:{{ad.path}}
+
+[ 2018-07-16T15:28:43+08:00 ] 127.0.0.1 /%7B%7Bad.path%7D%7D
+ERR: 无法加载控制器:{{ad.path}}
+
+[ 2018-07-16T15:28:46+08:00 ] 127.0.0.1 /%7B%7Bad.path%7D%7D
+ERR: 无法加载控制器:{{ad.path}}
+
+[ 2018-07-16T15:28:50+08:00 ] 127.0.0.1 /about
+ERR: 无法加载控制器:About
+
+[ 2018-07-16T15:29:03+08:00 ] 127.0.0.1 /about
+ERR: 无法加载控制器:About
+

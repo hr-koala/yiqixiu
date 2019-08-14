@@ -1,0 +1,27 @@
+.top_select{height:40px;width:200px;border:1px solid #ccc;border-bottom:0px;padding:0px;background:#f6f6f6;text-align:center;line-height:40px;}
+.no_select_div{height:200px;width:200px;overflow-y:scroll;border:1px solid #ccc;padding:0px;}
+.zone_div{padding:10px 0px 10px 30px;}
+.select_div{height:200px;width:200px;overflow-y:scroll;border:1px solid #ccc;padding:0px;}
+.add_div{text-align:center;line-height:240px;height:240px;}
+.select_div_zone{display:none;}
+.select_div_zone .zone_div{width:150px;float:left;}
+.select_div button{position:relative;float:right;padding-top:8px;padding-right:5px;}
+
+.goods-table{width:80%!important;font-size:14px;}
+
+
+.tags_ul{ width:360px; border:1px solid #ccc; position:relative; padding:0px; margin-top:5px;}
+.tags_ul ul{ padding:0px; overflow:hidden; zoom:1;}
+.tags_ul ul  li{ float:left; cursor:default; position:relative;}
+
+.tags_ul ul li.tags_list{ border:1px solid #ccc; display:block; background:#eee; padding:2px 18px; padding-right:25px; margin:7px 0px 0px 7px; border-radius:3px; }
+.tags_ul ul li.tags_list a{ position:absolute; right:7px; top:8px; width:7px; height:7px; background:url(../../../../../../system/include/public/ui/admin/images/tbl_close.gif) no-repeat left top; overflow:hidden; }
+.tags_ul ul li.tags_list:hover{ border:1px solid #ccc; background:#ddd;}
+.tags_ul li.tags_list a:hover{ background-position:left -7px;}
+
+.tags_ul ul li.tags_tj{ white-space:nowrap; height:28px; margin:7px; line-height:28px; }
+.tags_ul ul li.tags_tj label{ position:absolute; left:0px; top:0px; height:28px; line-height:28px; color:#999; display:none;}
+.tags_ul ul li.tags_tj span{ float:left; cursor:pointer; width:28px; height:28px; background:#ccc url(../../../../../../system/include/public/ui/admin/images/Ico_add.png) no-repeat center center; color:#36C; display:block; border-radius:3px;}
+.tags_ul ul li.tags_tj span:hover{ background-color:#999;}
+.tags_ul ul li.tags_tj input{ border:0!important; padding:2px 0px; height:25px; margin-left:5px; outline:0; position:relative; background:none;}
+

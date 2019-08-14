@@ -1,0 +1,13 @@
+@media (min-width: 768px) {
+.page-aside{ width:190px; }
+.page-aside + .page-main{ margin-left:190px; }
+}
+@media (min-width: 1200px) {
+	.page-aside{ width:230px; }
+	.page-aside + .page-main{ margin-left:230px; }
+}
+.page-content{ padding:20px 20px; }
+.panel-body{ padding:20px 20px; }
+
+.page-aside-title{ padding:10px 20px; }
+.page-aside .list-group-item{ padding:13px 20px; }

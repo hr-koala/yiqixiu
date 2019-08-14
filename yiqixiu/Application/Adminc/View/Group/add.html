@@ -1,0 +1,78 @@
+<include file="Public:head"/>
+<div class="container-fluid">
+				<!-- BEGIN PAGE HEADER-->
+				<div class="row-fluid">
+					<div class="span12">
+						<!-- BEGIN PAGE TITLE & BREADCRUMB-->
+						<h3 class="page-title">套餐管理 <small>    新增套餐</small></h3>
+
+							<ul class="breadcrumb">
+							<li><i class="icon-home"></i><a href="index.html">首页</a> 
+								<i class="icon-angle-right"></i></li>
+                            <li><a href="#"></i><a href="adminc.php?c=Group">用户组管理</a><i class="icon-angle-right"></i></li>
+							<li><a href="#">新增套餐</a></li>
+						</ul>
+						<!-- END PAGE TITLE & BREADCRUMB-->
+					</div>
+				</div>
+
+				<!-- END PAGE HEADER-->
+    
+     <!--内容显示 Begin-->
+    <div class="col_main">
+        <input name="ctl00$ContentPlaceHolder1$txt" type="hidden" id="ctl00_ContentPlaceHolder1_txt" />
+        <div class="main_hd">
+            <div class="title_tab" id="topTab">
+                <ul class="tab_navs mt title_tab">
+                </ul>
+            </div>
+             
+        </div>
+       <form action="" method="post">
+        <div style="text-align: left; padding: 1px; text-align: left;">
+            <hr style="width: 50%; size: 1px; border: none;" />
+            <table style="vertical-align: top;">
+                    <td >套餐名：</td>
+                    <td>
+                    <span class="frm_input_box">
+                            <input name="group[name]" type="text"   class="frm_input" style="width: 200px;" value=" " /></span>
+                    </td>
+                </tr>              
+                
+                 <tr>
+                    <td >价格：</td>
+                    <td>
+                        <span class="frm_input_box">
+                            <input name="group[price]" type="text"   class="frm_input" style="width: 200px;" value=" " /></span>
+                    </td>
+                </tr>
+                  <tr>
+                    <td >场景数：</td>
+                    <td>
+                        <span class="frm_input_box">
+                            <input name="group[cj_card_num]" type="text"   class="frm_input" style="width: 200px;" value=" " /></span>
+                    </td>
+                </tr>    
+ 
+</table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            </table>
+         <div class="form-actions">
+                <span id="Span1" class="btn btn_primary btn_input">
+                  <input type="hidden"  name="tag[type_int]" value="2" />
+                   <button type="submit" class="btn blue"><i class="icon-ok"></i> 保存</button>
+</div>
+        </form>
+        
+    </div> </div> </div> </div>
+ 
+
+
+  <include file="Public:foot"/>

@@ -1,0 +1,133 @@
+<include file="Public:head"/>
+	<link rel="stylesheet" href="/Public/kindeditor/themes/default/default.css" />
+	<link rel="stylesheet" href="/Public/kindeditor/plugins/code/prettify.css" />
+	<script charset="utf-8" src="/Public/kindeditor/kindeditor.js"></script>
+	<script charset="utf-8" src="/Public/kindeditor/lang/zh_CN.js"></script>
+	<script charset="utf-8" src="/Public/kindeditor/plugins/code/prettify.js"></script>
+    <script>
+		KindEditor.ready(function(K) {
+			var editor1 = K.create('textarea[name="content"]', {
+				cssPath : '/Public/kindeditor/plugins/code/prettify.css',
+				uploadJson : '/Public/kindeditor/php/upload_json.php',
+				fileManagerJson : '/Public/kindeditor/php/file_manager_json.php',
+				allowFileManager : true,
+				afterCreate : function() {
+					var self = this;
+					K.ctrl(document, 13, function() {
+						self.sync();
+						K('form[name=articleForm]')[0].submit();
+					});
+					K.ctrl(self.edit.doc, 13, function() {
+						self.sync();
+						K('form[name=articleForm]')[0].submit();
+					});
+				}
+			});
+			prettyPrint();
+		});
+	</script>
+<div class="container-fluid">
+				<!-- BEGIN PAGE HEADER-->
+				<div class="row-fluid">
+					<div class="span12">
+						<!-- BEGIN PAGE TITLE & BREADCRUMB-->
+						<h3 class="page-title">文章管理 <small>    发布新文章</small></h3>
+
+							<ul class="breadcrumb">
+							<li><i class="icon-home"></i><a href="index.html">首页</a> 
+								<i class="icon-angle-right"></i></li>
+                            <li><a href="#"></i><a href="adminc.php?c=article">文章列表管理</a><i class="icon-angle-right"></i></li>
+							<li><a href="#">添加文章</a></li>
+						</ul>
+						<!-- END PAGE TITLE & BREADCRUMB-->
+					</div>
+				</div>
+
+				<!-- END PAGE HEADER-->
+    
+     <!--内容显示 Begin-->
+    <div class="col_main">
+       
+        <div class="main_hd">
+            <div class="title_tab" id="topTab">
+                <ul class="tab_navs mt title_tab">
+                </ul>
+            </div>
+             <p class="extra_info">
+              
+            </p>
+        </div>
+        
+        
+        
+       <form action="" method="post" enctype="multipart/form-data" name="articleForm">
+        <div style="text-align: left; padding: 1px; text-align: left;">
+            <hr style="width: 50%; size: 1px; border: none;" />
+            <table style="vertical-align: top;"> 
+           
+<tr style="height: 50px;">
+ <td><strong class="btn green-stripe">文章标题</strong></td>
+ <td>
+<span class="frm_input_box">
+<input name="user[title]" type="text"  id="title"   class="frm_input" style="width: 200px;" value="{$user.title}" /></span>
+                    </td>
+</tr>
+ <tr style="height: 50px;">
+ <td><strong class="btn green-stripe">副标题</strong></td>
+ <td>
+<span class="frm_input_box">
+<input name="user[title_sub]" type="text"  id="title_sub"   class="frm_input" style="width: 200px;" value="{$user.title_sub}" /></span>
+       <span>&nbsp;&nbsp;例:40k-8k 经验3-5年/不限</span>              </td>
+</tr>
+  <tr  >
+ <td><strong class="btn green-stripe">类型</strong></td>
+ <td>  <select name="user[type]" style="width:180px">
+<option value="">选择</option>
+ <option value="1"<eq name="user['type']"  value="1">selected</eq>>关于我们</option>
+<option value="2"<eq name="user['type']"  value="2">selected</eq>>联系我们</option>
+<option value="3"<eq name="user['type']"  value="3">selected</eq>>付费方案</option>
+<option value="4"<eq name="user['type']"  value="4">selected</eq>>由来</option>
+<option value="5"<eq name="user['type']"  value="5">selected</eq>>文化</option>
+<option value="6"<eq name="user['type']"  value="6">selected</eq>>团队</option>
+<option value="7"<eq name="user['type']"  value="7">selected</eq>>招聘</option>
+
+ </select>         </td>
+</tr>
+ <tr  >
+ <td><strong class="btn green-stripe">内容</strong></td>
+ <td>
+   <textarea name="content" style="width:770px;height:500px;visibility:hidden;"><?php echo htmlspecialchars($user['content']); ?></textarea>
+                    </td>
+</tr>
+            </table>
+          <div class="form-actions">
+                <span id="Span1" class="btn btn_primary btn_input">
+                 <input type="hidden"  name="id" value="{$user.id}" />
+                   <button type="submit" class="btn blue"><i class="icon-ok"></i> 保存</button>
+            </div>
+        </div>
+        </form>
+        
+    </div>
+  <script type="text/javascript">
+   function checkForm(){
+	   if($('#title').val()==''){
+		   alert('文章名不能为空');
+		 return false;  
+		 }
+		 
+		 return true;
+	}
+   $(document).ready(function(){
+   
+ 
+   });
+  </script>
+</div>
+        </form> 
+
+
+  <include file="Public:foot"/>
+
+
+ 

@@ -1,0 +1,128 @@
+<link href="Public/uploadify/uploadify.css" type="text/css" rel="stylesheet">
+ <script src="Public/uploadify/jquery-1.9.1.min.js"></script>
+ <script src="Public/uploadify/jquery.uploadify.min.js"></script>
+引用样式文件
+ <form action="__URL__/areate" method="post">
+                    <div class="row">
+                        <div class="col6 mbt10">
+                            <div class="ify-list-box">
+                                <fieldset class="mbt10">
+                                    <legend>图片列表</legend>
+                                <div id="IFY-list-queue">
+                                    <div id="SWFUpload_10_0" class="uploadify-queue-item">
+                                        <a class="ify-cancel" href="javascript:$('#IFY-list').uploadify('cancel', 'SWFUpload_10_0')">删除</a>
+                                        <p class="ify-data">
+                                            <img src="http://www.ccc.ner/Public/uploadify/face.jpg" width="100" height="100">
+                                            <input type="hidden" name="images[]" value="Public/uploadify/face.jpg" readonly="">
+                                        </p>
+                                        <p class="ify-fileName">face.jpg</p>
+                                    </div>
+                                    <div id="SWFUpload_10_1" class="uploadify-queue-item">
+                                        <a class="ify-cancel" href="javascript:$('#IFY-list').uploadify('cancel', 'SWFUpload_10_1')">删除</a>
+                                        <p class="ify-data">
+                                            <img src="Public/uploadify/face.jpg" width="100" height="100">
+                                            <input type="hidden" name="images[]" value="http://www.ccc.ner/Public/uploadify/face.jpg" readonly="">
+                                        </p>
+                                        <p class="ify-fileName">face.jpg</p>
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                                <input id="IFY-list" name="list" type="file" multiple="true" />
+                                </fieldset>
+                            </div>
+                        </div>
+                        <div class="col6" style="margin-top:15px">
+                            <div class="ify-one-box mtp10">
+                                <img src="thumb.png" class="ify-one-img mbt10" />
+                                <input type="hidden" name="one" value="" />
+                                <p><input id="IFY-one" name="one" type="file" multiple="true" />
+                                    <a href="javascript:void(0)" id="IFY-one-cancel" class="btn">取消上传</a>
+                                </p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="mbt10">
+                        <input type="submit" class='btn-big' value="提交" />
+                    </div>
+                </form>
+  <include file="Public:foot" />               
+ <script>
+$(function() {
+    $('#IFY-list').uploadify({
+        'swf'      : 'Public/uploadify/uploadify.swf?ver=123',//swf文件路径
+        'uploader' : '__URL__/uploadify',//服务器端脚本文件路径
+        'fileObjName': 'Filedata',//上传附件$_FILE标识
+        'fileSizeLimit': '5MB',//上传附件大小,0不限制,5120B/512KB/2MB/1GB
+        'fileTypeDesc': '支持的格式：*.jpg;*.jpge;*.gif;*.png',
+        'fileTypeExts': '*.jpg;*.jpge;*.gif;*.png',//上传附件后缀限制,*.*不限制
+        'auto':true, //开启,自动上传
+        'multi'    : true, //开启,多选文件
+        'uploadLimit' : 10, //允许上传文件个数
+        'buttonText':'附件上传',
+        'width':'128',
+        'height':'43',
+        'queueID':'IFY-list-queue',//上传队列容器
+        'queueSizeLimit':10,//上传队列长度
+        'removeCompleted': false ,//上传完成移除
+        'itemTemplate':'<div id="${fileID}" class="uploadify-queue-item">\
+                    <a class="ify-cancel" href="javascript:$(\'#${instanceID}\').uploadify(\'cancel\', \'${fileID}\')">删除</a>\
+                    <p class="ify-data"></p>\
+                    <p class="ify-fileName">${fileName}</p>\
+                </div>',
+        'overrideEvents': ['onUploadSuccess'],//可以被用户自定义事件覆盖
+        'preventCaching':true,//后缀加随机数,防止缓存
+        'requeueErrors':true,//上传出现错误后,重新加入队列
+        'successTimeout':30,//等待服务器响应时间,超过30秒认为上传完成
+        //没有兼容的FLASH时触发
+        'onFallback':function(){
+            alert("您未安装FLASH控件，无法上传图片！请安装FLASH控件后再试。");
+        },
+        //上传文件成功后触发（每一个文件都触发一次）
+        'onUploadSuccess': function (file, data, response) {
+            var data=jQuery.parseJSON(data);
+            var yt='__ROOT__/'+data.yt;
+            var mi='__ROOT__/'+data.mi;
+            var img='<img src="'+mi+'" width="100" height="100" /><input type="hidden" name="images[]" value="'+yt+'" readonly />';
+            $('#' + file.id).find('.ify-data').html(img);
+        }
+    });
+    $('#IFY-one').uploadify({
+        'swf'      : '__Public__/js/uploadify/uploadify.swf?ver=123',//swf文件路径
+        'uploader' : '__URL__/uploadify',//服务器端脚本文件路径
+        'fileObjName': 'Filedata',//上传附件$_FILE标识
+        'fileSizeLimit': '5MB',//上传附件大小,0不限制,5120B/512KB/2MB/1GB
+        'fileTypeDesc': '支持的格式：*.jpg;*.jpge;*.gif;*.png',
+        'fileTypeExts': '*.jpg;*.jpge;*.gif;*.png',//上传附件后缀限制,*.*不限制
+        'auto':true, //开启,自动上传
+        'multi'    : true, //开启,多选文件
+        'uploadLimit' : 10, //允许上传文件个数
+        'buttonText':'附件上传',
+        'width':'128',
+        'height':'43',
+        'queueID':'IFY-one-queue',//上传队列容器
+        'queueSizeLimit':10,//上传队列长度
+        'removeCompleted': true ,//上传完成移除
+        'itemTemplate':'',
+        'debug'    : false,//开启调试模式
+        'overrideEvents': ['onUploadSuccess'],//可以被用户自定义事件覆盖
+        'preventCaching':true,//后缀加随机数,防止缓存
+        'requeueErrors':true,//上传出现错误后,重新加入队列
+        'successTimeout':30,//等待服务器响应时间,超过30秒认为上传完成
+        //没有兼容的FLASH时触发
+        'onFallback':function(){
+            alert("您未安装FLASH控件，无法上传图片！请安装FLASH控件后再试。");
+        },
+        //上传文件成功后触发（每一个文件都触发一次）
+        'onUploadSuccess': function (file, data, response) {
+            var data='__ROOT__/'+data;
+            $('.music').find('audio').attr('src',data);
+            $('.music').find('input').val(data);
+        }
+    });
+    $('#IFY-one-cancel').click(function(){
+        $('.ify-one-box').find('audio').attr('src',data);
+        $('.ify-one-box').find('input').val('');
+    });
+ });
+ </script>

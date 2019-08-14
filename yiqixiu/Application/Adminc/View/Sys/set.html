@@ -1,0 +1,267 @@
+ <include file="Public:head"/>
+
+<div class="container-fluid">
+				<!-- BEGIN PAGE HEADER-->
+				<div class="row-fluid">
+					<div class="span12">
+						<!-- BEGIN PAGE TITLE & BREADCRUMB-->
+						<h3 class="page-title">系统管理 <small>    System management</small></h3>
+
+						<ul class="breadcrumb">
+							<li><i class="icon-home"></i><a href="index.html">首页</a> 
+								<i class="icon-angle-right"></i></li>
+
+							<li><a href="#">系统管理</a><i class="icon-angle-right"></i></li>
+							<li><a href="#">网站信息设置</a></li>
+						</ul>
+						<!-- END PAGE TITLE & BREADCRUMB-->
+					</div>
+				</div>
+
+				<!-- END PAGE HEADER-->
+                <div class="tabbable tabbable-custom tabbable-full-width">
+							<ul class="nav nav-tabs">
+				<include file="Sys:_menu"/>
+							</ul>
+                            <hr>
+                </div>
+				<!-- BEGIN PAGE CONTENT-->          
+				<div class="row-fluid">
+					<div class="span12 ">
+						<!-- BEGIN EXAMPLE TABLE PORTLET-->
+							<div class="portlet-body">
+
+       <form action="" method="post" class="form-horizontal">
+     
+            <table style="vertical-align: top;">
+                <tr>
+                    <td height="48" align="right">网站名称 :</td>
+                    <td>
+                  <input name="site_name" type="text" value="{$Think.config.site_name}" /><span>&nbsp;&nbsp;例：搜虎精品社区</span>
+                    </td>
+                </tr>
+         <tr> 
+      <td   align="right">网站地址：</td>
+      <td><input type="text" name="site_url" value="{$Think.config.site_url}" <span>&nbsp;&nbsp;例:http://test.souho.net</span></td>
+    </tr>  
+                   <tr>
+                    <td  align="right">网站标题:</td>
+                    <td><input name="site_title" type="text" value="{$Think.config.site_title}" /><span>&nbsp;&nbsp;一般不超过80个字符</span> </td>
+                </tr>  
+                <tr>
+                    <td  align="right" > 关键词   :  </td>
+                    <td>  <input name="keyword" type="text" value="{$Think.config.keyword}" style="width: 200px;"><span>&nbsp;&nbsp;一般不超过100个字符</span></td>
+                </tr>
+                <tr>
+                    <td  align="right">描述 :</td>
+                    <td><textarea name="content" style="width:450px;height:60px;margin:5px 0 5px 0;">{$Think.config.content}</textarea> <span>&nbsp;&nbsp;一般不超过200个字符</span></td>
+                </tr>
+				<tr>
+				
+                    <td height="48" align="right">前台模板选择:</td>
+					
+                    <td>
+					<div class="controls">
+                  
+														<label class="radio">
+														<div class="radio"><span class="checked">
+                  <input id="s_0" type="radio" name="web_muban_status" value="1" <php> if(C('web_muban_status')=="1"):</php>   checked='checked'  <php>endif;</php> /><label for="s_0">
+                                                        </span></div>官方
+														</label>
+														
+														<label class="radio">
+														<div class="radio"><span class="">
+                <input id="s_1" type="radio"   name="web_muban_status" value="3" <php> if(C('web_muban_status')=="3"):</php>   checked='checked'  <php>endif;</php> /><label for="s_1">
+                                                        </span></div>70c
+														</label> 
+
+				</div>
+												
+                  </td>
+                </tr> 
+				
+				
+     <tr> 
+	 
+      
+    </tr> 
+       
+       <tr> 
+      <td  align="right">是否开启会员注册：</td>
+      <td>
+      
+                    <div class="controls">
+														<label class="radio">
+														<div class="radio"><span class="checked">
+                  <input id="ctl00_ContentPlaceHolder1_rdiIsEnable_help_0" type="radio" name="is_open_reg" value="1" <php> if(C('is_open_reg')==1):</php>   checked='checked'  <php>endif;</php> /><label for="ctl00_ContentPlaceHolder1_rdiIsEnable_help_0">
+                                                        </span></div>
+开启
+														</label>
+														<label class="radio">
+														<div class="radio"><span class="">
+                <input id="ctl00_ContentPlaceHolder1_rdiIsEnable_help_1" type="radio"   name="is_open_reg" value="0" <php> if(C('is_open_reg')==0):</php>   checked='checked'  <php>endif;</php> /><label for="ctl00_ContentPlaceHolder1_rdiIsEnable_help_1">
+                                                        </span></div>
+关闭
+														</label>  
+
+
+													</div>
+      
+        
+      </td>
+    </tr> 
+    <tr> 
+      <td  align="right">是否开启用户案例审核：</td>
+      <td>
+      
+                    <div class="controls">
+														<label class="radio">
+														<div class="radio"><span class="checked">
+                  <input id="ctl00__0" type="radio" name="is_user_anli_shenghe" value="1" <php> if(C('is_user_anli_shenghe')==1):</php>   checked='checked'  <php>endif;</php> /><label for="ctl00__0">
+                                                        </span></div>
+开启
+														</label>
+														<label class="radio">
+														<div class="radio"><span class="">
+                <input id="ctl00__1" type="radio"   name="is_user_anli_shenghe" value="0" <php> if(C('is_user_anli_shenghe')==0):</php>   checked='checked'  <php>endif;</php> /><label for="ctl00__1">
+                                                        </span></div>
+关闭
+														</label>  
+
+
+													</div>
+      
+        
+      <span></span></td>
+    </tr>          
+    <tr> 
+      <td  align="right">注册后使用天数：</td>
+      <td><input type="text" name="reg_validdays" value="{$Think.config.reg_validdays}"/><span>&nbsp;&nbsp;注册后多少天过期(仅注册不需要审核的时候有效)</span></td>
+    </tr> 
+    
+       <tr> 
+      <td  align="right">注册默认用户制作场景数：</td>
+      <td><input type="text" name="allow_nums" value="{$Think.config.allow_nums}"/><span></span></td>
+    </tr> 
+    
+       <tr> 
+      <td  align="right">注册送秀点：</td>
+      <td><input type="text" name="xd" value="{$Think.config.xd}"/><span>&nbsp;&nbsp;注册送秀点(200点为一个场景)</span></td>
+    </tr> 
+    <tr>
+     <td  align="right">色调设置：</td>
+     <td style="border:1px solid #39F; padding:10px 0">
+        <table >
+       
+        <tr> 
+      <td >总站大背景色：</td>
+      <td><input type="text" id="eq_main_bg" name="eq_main_bg" value="{$Think.config.eq_main_bg}"  /> 
+<span>默认：#f0f0f0; </span></td>
+    </tr> 
+         <tr> 
+      <td >头部背景色：</td>
+      <td><input type="text" id="main_info_bg" name="main_info_bg" value="{$Think.config.main_info_bg}" data-color-format="rgba"/> 
+<span>默认：#FFF </span></td>
+    </tr> 
+     <tr> 
+      <td >头部菜单hover背景色：</td>
+      <td><input type="text" id="header_tpl_hover_bg" name="header_tpl_hover_bg" value="{$Think.config.header_tpl_hover_bg}" data-color-format="rgba"/> 
+<span>(指鼠标悬停在菜单上的背景色)默认：#08a1ef </span></td>
+    </tr> 
+    
+         <tr> 
+      <td >场景设计器头部背景色：</td>
+      <td><input type="text" id="creat_head" name="creat_head" value="{$Think.config.creat_head}" data-color-format="rgba"/> 
+<span>默认：#08a1ef </span></td>
+    </tr> 
+     <tr> 
+      <td  >场景设计器中间背景色：</td>
+      <td><input type="text" id="create-bg" name="create-bg" value="{$Think.config.create-bg}" data-color-format="rgba"/> 
+<span> 默认：#d0cfd8 </span></td>
+    </tr> 
+    
+    
+        </table>     
+     </td>
+    </tr> 
+    
+    
+     <tr> 
+      <td  align="right">尾页版权文字 ：</td>
+      <td><input type="text" name="lastpagetext" value="{$Think.config.lastpagetext}" style="width:120px"/><span>&nbsp;&nbsp;例：搜虎精品社区</span> &nbsp;&nbsp;
+      <input type="text" id="lastpagetext_color" name="lastpagetext_color" style="width:120px" value="{$Think.config.lastpagetext_color}" data-color-format="rgba"/> 
+<span> 默认：#23a3d3 </span></td>
+    </tr>
+     <tr> 
+      <td  align="right">尾页版权链接 ：</td>
+      <td><input type="text" name="lastpagelink" value="{$Think.config.lastpagelink}"/><span>&nbsp;&nbsp;例：http://test.souho.net</span></td>
+    </tr>
+    
+    
+      <tr> 
+      <td  align="right">完全去除广告消耗秀点：</td>
+      <td><input type="text" name="qi_ad_xds" value="{$Think.config.qi_ad_xds}"/><span>&nbsp;&nbsp;例：100</span></td>
+    </tr>
+       <tr> 
+      <td  align="right">加载logo消耗秀点：</td>
+      <td><input type="text" name="loadingLogo_qi_xd" value="{$Think.config.loadingLogo_qi_xd}"/><span>&nbsp;&nbsp;例：100</span></td>
+    </tr>
+
+    	<tr> 
+      <td  align="right">网站备案：</td>
+      <td><input type="text" name="ipc" value="{$Think.config.ipc}"/><span>&nbsp;&nbsp;例：京IPC备888888号</span></td>
+    </tr>
+    	<tr> 
+      <td   align="right"><strong>统计代码：</strong></td>
+      <td><textarea	 type="text" name="countCode" class="ipt" style="width:450px;height:60px;margin:5px 0 5px 0;" />{$countCode}</textarea><span>&nbsp;&nbsp;例:51啦统计,cnzz统计</span></td>
+    </tr>
+            </table>
+            
+            
+            
+            <div class="form-actions">
+<input type="hidden" name="files" value="info.php" /> 
+													<button type="submit" class="btn blue"><i class="icon-ok"></i> 保存</button>
+
+													<button type="button" class="btn">放弃</button>
+
+												</div>
+         
+       
+        </form>
+        
+    </div>
+ 
+     </div>
+        </div>
+        <style type="text/css">
+		.form-horizontal .controls{ margin-left:0}
+		</style>
+ 
+
+  <link href="/Public/media/css/colorpicker.css" rel="stylesheet">
+ <script type="text/javascript">   
+ $(function () {
+ $('#eq_main_bg').colorpicker({
+				format: 'hex'
+			});
+			$('#main_info_bg').colorpicker({
+				format: 'hex'
+			});
+			$('#header_tpl_hover_bg').colorpicker({
+				format: 'hex'
+			}); 
+$('#creat_head').colorpicker({
+				format: 'hex'
+			});
+			$('#lastpagetext_color').colorpicker({
+				format: 'hex'
+			});
+$('#create-bg').colorpicker({
+				format: 'hex'
+			});		 
+	 
+    });  </script>
+   
+
+  <include file="Public:foot"/>

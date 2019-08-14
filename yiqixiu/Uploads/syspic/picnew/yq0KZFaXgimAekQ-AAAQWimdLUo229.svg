@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="128px"
+	 height="128px" viewBox="0 0 128 128" style="enable-background:new 0 0 128 128;" xml:space="preserve">
+<g id="icons">
+	<g>
+		<circle style="fill:#88C5CC;" cx="64" cy="64" r="64"/>
+		<g>
+			<path style="fill:#F5F5F5;" d="M50,19h44c1.1,0,2.073,0.9,2.073,2v82c0,1.1-0.973,2-2.073,2H32c-1.1,0-1.927-0.9-1.927-2V40
+				L50,19z"/>
+			<path style="fill:#E6E6E6;" d="M48,40c1.1,0,2.073-0.9,2.073-2V19L30,40H48z"/>
+		</g>
+		<g>
+			<rect x="78" y="102" style="fill:#E6E6E6;" width="4" height="3"/>
+			<rect x="74" y="99" style="fill:#E6E6E6;" width="4" height="3"/>
+			<rect x="78" y="96" style="fill:#E6E6E6;" width="4" height="3"/>
+			<rect x="74" y="93" style="fill:#E6E6E6;" width="4" height="3"/>
+			<rect x="78" y="90" style="fill:#E6E6E6;" width="4" height="3"/>
+			<rect x="74" y="87" style="fill:#E6E6E6;" width="4" height="3"/>
+			<rect x="78" y="84" style="fill:#E6E6E6;" width="4" height="3"/>
+			<rect x="74" y="81" style="fill:#E6E6E6;" width="4" height="3"/>
+			<rect x="78" y="78" style="fill:#E6E6E6;" width="4" height="3"/>
+			<rect x="74" y="75" style="fill:#E6E6E6;" width="4" height="3"/>
+			<rect x="78" y="72" style="fill:#E6E6E6;" width="4" height="3"/>
+			<rect x="74" y="69" style="fill:#E6E6E6;" width="4" height="3"/>
+			<rect x="78" y="66" style="fill:#E6E6E6;" width="4" height="3"/>
+			<rect x="74" y="63" style="fill:#E6E6E6;" width="4" height="3"/>
+			<rect x="78" y="60" style="fill:#E6E6E6;" width="4" height="3"/>
+			<rect x="74" y="57" style="fill:#E6E6E6;" width="4" height="3"/>
+			<rect x="78" y="54" style="fill:#E6E6E6;" width="4" height="3"/>
+			<rect x="74" y="51" style="fill:#E6E6E6;" width="4" height="3"/>
+			<rect x="78" y="48" style="fill:#E6E6E6;" width="4" height="3"/>
+			<rect x="74" y="45" style="fill:#E6E6E6;" width="4" height="3"/>
+			<rect x="78" y="42" style="fill:#E6E6E6;" width="4" height="3"/>
+			<rect x="74" y="39" style="fill:#E6E6E6;" width="4" height="3"/>
+			<rect x="78" y="36" style="fill:#E6E6E6;" width="4" height="3"/>
+			<rect x="74" y="33" style="fill:#E6D9B8;" width="4" height="3"/>
+			<g>
+				<path style="fill:#CCCCCC;" d="M82.243,26.641c-0.312,2.489-2.219,4.526-4.24,4.526c-2.022,0-3.928-2.037-4.24-4.526
+					l-0.389-3.114C73.062,21.037,74.86,19,77.37,19h1.266c2.51,0,4.308,2.037,3.996,4.526L82.243,26.641z"/>
+				<path style="fill:#B3B3B3;" d="M78.003,27.167c-1.242,0-2.448,0.683-3.416,1.785c0.809,1.318,2.082,2.215,3.416,2.215
+					c1.334,0,2.607-0.896,3.416-2.215C80.451,27.85,79.245,27.167,78.003,27.167z"/>
+				<path style="fill:#B3B3B3;" d="M78.636,19H77.37c-0.127,0-0.244,0.027-0.367,0.037c2.311,0.192,3.925,2.126,3.629,4.489
+					l-0.389,3.114c-0.26,2.07-1.626,3.809-3.24,4.342c0.327,0.108,0.66,0.185,1,0.185c2.021,0,3.928-2.037,4.24-4.526l0.389-3.114
+					C82.943,21.037,81.145,19,78.636,19z"/>
+				<path style="fill:#E6E6E6;" d="M83.955,39.287l-0.5-4.532c-0.401-3.623-2.853-6.588-5.452-6.588c-2.6,0-5.051,2.965-5.452,6.588
+					l-0.5,4.532c-0.4,3.623,1.911,6.588,5.139,6.588h1.627C82.044,45.875,84.355,42.91,83.955,39.287z M78.003,43.208
+					c-1.657,0-3-1.343-3-3c0-1.657,1.343-3,3-3c1.657,0,3,1.343,3,3C81.003,41.865,79.66,43.208,78.003,43.208z"/>
+				<g>
+					<path style="fill:#CCCCCC;" d="M83.955,39.287l-0.5-4.532c-0.401-3.623-2.853-6.588-5.452-6.588c-0.337,0-0.672,0.052-1,0.147
+						c2.201,0.636,4.103,3.288,4.452,6.441l0.5,4.532c0.393,3.552-1.824,6.464-4.952,6.577c0.062,0.002,0.123,0.011,0.187,0.011
+						h1.627C82.044,45.875,84.355,42.91,83.955,39.287z"/>
+					<path style="fill:#CCCCCC;" d="M75.003,40.208c0-1.489,1.087-2.715,2.509-2.95c-0.165-0.031-0.334-0.05-0.509-0.05
+						c-1.657,0-3,1.343-3,3c0,1.657,1.343,3,3,3c0.175,0,0.344-0.018,0.509-0.05C76.091,42.923,75.003,41.696,75.003,40.208z"/>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+<g id="header">
+</g>
+</svg>

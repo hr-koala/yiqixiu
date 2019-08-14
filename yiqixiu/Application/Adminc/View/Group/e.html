@@ -1,0 +1,154 @@
+<include file="Public:head"/>
+<div class="container-fluid">
+			<!-- BEGIN PAGE CONTAINER-->
+			<div class="container-fluid">
+				<!-- BEGIN PAGE HEADER-->   
+				<div class="row-fluid">
+					<div class="span12">
+						<!-- BEGIN STYLE CUSTOMIZER -->
+						<!-- END BEGIN STYLE CUSTOMIZER -->   
+
+						<h3 class="page-title">
+
+
+							 <eq name="user[userid_int]" value="0"> 用户管理<small>    User management</small><else/>用户套餐组编辑 <small>   Edit User Package</small></eq> 
+
+
+						</h3>
+
+						<ul class="breadcrumb">
+
+							<li>
+
+								<i class="icon-home"></i>
+
+								<a href="index.html">首页</a> 
+
+								<span class="icon-angle-right"></span>
+
+							</li>
+
+							<li>
+
+								<a href=adminc.php?c=group> 用户套餐组管理</a>
+
+								<span class="icon-angle-right"></span>
+
+							</li>
+
+							<li><a href="#"> <eq name="user[userid_int]" value="0"> 用户套餐组管理<else/>用户套餐组编辑 </eq> </a></li>
+
+						</ul>
+
+					</div>
+
+				</div>
+
+				<!-- END PAGE HEADER-->
+
+				<!-- BEGIN PAGE CONTENT-->
+
+				<div class="row-fluid">
+
+					<div class="span12">
+
+                <!-- BEGIN SAMPLE FORM PORTLET-->   
+     <!--内容显示 Begin-->
+    <div class="col_main">
+        <input name="ctl00$ContentPlaceHolder1$txt" type="hidden" id="ctl00_ContentPlaceHolder1_txt" />
+        <div class="main_hd">
+            <div class="title_tab" id="topTab">
+                <ul class="tab_navs mt title_tab">
+                </ul>
+            </div>
+            </p>
+        </div>
+       <form action="" method="post">
+        <div style="text-align: left; padding: 1px; text-align: left;">
+            <hr style="width: 50%; size: 1px; border: none;" />
+            <table style="vertical-align: top;">
+                <tr>
+                    <td style="width: 98px;"><strong class="btn purple-stripe">ID</td>
+                    <td><strong class="btn green-stripe">{$group.id} </td>
+                </tr>
+                <tr>
+                    <td ><strong class="btn red-stripe">套餐名</td>
+                    <td>
+                        <span class="frm_input_box">
+                            <input name="group[name]" type="text"   class="frm_input" style="width: 200px;" value="{$group.name}" /></span>
+   
+                    </td>
+                </tr>
+ 
+                 <tr>
+                    <td ><strong class="btn purple-stripe">场景数</td>
+                    <td>
+                        <span class="frm_input_box">
+                            <input name="group[cj_card_num]" type="text"   class="frm_input" style="width: 200px;" value="{$group.cj_card_num}" /></span>
+   <span>系统默认为：200点一个场景</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td ><strong class="btn green-stripe">价格</td>
+                    <td>
+                           <span class="frm_input_box">
+                            <input name="group[price]" type="text"   class="frm_input" style="width: 200px;" value="{$group.price}" /></span>
+   <span>系统默认为：200点一个场景</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+					
+                        <strong class="btn red-stripe">启用状态
+                    </td>
+                    <td>
+                        <table id="ctl00_ContentPlaceHolder1_rdiIsEnable_help" border="0">
+
+	                                <div class="control-group">	
+													<div class="controls">
+														<label class="radio">
+														<div class="radio"><span class="checked">
+                  <input id="ctl00_ContentPlaceHolder1_rdiIsEnable_help_0" type="radio" name="group[status]" value="1" <eq name="group['status']" value="1">checked="checked" </eq>/><label for="ctl00_ContentPlaceHolder1_rdiIsEnable_help_0">
+                                                        </span></div>
+启用
+														</label>
+														<label class="radio">
+														<div class="radio"><span class="">
+                <input id="ctl00_ContentPlaceHolder1_rdiIsEnable_help_1" type="radio"   name="group[status]" value="0" <eq name="group['status']" value="0">checked="checked" </eq>/><label for="ctl00_ContentPlaceHolder1_rdiIsEnable_help_1">
+                                                        </span></div>
+禁用
+
+													</div>
+
+												</div>
+
+	</tr>
+</table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            </table>
+          <div class="form-actions">
+                <span id="Span1" class="btn btn_primary btn_input">
+                        
+                    <button type="submit" class="btn blue"><i class="icon-ok"></i> 保存</button>
+            </div>
+        </div>
+        </form>
+        
+    </div>
+    <!--内容显示 End-->
+
+</div>
+        </form>
+        
+    </div> </div> </div> </div>
+ 
+
+
+  <include file="Public:foot"/>
